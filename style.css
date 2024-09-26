@@ -296,3 +296,100 @@ color: #fff;
     font-size: 13px;
 
 }
+
+/* Custom Checkbox Styling */
+.custom-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+
+
+.custom-checkbox img {
+    width: 20px;
+    height: 20px;
+    display: none;
+    border-radius: 3px;
+}
+
+.custom-checkbox input:checked ~ .checkmark img {
+    display: block;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.head{
+    font-size: 13px;
+    font-weight: 500;
+}
+.table thead th {
+    font-size: 13px;
+    vertical-align: bottom;
+    border-bottom: none !important;
+}
+.table tr{
+    font-size: 12px;
+}
+.table thead th {
+    background-color: #f8f9fa; /* Light gray background for headers */
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1; /* Add hover effect */
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1; /* Default background */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #007bff; /* Change to blue when checked */
+    border-color: #007bff;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .table thead th,
+    .table tbody td {
+        font-size: 0.875rem; /* Smaller font on small screens */
+        padding: 8px; /* Smaller padding */
+    }
+
+    .checkmark {
+        width: 16px;
+        height: 16px; /* Smaller checkboxes */
+    }
+}

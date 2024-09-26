@@ -183,4 +183,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
-    
+    //check boxes
+      // JavaScript to handle the 'select all' checkbox functionality
+
+  
+
+
+
+     
+
+
+     
