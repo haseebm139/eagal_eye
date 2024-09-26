@@ -212,13 +212,16 @@ color: #fff;
 }
 
 .form-control{
+    outline: none !important;
     border-radius: 14px !important;
     background-color: #f2f4fe !important;
     color: rgb(94, 94, 252) !important;
     border: none !important;
     font-size: 14px !important;
 }
+
    .form-control2{
+    outline: none !important;
     color: rgb(192, 190, 190) !important;
     border-radius: 14px !important;
     background-color: #ffffff !important;
@@ -227,6 +230,7 @@ color: #fff;
    }
 
    .form-control3{
+    outline: none !important;
    padding: 5px 20px;
     color: rgb(20, 17, 17) !important;
     border-radius: 14px !important;
