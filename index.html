@@ -20,18 +20,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .custom-active {
-            background-color: #28a745; /* Custom green */
-            color: white;
+            background-color: #5570F129; /* Custom green */
+            color: rgb(0, 0, 0);
+            
             padding: 5px;
-            border-radius: 5px;
+            border-radius: 12px;
             text-align: center;
         }
     
         .custom-inactive {
-            background-color: #dc3545; /* Custom red */
-            color: white;
+            background-color:#FFF2E2;
+            ; /* Custom red */
+            color: rgb(0, 0, 0);
             padding: 5px;
-            border-radius: 5px;
+            border-radius: 12px;
             text-align: center;
         }
     </style>
@@ -670,7 +672,7 @@
                                 <tr>
                                     <th scope="col">
                                         <label class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
+                                            <input type="checkbox" id="select-all">
                                             <span class="checkmark"></span>
                                         </label>
                                     </th>
@@ -774,7 +776,7 @@
     const showingInfo = document.getElementById('showing-info');
     const prevPageBtn = document.getElementById('prev-page');
     const nextPageBtn = document.getElementById('next-page');
-
+    const selectAllCheckbox = document.getElementById('select-all');
     // Function to render table rows for the current page
     function renderTableRows() {
         tableBody.innerHTML = '';
@@ -784,12 +786,15 @@
 
         visibleProducts.forEach((product) => {
 
-            const statusClass = product.status === "Active" ? "custom-active" : "custom-inactive"; // Custom classes for status
+            const statusClass = product.status === "Active" ? "custom-active" : "custom-inactive";
+            console.log(statusClass, 'product');
+            
+            // Custom classes for status
             const row = `
                 <tr>
                     <td>
                           <label class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
+                                            <input type="checkbox" class="product-checkbox" data-id="${product.id}">
                                             <span class="checkmark"></span>
                                         </label>
                         
@@ -820,11 +825,12 @@
                         </ul>
                     </div>
                         </td>
-                    <td class="${statusClass}">${product.status}</td>
+                    <td><p class="${statusClass}">${product.status}</p></td>
                 </tr>`;
             tableBody.insertAdjacentHTML('beforeend', row);
         });
         updatePaginationInfo();
+       
     }
 
     // Function to update the pagination info
@@ -839,7 +845,21 @@
         prevPageBtn.parentElement.classList.toggle('disabled', currentPage === 1);
         nextPageBtn.parentElement.classList.toggle('disabled', currentPage === totalPages);
     }
+ // Event listener for the select-all checkbox
+ selectAllCheckbox.addEventListener('change', function () {
+        const allCheckboxes = document.querySelectorAll('.product-checkbox');
+        allCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    });
+    
 
+     // Check if all checkboxes are selected and update the "Select All" checkbox
+     function checkIfAllSelected() {
+        const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+        const allChecked = Array.from(rowCheckboxes).every((checkbox) => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
+    }
     // Event listener for items per page change
     itemsPerPageSelect.addEventListener('change', function () {
         rowsPerPage = parseInt(this.value);
@@ -869,6 +889,9 @@
     // Initial render
     renderTableRows();
 });
+
+
+
 
       
     </script>
