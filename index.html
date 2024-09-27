@@ -555,7 +555,7 @@
           >
             <div class="container-fluid">
               <div
-                class="d-flex justify-content-between align-items-center"
+                class="d-flex justify-content-between align-items-center my-3"
                 style="width: 100%"
               >
                 <span
@@ -644,9 +644,24 @@
                   border-radius: 15px;
                 "
               >
-                <h6>Products</h6>
-                <div>
+                <div class="d-flex justify-content-between">
+                  <h6>Products</h6>
+               <div class="d-flex gap-2">
+                <div class="search-bar">
+                  <img src="./assests/svg/Search.svg" />
                   <input type="text" placeholder="Search.." />
+                </div>
+                <button  class="filter-btn"><img src="./assests/svg/filter1.svg" /> Filter</button>
+                <button class="filter-btn"><img src="./assests/svg/Calendar.svg" /> Filter</button>
+                <button class="filter-btn"><img src="./assests/svg/Send.svg" /> send</button>
+                <div>
+                  <select id="itemsPerPage" class="form-select form-select-sm filter-dropdown" style="width: auto;">
+                      <option value="3">bulk Action</option>
+                      <option value="5">page</option>
+                      <option value="10">per page</option>
+                  </select>
+              </div>
+               </div>
                 </div>
                 <div class="container mt-4">
                     <div class="table-responsive">

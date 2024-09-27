@@ -375,6 +375,38 @@ color: #fff;
     background-color: #007bff; /* Change to blue when checked */
     border-color: #007bff;
 }
+.search-bar{
+border: 1px solid rgb(207, 207, 207);
+border-radius: 8px;
+padding: 2px 6px
+}
+.search-bar img{
+    width: 14px;
+}
+.search-bar input{
+    border: none;
+    outline: none;
+    font-size: 13px;
+
+}
+.filter-btn{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    background-color: white;
+    padding: 2px 6px;
+    font-size: 13px;
+
+}
+.filter-btn img{
+    width: 13px;
+}
+.filter-dropdown{
+    outline: none;
+    border-radius: 8px;
+}
 
 /* Responsive behavior */
 @media (max-width: 768px) {
