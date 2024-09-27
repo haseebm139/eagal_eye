@@ -291,8 +291,19 @@ color: #fff;
 .order-btn{
     color: white;
     background-color: black;
+    padding: 9px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+
+}
+
+.order-btn2{
+    color: black;
+    background-color: #ffd014;
+    border: 1px solid #ffd014;
     padding: 3px 20px;
     border-radius: 12px;
+    font-weight: 700;
     font-size: 13px;
 
 }
@@ -309,9 +320,6 @@ color: #fff;
     opacity: 0;
     cursor: pointer;
 }
-
-
-
 
 .custom-checkbox img {
     width: 20px;
@@ -373,7 +381,7 @@ color: #fff;
 
 .custom-checkbox input:checked + .checkmark {
     background-color: #007bff; /* Change to blue when checked */
-    border-color: #007bff;
+    border-color: #a9cef7;
 }
 .search-bar{
 border: 1px solid rgb(207, 207, 207);
@@ -407,7 +415,41 @@ padding: 2px 6px
     outline: none;
     border-radius: 8px;
 }
-
+.ProductDropdown{
+ 
+    gap: 9px;
+    background: black;
+    color: white;
+    border-radius: 12px;
+    padding: 8px 20px;
+}
+.ProductDropdownLayout{
+    position: relative;
+    display: flex;
+  
+}
+.ProductDropdownLayout img{
+    position: absolute;
+    right: 9px;
+    top: 18px;
+    width: 9px;
+}
+.date{
+    width: 100%;
+    outline: none;
+    background-color: #eeeef0;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 19px;
+    font-size: 13px;
+}
+.dateTime p{
+    margin-top: 10px;
+    color: #8f8787;
+    padding: 0;
+    font-size: 13px;
+   
+}
 /* Responsive behavior */
 @media (max-width: 768px) {
     .table-responsive {
@@ -425,3 +467,179 @@ padding: 2px 6px
         height: 16px; /* Smaller checkboxes */
     }
 }
+.mainBar{
+    background-color: white;
+
+    border-radius: 13px;
+    padding: 1.5rem;
+}
+.leftBar{
+    background-color: white;
+    border-radius: 13px;
+    padding: 1rem;
+    width: 40%;
+}
+
+.subFormleft{
+    width: calc(54% - 10px);
+}
+.rightForm{
+    width: calc(50% - 10px);
+}
+.subFormleft textarea{
+    font-size: 13px;
+    border-radius: 10px;
+    border: 1px solid  #eeeef0;
+    background:  #eeeef0;
+    padding: 9px ;
+}
+.product{
+    outline: none;
+    width: 100%;
+border: none;
+font-size: 13px;
+border-radius: 11px;
+padding: 9px ;
+    background-color: #eeeef0;
+}
+.ProductList{
+color: #8f8787;
+    border: none;
+font-size: 13px;
+border-radius: 11px;
+padding: 9px ;
+    background-color: #eeeef0;
+}
+.image-uploader2{
+    padding:20px 13px;
+    width: 100%;
+    color: #8f8787;
+    border: none;
+font-size: 13px;
+border-radius: 11px;
+    background-color: #eeeef0;  
+}
+
+.image-uploader3{
+    width: 100%;
+    border: 1px dashed #585757 !important;
+    color: #8f8787;
+font-size: 13px;
+border-radius: 11px;
+padding: 9px ;
+    background-color: #ffffff; 
+}
+.image-uploader{
+
+    height: 240px;
+    color: #8f8787;
+    border: none;
+font-size: 13px;
+border-radius: 11px;
+padding: 9px ;
+    background-color: #eeeef0;
+}
+.image-uploader .previewImage{
+    width: 40px;
+}
+.image-uploader p{
+    font-size: 13px;
+}
+.bold2{
+    font-weight: 500;
+}
+
+.switch {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    border-radius: 34px;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+  
+  .discount{
+    padding: 0;
+    margin: 0;
+   text-align: center;
+    font-size: 13px;
+  }
+  .editor-toolbar{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    flex-wrap: wrap;
+    gap: 3px;
+    display: flex;
+  }
+  .editor-toolbar button {
+    font-size: 13px;
+    background-color: #eeeef0;
+
+    border: 1px solid  #eeeef0;;
+  }
+  .Productform-control{
+    border-radius: 0 !important;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    color: #8f8787 !important;
+  }
+ 
+  #productDescription {
+ 
+    /*  */
+    background-color: #eeeef0 !important;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 150px;
+  }
+  .Description{
+    font-size: 14px;
+  }
+  .Fonts{
+   
+    width: 94px;
+    font-size: 12px;
+    border-radius: 9px !important;
+    border: 1px solid #ddd !important;
+padding: 4px 10px;
+  }

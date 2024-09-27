@@ -180,14 +180,59 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
+    function formatText(command) {
+        if (command === 'createLink') {
+          const url = prompt("Enter the URL");
+          document.execCommand(command, false, url);
+        } else {
+          document.execCommand(command, false, null);
+        }
+      }
+      
+      document.getElementById('fontFamily').addEventListener('change', function() {
+        document.execCommand('fontName', false, this.value);
+      });
+      
+      document.getElementById('fontSize').addEventListener('change', function() {
+        let size;
+        switch (this.value) {
+          case 'Heading 1':
+            size = 'h1';
+            break;
+          case 'Heading 2':
+            size = 'h2';
+            break;
+          case 'Heading 3':
+            size = 'h3';
+            break;
+          default:
+            size = 'p';
+        }
+        document.execCommand('formatBlock', false, size);
+      });
+      
 
 
 
-    //check boxes
-      // JavaScript to handle the 'select all' checkbox functionality
-
-  
-
+      function previewUploadedFile(event) {
+        const imageUploader = document.getElementById('imageUploader');
+        const previewImage = document.getElementById('previewImage');
+        const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+        
+        const file = event.target.files[0];
+        
+        if (file) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                previewImage.style.display = 'block';
+                uploadPlaceholder.style.display = 'none';
+            }
+            
+            reader.readAsDataURL(file);
+        }
+    }
 
 
      
