@@ -601,19 +601,7 @@ padding: 9px ;
    text-align: center;
     font-size: 13px;
   }
-  .editor-toolbar{
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    flex-wrap: wrap;
-    gap: 3px;
-    display: flex;
-  }
-  .editor-toolbar button {
-    font-size: 13px;
-    background-color: #eeeef0;
 
-    border: 1px solid  #eeeef0;;
-  }
   .Productform-control{
     border-radius: 0 !important;
     border-bottom-left-radius: 12px !important;

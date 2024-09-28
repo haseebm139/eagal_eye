@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     
     <link
@@ -859,35 +859,28 @@
                         <div class="mb-3 mt-3" style="width: 100%;">
                           <label for="productDescription" class="form-label Description ">Product Long Description</label>
                           
-                          <div class="editor-toolbar " style="background-color:#eeeef0;">
-                            <select id="fontFamily" class="form-select d-inline-block  ProductList Fonts" >
-                              <option selected>Roboto</option>
-                              <option>Arial</option>
-                              <option>Times New Roman</option>
-                              <option>Verdana</option>
+                          <div id="toolbar">
+                            <!-- Font options -->
+                            <select class="ql-font"></select>
+                            <!-- Paragraph format -->
+                            <select class="ql-header">
+                                <option selected></option>
+                                <option value="1"></option>
+                                <option value="2"></option>
                             </select>
-                            
-                            <select id="fontSize" class="form-select d-inline-block  ProductList Fonts">
-                              <option selected>Paragraph</option>
-                              <option>Heading 1</option>
-                              <option>Heading 2</option>
-                              <option>Heading 3</option>
-                            </select>
-                    
-                            <!-- Formatting Buttons -->
-                            <button class="btn btn-light" onclick="formatText('bold')"><b>B</b></button>
-                            <button class="btn btn-light" onclick="formatText('underline')"><u>U</u></button>
-                            <button class="btn btn-light" onclick="formatText('italic')"><img src="./assests/svg/fi_italic.svg" /></button>                            
-                            <button class="btn btn-light" onclick="formatText('justifyCenter')"><img src="./assests/svg/fi_align-justify.svg" /></button>
-                            <button class="btn btn-light" onclick="formatText('justifyRight')"><img src="./assests/svg/fi_align-right.svg" /></button>
-                            <button class="btn btn-light" onclick="formatText('justifyLeft')"><img src="./assests/svg/fi_align-left.svg" /></button>
-                            <button class="btn btn-light" onclick="formatText('createLink')"><img src="./assests/svg/fi_link-2.svg" /></button>
-                          </div>
-                          
-                          <!-- Editable Content Area -->
-                          <div id="productDescription" class="form-control Productform-control" contenteditable="true" >
-                            Your text goes here
-                          </div>
+                            <!-- Text formatting options -->
+                            <button class="ql-bold"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-italic"></button>
+                            <!-- Alignment options -->
+                            <button class="ql-align" value=""></button>
+                            <button class="ql-align" value="center"></button>
+                            <button class="ql-align" value="right"></button>
+                        </div>
+                        <div id="editor">
+                            <p>Your text goes here</p>
+                        </div>
+                      
                           
                           <div class="form-text mt-2 " style="color: #8f8787">Add a long description for your product</div>
                         </div>
@@ -988,11 +981,18 @@
 
       <!-- //call every page here dynamically -->
     </div>
-
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 
+
     <script>
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: '#toolbar'
+            }
+        });
       // Inject the fetched page content into the specific area
       async function fetchData() {
         try {

@@ -179,41 +179,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 
 
-
-    function formatText(command) {
-        if (command === 'createLink') {
-          const url = prompt("Enter the URL");
-          document.execCommand(command, false, url);
-        } else {
-          document.execCommand(command, false, null);
-        }
-      }
-      
-      document.getElementById('fontFamily').addEventListener('change', function() {
-        document.execCommand('fontName', false, this.value);
-      });
-      
-      document.getElementById('fontSize').addEventListener('change', function() {
-        let size;
-        switch (this.value) {
-          case 'Heading 1':
-            size = 'h1';
-            break;
-          case 'Heading 2':
-            size = 'h2';
-            break;
-          case 'Heading 3':
-            size = 'h3';
-            break;
-          default:
-            size = 'p';
-        }
-        document.execCommand('formatBlock', false, size);
-      });
-      
-
-
-
       function previewUploadedFile(event) {
         const imageUploader = document.getElementById('imageUploader');
         const previewImage = document.getElementById('previewImage');
@@ -238,4 +203,3 @@ document.querySelectorAll('.nav-link').forEach(link => {
      
 
 
-     
