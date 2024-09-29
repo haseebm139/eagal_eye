@@ -4,6 +4,16 @@
     src: url("./assests/Inter/static/Inter_18pt-Medium.ttf");
 }
 
+@font-face{
+  font-family: InterLight;
+  src: url("./assests/Inter/static/Inter_18pt-ExtraLight.ttf");
+}
+
+@font-face{
+  font-family: InterBold;
+  src: url("./assests/Inter/static/Inter_18pt-Bold.ttf");
+}
+
 @font-face {
     font-family: GilroyMedium;
     src: url('../assests/gilroy/Gilroy-Medium.ttf');
@@ -21,6 +31,15 @@
 .box{
     margin-top: 8rem;
     text-align: center;
+    border-radius: 12px;
+    padding:2rem;
+
+    width: 230px;
+    height: 230px;
+    border: 1px solid gainsboro;
+}
+.box3{
+  text-align: center;
     border-radius: 12px;
     padding:2rem;
 
@@ -303,7 +322,8 @@ font-family: InterMedium;
   }
 
   .Equipment{
-    background-color: #D9D9D9 !important ;
+    padding: 1rem 0;
+    background-color: #D9D9D9 ;
   }
   .newSection{
     gap: 10rem;
@@ -314,3 +334,14 @@ width: 28%;
   .outer .img{
     width: 230px;
   }
+.swiper-slide{
+  height: 80%;
+}
+
+.swiper-wrapper3 {
+  margin-top: 2rem !important;
+ 
+  width: 100%;
+  height: auto !important;
+}
+  
