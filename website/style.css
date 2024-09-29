@@ -293,7 +293,9 @@ font-family: InterMedium;
   .newSection{
     gap: 10rem;
   }
-
+.outer2{
+width: 28%;
+}
   .outer .img{
     width: 230px;
   }
