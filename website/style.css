@@ -149,9 +149,26 @@ font-size: 14px;
     background-color: #FFC107;
    
 }
+
+
+.btn3:active{
+    
+  background-color: #FFC107;
+ 
+}
+.clicked {
+  fill: yellow; /* This changes the color of the SVG */
+}
+
+
+
 .btn2 img{
     width: 15px;
     transform: rotate(1deg);
+}
+.btn3 img{
+  width: 15px;
+  transform: rotate(1deg);
 }
 
 
@@ -284,9 +301,7 @@ font-family: InterMedium;
     color: #ffffff;
     font-family: InterMedium; 
   }
-  .Equipment .navbar{
-    background-color: #D9D9D9 !important ;
-  }
+
   .Equipment{
     background-color: #D9D9D9 !important ;
   }
