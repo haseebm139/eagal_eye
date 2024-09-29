@@ -226,9 +226,11 @@ font-size: 14px;
     font-family: GilroyBold; 
   }
   .footerLeft{
+    font-family: InterMedium; 
     width: 30%;
   }
 .footerRight{
+  font-family: GilroyMedium;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -257,7 +259,9 @@ font-size: 14px;
   }
   .inner{
 width: 50%;
+font-family: InterMedium;
   }
+
   .searchBar input{
     width: 100%;
     background-color: #3e3e3e3e  ;
@@ -270,8 +274,26 @@ width: 50%;
   .searchBar a{
     color: black;
     position: absolute;
-    right: 8px;
+    right: 3px;
   }
   .icons img{
     width: 20px;
+  }
+  .copyRight{
+    background-color: #161616;
+    color: #ffffff;
+    font-family: InterMedium; 
+  }
+  .Equipment .navbar{
+    background-color: #D9D9D9 !important ;
+  }
+  .Equipment{
+    background-color: #D9D9D9 !important ;
+  }
+  .newSection{
+    gap: 10rem;
+  }
+
+  .outer .img{
+    width: 230px;
   }
