@@ -8,10 +8,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./style.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
+
+@font-face{
+    font-family: InterMedium;
+    src: url("./assests/Inter/static/Inter_18pt-Medium.ttf");
+}
+
+@font-face{
+  font-family: InterLight;
+  src: url("./assests/Inter/static/Inter_18pt-ExtraLight.ttf");
+}
+
+@font-face{
+  font-family: InterBold;
+  src: url("./assests/Inter/static/Inter_18pt-Bold.ttf");
+}
+
      .custom-dropdown {
             display: flex;
             align-items: center;
@@ -39,260 +56,240 @@
             padding: 10px;
             min-width: 150px;
         }
-#back_btn_sec .product_back_btn{
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  font-family: "Inter", sans-serif;
-  font-weight: normal;
-  gap:20px;
-  color:#191919;
-  text-decoration: none;
-  }
-  #back_btn_sec .product_page_top_bar{
-      padding:30px 0px;
-  }
-/* product details Section css */
-#products_details_sec{
-  padding-bottom: 80px;
+
+.product_back_btn{
+    margin-top: 1rem;
+    color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+.product_back_btn img{
+    width: 20px;
+}
+.container {
+  text-align: center;
 }
 
-  #products_details_sec .product_images_wrapper{
-      display: flex;
-      gap:20px;
-  }
-  #products_details_sec .product_images_wrapper .product_extra_images_wrapper{ 
-      width:210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap:15px;
-  }
-  #products_details_sec .product_feature_image_wrapper img{
-      border: 1px solid #DADADA;
-      width:100%;
-      height: 100%;
-      object-fit: cover;
-  }
-  #products_details_sec .product_feature_image_wrapper{
-      width: 100%;
-  }
-  #products_details_sec .product_title{
-      font-family: "Inter", sans-serif;
-      font-weight: bold;
-      font-size: 45px;
-      line-height: 1;
-  }
-  #products_details_sec .product_price{
-      font-family: "Inter", sans-serif;
-      font-weight: 300;
-      font-size: 30px;
-      line-height: 1;
-  }
-  #products_details_sec .extra_paragraph{
-      font-family: "Inter", sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1;
-  }
-  #products_details_sec .product_details_form{
-      margin-top:40px;
-  }
-  #products_details_sec .product_details_form label{
-      font-family: "Inter", sans-serif;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1;
-  }
-  #products_details_sec .product_details_form input[type='text']{
-      border:none;
-      border-bottom: 1px solid #000;
-      padding-left:0px;
-      border-radius: 0px;
+.stepper-wrapper {
+    position: relative;
+  margin:0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.screen-indicator p{
+    position: absolute;
+}
+.stepper-outer{
 
-  }
-  #products_details_sec .product_details_form  input[type='text']:focus{
-      border:none;
-      border-bottom: 1px solid #000;
-      padding-left:0px;
-      border-radius: 0px;
-      outline: none;
-      box-shadow: none;
-  }
-  #products_details_sec .pr-3{
-      padding-right:30px;
-  }
-  #products_details_sec .pl-3{
-      padding-left:30px;
-  }
-  #products_details_sec .product_details_wrapper{
-      padding-left:30px;
-  }
-  #products_details_sec .qty_buttons{
-      background:#FEFAFA;
-      border: 1px solid #E6E6E6;
-      border-radius: 10px;padding:10px;
-  }
-  #products_details_sec .product_description p{
-      font-family: "Inter", sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 20px;
-  }
-  #products_details_sec .qty_selector{
-      border: none!important;
-      width: 50px;
-      text-align: center;
-  }
-  #products_details_sec #Additional_file_notes{
-      border-bottom: 0.5px solid #0000007a;
-  }
-  #products_details_sec .uploader_area{
-      background: #D9D9D9;
-      border-radius:20px;
-      min-height:120px;
-      border: 0.3px solid #00000048;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 10px;
-  }
-  #products_details_sec .add-to-cart-btn{
-      background:#FFD323;
-      width:175px;
-      height:50px;
-      border-radius: 60px;
-      border-color:#FFD323;
-      font-family: "Inter", sans-serif;
-      font-weight: 500;
-      font-size: 15px;
-      line-height: 1;
-      color:#000;
-  }
-  #products_details_sec .add-to-cart-btn:focus{
-      background:#FFD323;
-      width:175px;
-      height:50px;
-      border-radius: 60px;
-      border-color:#FFD323;
-  }
-  #products_details_sec .add-to-cart-button-wrapper{
-      gap:20px;
-      display:flex;
-      align-items: center;
-  }
-  #products_details_sec .back_btn{
-      background:#000;
-      width:175px;
-      height:50px;
-      border-radius: 60px;
-      border-color:#000;
-      font-family: "Inter", sans-serif;
-      font-weight: 500;
-      font-size: 15px;
-      line-height: 1;
-      color:#fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-  }
+    z-index: -1;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding:4rem 2.5rem;
+}
+.stepper-outer p{
+    font-family:InterMedium;
+}
+.cart p{
+    font-family:InterMedium;
+}
+.stepper-wrapper::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: rgb(143, 142, 142);
+  position: absolute;
+  z-index: 0;
+}
 
-  /* product description section */
-  #product_page_description_section{
-      background:#D9D9D9;
-      padding:30px 0px;
-  }
-  #product_page_description_section .products_details_sec_title{
-      color:#191919;
-      font-family: "Inter", sans-serif;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 1;
-  }
-  #product_page_description_section .description_item_wrapper{
-      padding:15px;
-      background: #fff;
-      display:flex;
-      align-items: center;
-      gap:20px;
-  }
-  #product_page_description_section .description_item_wrapper img{
-      width:190px;
-      height:343px;
-      object-fit: cover;
-  }
-  #product_page_description_section .description_item_wrapper .description_item_content .description_item_content_heading{
-      color:#191919;
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      font-size: 40px;
-      line-height: 66px;
-  }
-  #product_page_description_section .description_item_wrapper .description_item_content .description_item_content_paragraph{
-      color:#191919;
-      font-family: "Inter", sans-serif;
-      font-weight: 300;
-      font-size: 12px;
-      line-height: 25px;
-  }
-  #product_page_description_section .description_item_list{
-      list-style-type: none;
-      padding: 0px;
-  }
-  #product_page_description_section .description_item_list li{
-      color:#191919;
-      font-family: "Inter", sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      line-height: 25px;
-  }
-  #product_page_description_section .description_item_list li b{
-      font-weight: 700 !important;
-  }
-  #product_page_description_section .description_see_more_btn{
-      text-decoration:none;
-      color:#191919;
-      font-size:24px;
-      font-family: "Inter", sans-serif;
-      font-weight:400;
-  }
-  @media(max-width:600px){
-      /* Product Detail Section */
-      #products_details_sec .product_images_wrapper .product_extra_images_wrapper{
-          width: 100px;
-      }
-      #products_details_sec .product_details_wrapper{
-          padding-top: calc(var(--bs-gutter-x)* .5);
-          padding-right: calc(var(--bs-gutter-x)* .5);
-          padding-left: calc(var(--bs-gutter-x)* .5);
-      }
-      #products_details_sec .pl-3{
-          padding-right: calc(var(--bs-gutter-x)* .5);
-          padding-left: calc(var(--bs-gutter-x)* .5);
-      }
-      #products_details_sec .pr-3{
-          padding-right: calc(var(--bs-gutter-x)* .5);
-          padding-left: calc(var(--bs-gutter-x)* .5);
-      }
-      #products_details_sec .col-sm-12{
-          padding-top: calc(var(--bs-gutter-x)* .5);
-      }
+.progress {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgb(68, 72, 73);
+  position: absolute;
+  z-index: -1;
+  transition: width 1s;
+}
 
-      /* Product Description Section */
-      #product_page_description_section .description_item_wrapper{
-          flex-direction:column;
-      }
-      #product_page_description_section .description_item_wrapper img{
-          width:100%;
-      }
-  }
+.screen-indicator {
+
+  border-radius: 50%;
+  border: 3px solid rgb(143, 142, 142);
+  background-color: white;
+z-index: 1;
+  color: gray;
+  transition: border-color color;
+  transition-duration: 0.7s;
+}
+
+.completed {
+  border-color: rgb(78, 196, 243);
+  color: rgb(78, 196, 243);
+}
+
+.control-btn {
+  background-color: rgb(238, 238, 238);
+  padding: 5px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.control-btn:disabled {
+  cursor: not-allowed;
+  
+}
+
+.control-btn:not(:disabled):hover {
+  background-color: rgb(143, 142, 142);
+}
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.upload-section {
+    border: 2px dashed #ccc;
+    color: #888;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-section:hover {
+    background-color: #f8f8f8;
+}
 
 
+.Tableimg{
+    width: 170px;
+}
+.table>:not(caption)>*>* {
+   
+    border-bottom-width: 0px;
+   
+}
+.table{
+  
+    margin: 15px 0;
+position: relative;
+border: 1px solid gray;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px !important; /* Adjust the value as needed */
+    overflow: scroll;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+.table .header{
+    font-family: InterMedium;
+    background-color: #D9D9D9 !important;
+   
+ font-size: 13px;
+}
+.upload-container {
+    width: 35%;
+    background-color: #D9D9D9;
+    position: absolute;
+    right: 2rem;
+    top: 10rem;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-container:hover {
+    background-color: #f8f8f8;
+}
+
+.upload-container p {
+    margin: 0;
+    color: #555;
+}
+
+.size{
+    font-size: 10px;
+    color: gray;
+}
+.table td{
+
+padding: 15px;
+}
+.table .btn{
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+   
+}
+td input{
+    outline: none;
+    border-bottom: 1px solid rgb(173, 173, 173);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 0;
+    font-size: 13px;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom:none;
+}
+.table td h5{
+  
+    font-family: InterBold;
+    font-size: 20px;
+}
+.table td p{
+    font-size: 13px;
+    margin: 0;
+    padding: 5px 0;
+    font-family: InterBold;
+}
+.table td .span{
+    font-family: InterMedium;
+}
+.table-responsive {
+    overflow-x: auto;
+}
 
 
+.table2{
+   
+    width: 50%;
+    
+}
+.header2{
+    width:25% ;
+    font-family: InterMedium;
+    background-color: #D9D9D9 !important;
+    font-size: 13px;
 
+}
+.bottom{
+    width:25% ;
+    font-family: InterMedium;
+    color: white;
+    background-color: #000 !important;
+    font-size: 13px;
+ 
+}
 
 </style>
     </head>
@@ -370,418 +367,184 @@
                     
                         <img src="images/back.svg">
         
-                            Back
+                            Cancel Cart
                     </a>
                 </div>
             </div>
             
         </section>
-        <section id="products_details_sec">
-            <div class="container">
-              
-                <div class="row">
-                    <div class="col-xxl-7 col-xm-7 col-lg-7 col-md-12 col-sm-12">
-                        <div class="product_images_wrapper">
-                            <div class="product_extra_images_wrapper">
-                                <img src="images/image.png" class="other_img">
-                                <img src="images/image_1.png"  class="other_img">
-                                <img src="images/image_728.png"  class="other_img">
-                            </div>
-                            <div class="product_feature_image_wrapper">
-                                <img src="images/main.png" id="featured_img">
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-xxl-5 col-xm-5 col-lg-5 col-md-12 col-sm-12 mt-sm-5 mt-lg-0">
-                        <div class="product_details_wrapper">
-                            <h1 class="product_title">Flatbed Printing</h1>
-                            <p class="product_price">$<span id="product_price">0.00</span> /per piece</p>
-                            <p class="extra_paragraph">Flatbed printed materials with UV ink</p>
-                            <form action="" method="post" class="product_details_form">
-                                <div class="row">
-                                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 pr-3">
-                                        <label for="height" class="form-label">Height<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="height" name="height" placeholder="Enter Height" required />
-                                    </div>
-                                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 pl-3">
-                                        <label for="height" class="form-label">Width<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="Width" name="Width" placeholder="Enter Width" required />
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 pr-3">
-                                        <label for="Material" class="form-label">Material<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="Material" name="Material" placeholder="Enter Height" required />
-                                    </div>
-                                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 pl-3">
-                                        <label for="printed_sides" class="form-label">Printed Sides<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="printed_sides" name="printed_sides" placeholder="Enter Width" required />
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 pr-3">
-                                        <label for="flute_direction" class="form-label">Flute Direction<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="flute_direction" name="flute_direction" placeholder="Enter Height" required />
-                                    </div>
-                                   
-                                </div>
 
-                                <div class="row mt-3">
-                                    <div class="col-sm-12">
-                                        <label for="special_instructions" class="form-label">Special Instructions<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control mt-4" id="special_instructions" name="special_instructions" placeholder="Enter Height" required />
-                                    </div>
-                                   
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col-sm-12">
-                                        <label for="flute_direction" class="form-label">Quantity<span class="text-danger">*</span></label>
-                                        <div class="quantity_selector mt-2">
-                                                <button id="plus_quantity" type="button" class="qty_buttons"><img src="images/minus.svg" width="20px"></button> 
-                                                <input type="text" class="qty_selector" id="selector" name="qty" value="1" min="1">
-                                                <button id="minus_quantitiy"  type="button" class="qty_buttons"><img src="images/plus.svg" width="20px"></button>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col-sm-12">
-                                      <div class="product_description"> 
-                                            <p>We accept the following file types: PDF, AI, SVG, EPS, PSD, JPG, TIF, PNG</p>
-                                            <p>Files should be in the CMYK colorspace, if not they will be converted to CMYK and we are not responsible if the results are not what you expected.</p>
-                                            <p>Finally, for large file transfers (over 100mb total), we recommend uploading them AFTER the order is placed, to avoid a long order confirmation wait when you hit the final payment button.</p>
-                                      </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-sm-12">
-                                        <label for="Additional_file_notes" class="form-label">Additional File Notes<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control " id="Additional_file_notes" name="Additional_file_notes" placeholder="Enter Height" required />
-                                    </div>
-                                   
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-12">
-                                        <div class="uploader_area " id="upload_image_area">
-                                            <img id="preview_image" style="display:none; max-width: 100px; max-height: 100px;">
-                                            <img src="images/upload_image.svg" id="preview_image">
-                                        </div>
-                                        <!-- Hidden file input -->
-                                        <input type="file" name="Additional_file" id="image_input" accept="image/*" style="display:none;">
-                                        <!-- Image preview area -->
-                                    </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col-md-12">
-                                        <div class="add-to-cart-button-wrapper mt-3">
-                                            <input type="submit" value="Add To Cart" class="add-to-cart-btn" name="add-to-cart" id="add-to-cart">
-                                            <a href="#" class="back_btn">Back</a>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+        <div class="container stepper-outer">
+           <div class="d-flex justify-content-between align-items-center">
+            <p>Cart</p>
+            <p>Checkout</p>
+            <p>Payment</p>
+           </div>
+            <div class="stepper-wrapper">
+              <div class="progress"></div>
+           
+           
+            <div class="screen-indicator completed">
+               
+                <input type="radio" />
+              </div>
+           
+              <div class="screen-indicator">
+                <input type="radio" />
+              </div>
+              <div class="screen-indicator">
+                <input type="radio" />
+              </div>
+             
             </div>
-        </section>
-        <section id="product_page_description_section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="products_details_sec_title">
-                            Description
-                        </h1>
-                    </div>
-                </div>
-                <div class="row  align-items-center">
-                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12  mt-4">
-                        <div class="description_item_wrapper">
-                            <img src="images/Group_1597881064.png">
-                            <div class="description_item_content">
-                                <h1 class="description_item_content_heading">Dibond</h1>
-                                <p class="description_item_content_paragraph">An excellent and durable material originally designed for building facades.  It consists of a black polyethylene core with .012″ aluminum faces on both sides.  Easy to cut and shape with a pleasing gloss enamel white finish on both sides. It won’t bow or oil can like standard metals.</p>
-                                <ul class="description_item_list">
-                                    <li>
-                                        <b>Thickness:</b> 3mm (3/16″)
-                                    </li>
-                                    <li>
-                                        <b>Sheet Size:</b> 48″ x 96, Special order up to 60″ x 120″
-                                    </li>
-                                    <li><b>Color Front/Back:</b> White/White</li>
-                                    <li><b>Finish:</b> Gloss</li>
-                                    <li><b>Durability:</b> Long Term</li>
-                                </ul>
+
+          </div>
+<div class="container cart">
+    <div class="d-flex justify-content-start align-items-start gap-3 mt-5">
+      <span class="d-flex gap-2 justify-content-center align-items-center">
+        <img src="./assests/svg/delete 1.svg" />
+        <p class="p-0 m-0">Remove Item</p>
+      </span>
+       <span class="d-flex gap-2 justify-content-center align-items-center">
+        <img src="./assests/svg/delete 1 (1).svg" />
+        <p class="p-0 m-0">Edit</p>
+       </span>
+    </div>    
+</div>
+
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="header"></th>
+                        <th scope="col" class="header">Product</th>
+                        <th scope="col" class="header">Price</th>
+                        <th scope="col" class="header">Qty</th>
+                        <th scope="col" class="header">SubTotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="./assests/image2.png" class="Tableimg" />
+                        </td>
+                        <td>
+                            <div>
+                                <h5>Flatbed Printing</h5>
+                                <p>Height: <Span class="span">50</Span></p>
+                                <p>Width: <Span class="span">50</Span></p>
+                                <p>Material: <Span class="span">Ultraboard 3/16" (up to 60x120)</Span></p>
+                                <p>Printed Sides: <span class="span">Double Sided 4:4</span></p>
+                                <p>Notes: <span class="span">sdgsdgsdg</span></p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12  mt-4">
-                        <div class="description_item_wrapper">
-                            <img src="images/Group_1597881065.png">
-                            <div class="description_item_content">
-                                <h1 class="description_item_content_heading">Coroplast</h1>
-                                <p class="description_item_content_paragraph">An excellent and durable material originally designed for building facades.  It consists of a black polyethylene core with .012″ aluminum faces on both sides.  Easy to cut and shape with a pleasing gloss enamel white finish on both sides. It won’t bow or oil can like standard metals.</p>
-                                <ul class="description_item_list">
-                                    <li>
-                                        <b>Thickness:</b> 3mm (3/16″)
-                                    </li>
-                                    <li>
-                                        <b>Sheet Size:</b> 48″ x 96, Special order up to 60″ x 120″
-                                    </li>
-                                    <li><b>Color Front/Back:</b> White/White</li>
-                                    <li><b>Finish:</b> Gloss</li>
-                                    <li><b>Durability:</b> Long Term</li>
-                                </ul>
+                        </td>
+                        <td>
+                            <p class="span">Price $500</p>
+                            <p class="span">Additional File Notes*</p>
+                            <input type="number" placeholder="height" />
+                        </td>
+                        <td>
+                            <div class="d-flex justify-content-start align-items-center gap-2">
+                                <button class="btn">-</button>
+                                2
+                                <button class="btn">+</button>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 mt-4">
-                        <div class="description_item_wrapper">
-                            <img src="images/Group_1597881066.png">
-                            <div class="description_item_content">
-                                <h1 class="description_item_content_heading">Lusterboard</h1>
-                                <p class="description_item_content_paragraph">An excellent and durable material originally designed for building facades.  It consists of a black polyethylene core with .012″ aluminum faces on both sides.  Easy to cut and shape with a pleasing gloss enamel white finish on both sides. It won’t bow or oil can like standard metals.</p>
-                                <ul class="description_item_list">
-                                    <li>
-                                        <b>Thickness:</b> 3mm (3/16″)
-                                    </li>
-                                    <li>
-                                        <b>Sheet Size:</b> 48″ x 96, Special order up to 60″ x 120″
-                                    </li>
-                                    <li><b>Color Front/Back:</b> White/White</li>
-                                    <li><b>Finish:</b> Gloss</li>
-                                    <li><b>Durability:</b> Long Term</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-xm-6 col-lg-6 col-md-12 col-sm-12 mt-4">
-                        <div class="description_item_wrapper">
-                            <img src="images/Group_1597881067.png">
-                            <div class="description_item_content">
-                                <h1 class="description_item_content_heading">PVC aka Sintra</h1>
-                                <p class="description_item_content_paragraph">An excellent and durable material originally designed for building facades.  It consists of a black polyethylene core with .012″ aluminum faces on both sides.  Easy to cut and shape with a pleasing gloss enamel white finish on both sides. It won’t bow or oil can like standard metals.</p>
-                                <ul class="description_item_list">
-                                    <li>
-                                        <b>Thickness:</b> 3mm (3/16″)
-                                    </li>
-                                    <li>
-                                        <b>Sheet Size:</b> 48″ x 96, Special order up to 60″ x 120″
-                                    </li>
-                                    <li><b>Color Front/Back:</b> White/White</li>
-                                    <li><b>Finish:</b> Gloss</li>
-                                    <li><b>Durability:</b> Long Term</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12 d-flex align-items-center justify-content-center">
-                        <a href="#" class="description_see_more_btn">
-                            See More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div  class="container ">
-            <div class="d-flex justify-content-between align-items-center mt-5 mb-2">
-                <h2>Similar Equipment</h2>
-            </div>
-            <div class="swiper mySwiper ">
-                <div class="swiper-wrapper swiper-wrapper3 ">
-                  <div class="swiper-slide">
-                    <div>
-                        <img src="./assests/image (1).png" />
-                       <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
-                    </div>
-                </div>
-                  <div class="swiper-slide"> 
-                    
-                  <div>
-                      <img src="./assests/image (2).png" />
-                    <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
-                  </div>
-                </div>
-        
-                  <div class="swiper-slide"> 
-                    <div>
-                    <img src="./assests/image (3).png" />
-                
-                    <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
+                        </td>
+                        <td>
+                            $756854
+                        </td>
                        
-                  </div>
-                </div>
-        
-        
-                  <div class="swiper-slide">
-                    <div>
-                    <img src="./assests/image4.png" />
-                    <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
-                  </div>
-                  </div>
-                  <div class="swiper-slide"> 
-                    <div>
-                    <img src="./assests/image (1).png" />
-                    <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
-                  </div>
-                  </div>
-                 
-        
-                  <div class="swiper-slide"> 
-                    
-                    <div>
-                        <img src="./assests/image (2).png" />
-                      <div class="d-flex justify-content-start align-items-center">
-                          <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                          <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                         </div>
-                    </div>
-                  </div>
-                
-        
-                  <div class="swiper-slide"> 
-                    <div>
-                    <img src="./assests/image (1).png" />
-                    <div class="d-flex justify-content-start align-items-center">
-                        <p> 1 Mimaki UJV100-160 64" UV printer</p>
-                        <a href="#" class="btn1 btn2"><img src="./assests/svg/Vector.svg"/></a>
-                       </div>
-                  </div>
-                  </div>
-                 
-                  <div class="swiper-slide"> <img src="./assests/image4.png" /></div>
-                  <div class="swiper-slide"> <img src="./assests/image (1).png" /></div>
-                </div>
-                <!-- <div class="swiper-pagination"></div> -->
-              </div>
-        </div>
-        
+                    </tr>
 
-        <div class="container  d-flex  gap-3 justify-content-center align-items-center">
-            <div class="d-flex flex-column justify-content-center align-items-center  box3">
-                <h1 class="price">3K</h1>
-                <p class="indentity">Customer</p>
-            </div>
-        
-        
-            <div class="d-flex flex-column justify-content-center align-items-center box3 ">
-                <h1 class="price">56K</h1>
-                <p class="indentity">Prints & Signs in last 12 Months </p>
-            </div>
-        
-            <div class="d-flex flex-column justify-content-center align-items-center box3 ">
-                <h1 class="price">22</h1>
-                <p class="indentity">States</p>
-            </div>
+                    <tr class="imageBox">
+                       <td>
+                        <div class="upload-container">
+                            <div class="d-flex justify-content gap-3 align-items-center">
+                                <img src="./assests/svg/image 727.svg" />
+                                <span>
+                                    <p>Upload Image</p>
+                                    <p class="size">Max size: 200 MB</p>
+                                </span>
+                            </div>
+                            <input type="file" id="file-input" style="display: none;" onchange="handleFileUpload(event)" />
+                        </div>
+                       </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        
-        <div class="footer">
-        <div class="container d-flex">
-            <div class="d-flex flex-column gap-2 footerLeft">
-              <div class="d-flex  flex-column">
-                <h5>OFFICE ADDRESS</h5>
-                <p class="para p-0 m-0"> (By Appointment Only)</p>
-              </div>
-              <p class="d-flex gap-2 para mt-3">  <img src="./assests/svg/image 469.svg" />Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-        
-            <p class="d-flex gap-2 para">  <img src="./assests/svg/image 469.svg" />Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-        <ul class="ul">
-            <li>Mon - Fri :<span> 9am - 5pm</span></li>
-            <li>Sat - Sun : <span>Closed</span></li>
-            <li>Contact no : <span>+1 647-689-4646</span></li>
-            <li>Email : <span>+1 647-689-4646</span></li>
-        </ul>    
-        <p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-        
-        </div>
-        <div>
-        <div class="footerRight">
-            <img src="./assests/Rectangle 4126.png" class="map" />
-        </div>
-        
-        <div class="d-flex justify-content-start RightBottom">
-        <ul class="">
-        <h6 class="">Quick Links</h6>
-        <li class="para color"><a>About Us</a></li>
-        <li class="para color"><a>Portfolio</a></li>
-        <li class="para color"><a>Blog</a></li>
-        <li class="para color"><a>Search</a></li>
-        <li class="para color"><a>Privacy Policy</a></li>
-        <li class="para color"><a>Terms of Services</a></li>
-        <li class="para color"><a>Refund Policy</a></li>
-        
-        
-        </ul>
-        
-        <ul class="">
-            <h6 class="">Services</h6>
-            <li class="para color"><a>Service-1</a></li>
-            <li class="para color"><a>Service-2</a></li>
-            <li class="para color"><a>Service-3</a></li>
-            <li class="para color"><a>Service-4</a></li>
-            <li class="para color"><a>Service-5</a></li>
-          
-            
-            
-            </ul>
-        
-            <div class="d-flex flex-wrap flex-column inner">
-                <h2>Do you have any questions?</h2>
-                    <p  class="para color">Lorem ipsum dolor sit amet consectetur. Proin lectus lectus lectus imperdiet </p>
-        
-                  <div class="searchBar">
-                    <input type="search para" placeholder="ENTER YOUR EMAIL"></input>
-                    <a class="btn2 btn1 para ">SEND</a>
-                  </div>
-                 <div class="d-flex justify-content-start align-items-start gap-1  mt-2 icons">
-                    <a href="#" >
-                        <img src="./assests/fb.png" class="pb-1" />
-                      </a>
-                      <a href="#">
-                        <img src="./assests/Group (1).png" class="pb-1" />
-                      </a>
-                      <a href="#"></a>
-                        <img src="./assests/Group (2).png" />
-                      </a>
-                      <a href="#"></a>
-                        <img src="./assests/Group (3).png" />
-                      </a>
-                      <a href="#"></a>
-                      <img src="./assests/Group (4).png" />
-                    </a>
-                 </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        
-        </div>
-        <div class="copyRight pt-3 pb-3 ">
-            <p class="p-0 m-0 text-center">Copyright © 2024 Eagle eye</p>
-        </div>
-      
+    </div>
+    
 
+
+
+    <div class="container ">
+        <div class="table-responsive d-flex justify-content-end align-items-end ">
+            <table class="table table2">
+                <thead>
+                    <tr>
+                       
+                        <th scope="col" class="header2">subTotal</th>
+                        <th scope="col" class="header2">$907.46</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h5>Shipping</h5>
+                        </td>
+                        <td>
+                            <div>
+                             
+                                <div class="d-flex gap-2">
+                                    <input type="radio" />
+                                    <p>Pickup from Eagle Eye</p>
+                                </div>
+                               <div class="d-flex gap-2">
+                                <input type="radio" />
+                                <p> Flat Rate Shipping: <Span class="span"> $15.99</Span></p>
+                               </div>
+                               <div class="d-flex gap-2">
+                                <input type="radio" />
+                                <p>   Flat Rate: Over 47": <Span class="span">$36.95</Span></p>
+                               </div>
+                               <div class="d-flex gap-2">
+                                <input type="radio" />
+                                <p>  Use My Carrier</p>
+                               </div>
+                               <div class="d-flex gap-2">
+                                <input type="radio" />
+                                <p> Air Freight: <span class="span">  $150.00</span></p>
+                               </div>
+                               <p  class="span">
+                                Shipping to 13375 N Stemmons, Farmers Branch, TX 75234.
+                               </p>
+                            </div>
+                        </td>
+
+
+
+                        
+                       
+                       
+                        
+                    </tr>
+                    <tr class="bottom">
+                        <td>Total</td>
+                        <td>$904.51</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
+    </div>
+
+
+
+
+   
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -790,47 +553,21 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-       <script>
-        var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4, // Number of slides visible at a time
-    spaceBetween: 30, // Space between each slide
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".next", // Your custom "next" button
-        prevEl: ".prev", // Your custom "prev" button
-    },
+<script>
+    // When clicking the div, trigger the hidden input
+document.querySelector('.upload-container').addEventListener('click', function() {
+    document.getElementById('file-input').click();
 });
 
-            $(document).ready(function(){
-                $('.other_img').on('click',function(e){
-                    e.preventDefault();
-                    var src=$(this).attr('src');
-                    $('#featured_img').attr('src',src);
-                })
-    // When the upload area is clicked, trigger the file input
-    $('#upload_image_area').on('click', function(){
-        $('#image_input').click();
-    });
+// Function to handle the file input change (optional)
+function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+        alert(`Selected file: ${file.name}`);
+        // You can add more functionality here, like displaying the selected image
+    }
+}
 
-    // When an image is selected, display it in the preview area
-    $('#image_input').on('change', function(event){
-        var reader = new FileReader();
-        reader.onload = function(e){
-            // Set the preview image's src to the selected file
-            $('#preview_image').attr('src', e.target.result);
-            // Show the preview image
-            $('#preview_image').show();
-            // Optionally hide the upload icon or keep it
-            $('#upload_icon').hide();
-        }
-        // Read the selected file as DataURL
-        reader.readAsDataURL(event.target.files[0]);
-    });
-});
-
-        </script>
+</script>
     </body>
 </html>
