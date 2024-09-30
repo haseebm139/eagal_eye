@@ -293,7 +293,57 @@ td input{
     font-size: 13px;
  
 }
+@media only screen and (max-width: 768px){
+    .product_back_btn {
+        font-size: 12px;
+    }
+    .product_back_btn img{
+        width: 15px;
+    } 
+    .stepper-outer p{
+        font-size: 13px;
+    }
+    .cart p{
+        font-size: 13px;
+    }
+    .cart img{
+        width: 18px;
+    }
+    .productDetails{
+        width: 300px;
+    }
+    .table2{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 425px){
+    .stepper-outer {
+   width: 95%;
+   
 
+    padding: 2rem 2.5rem;
+}
+
+.table2{
+        width: 100%;
+    }
+}
+.qunatity{
+    width: 140px;
+}
+.table td h5 {
+    font-size: 18px;
+}
+.table td p {
+    font-size: 12px;
+}
+
+/* ::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #000;
+} */
 </style>
     </head>
     <body>
@@ -434,7 +484,7 @@ td input{
                             <img src="./assests/image2.png" class="Tableimg" />
                         </td>
                         <td>
-                            <div>
+                            <div class="productDetails">
                                 <h5>Flatbed Printing</h5>
                                 <p>Height: <Span class="span">50</Span></p>
                                 <p>Width: <Span class="span">50</Span></p>
@@ -449,7 +499,7 @@ td input{
                             <input type="number" placeholder="height" />
                         </td>
                         <td>
-                            <div class="d-flex justify-content-start align-items-center gap-2">
+                            <div class="d-flex justify-content-start align-items-center gap-2 quantity">
                                 <button class="btn">-</button>
                                 2
                                 <button class="btn">+</button>
