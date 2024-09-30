@@ -278,6 +278,7 @@ td input{
     width: 50%;
     
 }
+
 .header2{
     width:25% ;
     font-family: InterMedium;
@@ -293,6 +294,35 @@ td input{
     font-size: 13px;
  
 }
+th.header:first-child {
+  border-top-left-radius: 12px; /* Add your desired border style */
+}
+
+/* Target the last th child */
+th.header:last-child {
+   border-top-right-radius: 12px; /* Add your desired border style */
+}
+
+
+th.header2:first-child {
+  border-top-left-radius: 12px; /* Add your desired border style */
+}
+
+/* Target the last th child */
+th.header2:last-child {
+   border-top-right-radius: 12px; /* Add your desired border style */
+}
+tr.bottom td:first-child {
+    border-bottom-left-radius: 12px; 
+}
+
+tr.bottom td:last-child {
+    border-bottom-right-radius: 12px; 
+}
+.astrik{
+    color: red;
+}
+
 @media only screen and (max-width: 768px){
     .product_back_btn {
         font-size: 12px;
@@ -495,7 +525,7 @@ td input{
                         </td>
                         <td>
                             <p class="span">Price $500</p>
-                            <p class="span">Additional File Notes*</p>
+                            <p class="span">Additional File Notes <span class="astrik">*</span> </p>
                             <input type="number" placeholder="height" />
                         </td>
                         <td>
