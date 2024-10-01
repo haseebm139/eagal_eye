@@ -116,16 +116,37 @@
         .cart p {
             font-family: InterMedium;
         }
-
         .stepper-wrapper::before {
-            content: "";
-            width: 100%;
-            height: 3px;
-            background-color: rgb(143, 142, 142);
-            position: absolute;
-            z-index: 0;
-        }
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: rgb(192, 189, 189);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+}
 
+
+    .stepper-wrapper::after {
+    content: "";
+    width: 0; /* Initial width set to 0 */
+    height: 3px;
+    background-color: #575ae7; /* Change to your preferred progress color */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure this is above the before element */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.stepper-header input[type="radio"] {
+    position: relative;
+    z-index: 2; /* Ensure radio buttons appear above the progress bar */
+    margin: 0 15px; /* Adjust spacing */
+}
         .progress {
             content: "";
             width: 0%;
@@ -1548,11 +1569,6 @@ font-size: 12px;
         </div>
         </form>
      
-
-
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
@@ -1600,53 +1616,61 @@ font-size: 12px;
 
         </script>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                let currentStep = 0;
-                const steps = document.querySelectorAll(".step");
-                const stepRadios = document.querySelectorAll(".stepper-header input[type='radio']");
+          
+              
+          document.addEventListener("DOMContentLoaded", function () {
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".step");
+    const stepRadios = document.querySelectorAll(".stepper-header input[type='radio']");
+    const stepperWrapper = document.querySelector(".stepper-wrapper");
 
-                function showStep(stepIndex) {
-                    // Hide all steps
-                    steps.forEach(step => step.classList.remove("active"));
-                    // Show the current step
-                    steps[stepIndex].classList.add("active");
+    function showStep(stepIndex) {
+        // Hide all steps
+        steps.forEach(step => step.classList.remove("active"));
+        // Show the current step
+        steps[stepIndex].classList.add("active");
 
-                    // Update stepper radio buttons
-                    stepRadios.forEach((radio, index) => {
-                        radio.checked = index === stepIndex;
-                        radio.disabled = index !== stepIndex;
-                    });
-                }
+        // Update stepper radio buttons
+        stepRadios.forEach((radio, index) => {
+            radio.checked = index === stepIndex;
+            radio.disabled = index !== stepIndex;
+        });
 
-                // Next step button event
-                document.querySelectorAll(".next-step").forEach(button => {
-                    button.addEventListener("click", function () {
-                        if (currentStep < steps.length - 1) {
-                            currentStep++;
-                            showStep(currentStep);
-                        }
-                    });
-                });
+        // Update the progress width based on the current step
+        const progressWidth = (stepIndex / (stepRadios.length - 1)) * 100;
+        stepperWrapper.style.setProperty('--progress-width', `${progressWidth}%`);
+    }
 
-                // Previous step button event
-                document.querySelectorAll(".prev-step").forEach(button => {
-                    button.addEventListener("click", function () {
-                        if (currentStep > 0) {
-                            currentStep--;
-                            showStep(currentStep);
-                        }
-                    });
-                });
-
-                // Submit form event
-                document.getElementById("stepperForm").addEventListener("submit", function (event) {
-                    event.preventDefault();
-                    alert("Form submitted!");
-                });
-
-                // Initial display of the first step
+    // Next step button event
+    document.querySelectorAll(".next-step").forEach(button => {
+        button.addEventListener("click", function () {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
                 showStep(currentStep);
-            });
+            }
+        });
+    });
+
+    // Previous step button event
+    document.querySelectorAll(".prev-step").forEach(button => {
+        button.addEventListener("click", function () {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // Submit form event
+    document.getElementById("stepperForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Form submitted!");
+    });
+
+    // Initial display of the first step
+    showStep(currentStep);
+});
+
         </script>
 </body>
 
