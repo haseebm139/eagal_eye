@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stepper Form with Radio Buttons</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .stepper-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .stepper-header input[type="radio"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <!-- Stepper Header with Radio Buttons -->
+  <div class="stepper-header mb-4">
+    <input type="radio" name="stepper" id="step1" checked disabled> <label for="step1">Cart</label>
+    <input type="radio" name="stepper" id="step2" disabled> <label for="step2">Checkout</label>
+    <input type="radio" name="stepper" id="step3" disabled> <label for="step3">Payment</label>
+  </div>
+
+  <!-- Stepper Form -->
+  <form id="stepperForm">
+    <!-- Step 1 -->
+    <div class="step active">
+      <h2>Cart</h2>
+      <div class="form-group">
+        <label for="cartItem">Item in Cart:</label>
+        <input type="text" class="form-control" id="cartItem" placeholder="Enter item">
+      </div>
+      <button type="button" class="btn btn-primary next-step">Next</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <h2>Checkout</h2>
+      <div class="form-group">
+        <label for="checkoutAddress">Address:</label>
+        <input type="text" class="form-control" id="checkoutAddress" placeholder="Enter address">
+      </div>
+      <button type="button" class="btn btn-secondary prev-step">Previous</button>
+      <button type="button" class="btn btn-primary next-step">Next</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <h2>Payment</h2>
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select class="form-control" id="paymentMethod">
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bankTransfer">Bank Transfer</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-secondary prev-step">Previous</button>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- JavaScript Logic for Stepper -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".step");
+    const stepRadios = document.querySelectorAll(".stepper-header input[type='radio']");
+
+    function showStep(stepIndex) {
+      // Hide all steps
+      steps.forEach(step => step.classList.remove("active"));
+      // Show the current step
+      steps[stepIndex].classList.add("active");
+      
+      // Update stepper radio buttons
+      stepRadios.forEach((radio, index) => {
+        radio.checked = index === stepIndex;
+        radio.disabled = index !== stepIndex;
+      });
+    }
+
+    // Next step button event
+    document.querySelectorAll(".next-step").forEach(button => {
+      button.addEventListener("click", function() {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    // Previous step button event
+    document.querySelectorAll(".prev-step").forEach(button => {
+      button.addEventListener("click", function() {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    // Submit form event
+    document.getElementById("stepperForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Form submitted!");
+    });
+
+    // Initial display of the first step
+    showStep(currentStep);
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
