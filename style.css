@@ -337,7 +337,7 @@ color: #fff;
     font-size: 13px;
     font-weight: 500;
 }
-.table thead th {
+.table thead .th {
     font-size: 13px;
     vertical-align: bottom;
     border-bottom: none !important;
@@ -345,8 +345,8 @@ color: #fff;
 .table tr{
     font-size: 12px;
 }
-.table thead th {
-    background-color: #f8f9fa; /* Light gray background for headers */
+.table thead .th {
+    /* background-color: #f8f9fa; Light gray background for headers */
     font-weight: bold;
     text-align: left;
     padding: 12px;
