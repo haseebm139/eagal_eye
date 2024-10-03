@@ -3,7 +3,30 @@ body {
     background-color:  #F4F5FA !important;
     
 }
+/* Custom styles */
+@font-face{
+    font-family: InterMedium;
+    src: url("./website/assests/Inter/static/Inter_18pt-Medium.ttf");
+}
 
+@font-face{
+  font-family: InterLight;
+  src: url("./website/assests/Inter/static/Inter_18pt-ExtraLight.ttf");
+}
+
+@font-face{
+  font-family: InterBold;
+  src: url("./website/assests/Inter/static/Inter_18pt-Bold.ttf");
+}
+
+@font-face {
+    font-family: GilroyMedium;
+    src: url('./assests/gilroy/Gilroy-Medium.ttf');
+}
+@font-face {
+    font-family: GilroyBold;
+    src: url('./assests/gilroy/Gilroy-Bold.ttf');
+}
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -296,11 +319,38 @@ color: #fff;
     font-size: 13px;
 
 }
+.add-btn{
+    font-family: InterMedium;
+    text-align: center;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    border: none;
+    background-color:  #ffd014;
+    padding: 9px 25px;
+    border-radius: 12px;
+    font-size: 13px;
+
+}
 
 .order-btn2{
+    font-family: InterMedium;
     color: black;
     background-color: #ffd014;
     border: 1px solid #ffd014;
+    padding: 3px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+
+}
+
+.cancel-btn2{
+    font-family: InterMedium;
+    text-align: center;
+    width: 100%;
+    color: black;
+    background-color: #ffffff;
+    border: 1px solid #000000;
     padding: 3px 20px;
     border-radius: 12px;
     font-weight: 700;
@@ -556,7 +606,15 @@ padding: 9px ;
     width: 50px;
     height: 25px;
   }
+  .switch2{
+    width: 47px !important;
+    height: 22px !important;
+  }
+  .switch2 .slider:before {
+
+    bottom: 2px;
   
+  }
   .switch input {
     opacity: 0;
     width: 0;
