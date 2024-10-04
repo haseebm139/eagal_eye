@@ -27,6 +27,40 @@ body {
     font-family: GilroyBold;
     src: url('./assests/gilroy/Gilroy-Bold.ttf');
 }
+.mediumFont{
+   
+    font-family: InterMedium;
+    font-size: 13px;
+}
+
+.mediumFont2{
+   
+    font-family: InterMedium;
+    font-size: 12px;
+    color: #8f8787;
+}
+
+.CustomerStatus{
+    background-color: #9ee7cc;
+    padding: 4px 9px;
+    font-size: 12px;
+    border: none;
+    border-radius: 12px;
+    color: #408553;
+}
+.mediumFont3{
+   
+    font-family: InterMedium;
+    font-size: 10px;
+    color: #8f8787;
+}
+.mediumFont3 span{
+    color: #333232;
+}
+.LightFont{
+    font-family: InterLight;
+    font-size: 13px;
+}
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -223,6 +257,9 @@ color: #fff;
 .sec-section{
     width: 49%;
 }
+.customer2{
+    padding: 10px;
+}
 .container-2{
     border: none !important;
     background-color: #ffffff;
@@ -260,6 +297,17 @@ color: #fff;
     background-color: #d8d8d8 !important;
     border: none !important;
     font-size: 12px !important;
+}
+.form-control4{
+    font-family: InterMedium;
+    padding: 0 13px;
+    display: flex;
+    outline: none !important;
+    color: rgb(255 255 255) !important;
+    border-radius: 14px !important;
+    background-color: #000000 !important;
+    border: none !important;
+    font-size: 13px !important;
 }
 .dropdown-icon{
     position: absolute;
@@ -318,6 +366,22 @@ color: #fff;
     border-radius: 12px;
     font-size: 13px;
 
+}
+.suspension-btn{
+    color: rgb(255, 255, 255);
+    background-color: #CC0000;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 12px;
+    font-family: InterMedium;
+    font-size: 13px;
+}
+.dropdown2{
+    color: white;
+    background-color: black;
+    padding: 9px 20px;
+    border-radius: 12px;
+    font-size: 13px;
 }
 .add-btn{
     font-family: InterMedium;

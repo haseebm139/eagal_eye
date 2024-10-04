@@ -57,6 +57,7 @@
         border-radius: 12px;
         text-align: center;
       }
+    
       .ql-container {
         background-color: #eeeef0;
     height: 20vh;
@@ -107,12 +108,12 @@
   z-index: 999; /* Ensure it appears above other content */
       }
 
-      NewCompany2{
+  .NewCompany2{
         position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
   display: none;
   justify-content: center;
@@ -123,10 +124,22 @@
         border-radius: 20px;
       background-color: white;
         width: 400px;
+       
+        padding: 1.5rem 1.2rem;
+        z-index: 2;
+      }
+      .NewCompany2 .model2{
+        border-radius: 20px;
+      background-color: white;
+        width: 400px;
+        height: auto;
         padding: 1.5rem 1.2rem;
         z-index: 2;
       }
       .model span{
+        font-family:poppinsBold ;
+      }
+      .model2 span{
         font-family:poppinsBold ;
       }
       .model p{
@@ -137,11 +150,19 @@
         font-size: 13px;
         font-family: poppinsMedium;
       }
+      .model2 p{
+        margin-top: none;
+        margin-bottom: 0;
+        color: #8B8D97;
+        padding: 6px 0;
+        font-size: 13px;
+        font-family: poppinsMedium;
+      }
       .iti{
-        margin: 10px 0;
+        margin: 5px 0;
       }
       .inputBox{
-        margin: 10px 0;
+        margin: 5px 0;
         width: 100% ;
         border: none;
         color: #8B8D97;
@@ -801,7 +822,7 @@
                     <img src="./assests/svg/Search.svg" />
                     <input type="text" placeholder="Search.." />
                   </div>
-                  <button class="filter-btn">
+                  <button class="filter-btn"  id="addCompanyBtn2">
                     <img src="./assests/svg/filter1.svg" /> Filter
                   </button>
                   <button class="filter-btn">
@@ -931,16 +952,14 @@
   </form>
   </div>
 </div>
-
-
 <div class="NewCompany2"  id="newCompanyDiv2">
-  <div class="model d-flex flex-column">
+  <div class="model2 d-flex flex-column">
    <div class="d-flex justify-content-between align-items-center">
     <span
     class="my-2"
   
     >Add a New Company</span>
-  <button class="cancel" id="cancelBtn" >
+  <button class="cancel" id="cancelBtn2" >
   
   <img src="./assests/svg/Frame 5800.svg" />
   </button>
@@ -957,7 +976,7 @@
   
         
      </div>
-       <div class="d-flex gap-3 mt-3">
+       <div class="d-flex gap-3 mt-2">
         <p>Add Address</p>
         <div class="">
           <label class="switch switch2">
@@ -1011,6 +1030,343 @@
   </div>
 </div>
 
+<div class="container-fluid ">
+  <div class="Width d-flex justify-content-between align-items-center customer2">
+   <div class="d-flex align-items-center justify-content-center gap-3">
+    <span class="d-flex gap-2">
+      <p class="mediumFont">Order Number</p>
+      <p class="LightFont">#88540</p>
+    </span>
+
+    <span class="d-flex gap-2">
+      <p class="mediumFont">Customer Since</p>
+      <p class="LightFont">12Sept 2022 - 12:55pm</p>
+    </span>
+
+    <span class="d-flex gap-2">
+      <p class="mediumFont">Tracking ID</p>
+      <p class="LightFont">1534ft9</p>
+    </span>
+   </div>
+ <div class="d-flex gap-3">
+  <div class="dropdown-container dropdown2 position-relative">
+    <select
+      id="data-category"
+      class="form-control4 d-inline w-auto"
+    >
+      <option value="Revenue">This Week</option>
+      <option value="Expenses">This Week</option>
+      <option value="Profit Margin">This Week</option>
+    </select>
+    <span class="dropdown-icon"></span>
+    <!-- Down arrow icon -->
+  </div>
+  <button class="suspension-btn d-flex align-items-center">
+    Suspended Customer
+   </button>
+ </div>
+  </div>
+  <div class="d-flex gap-3 mt-3">
+    <div class="" style="width: 30%">
+      <div class="card text-center">
+        <div class="alignemnt">
+        <div class="d-flex gap-3">
+          <img src="./assests/svg/client2.svg" />
+          <div class="">
+            <p class="mediumFont2 m-0 p-0 text-left">Janet Adebayo</p>
+            <p class="mediumFont3 m-0 p-0 text-left">Last Order <span>12 sept 2022</span></p>
+          </div>
+        </div>
+          <div class="leftAlignement">
+          <button class="CustomerStatus">Active</button>
+            <!-- <p class="side-text">This Week</p> -->
+          </div>
+        </div>
+
+        <div class="bottomContent">
+          <span>
+            <p class="sales">Phone</p>
+            <p class="bold">+236365746 </p>
+          </span>
+
+          
+          <span>
+            <p class="sales">Email</p>
+            <p class="bold">
+              abc@yopmail.com
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class=" " style="width: 40%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/address.svg" />
+         
+        </div>
+
+        <div class="bottomContent">
+          <span>
+            <p class="sales">Home Address</p>
+            <p class="bold">
+              1,250
+            </p>
+          </span>
+     
+          <span>
+            <p class="sales">Billing  Address</p>
+            <p class="bold">
+              5
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class=" " style="width: 30%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/orders.svg" />
+        </div>
+
+        <div class="bottomContent">
+          <span>
+            <p class="sales">Total Orders</p>
+            <p class="bold">
+              $1,250 
+            </p>
+          </span>
+        
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="d-flex gap-3 mt-3">
+    <div class="" style="width: 30%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/icon3.svg" />
+          <div class="leftAlignement">
+            <div class="dropdown-container position-relative">
+              <select
+                id="data-category"
+                class="form-control2 d-inline w-auto"
+              >
+                <option value="Revenue">This Week</option>
+                <option value="Expenses">This Week</option>
+                <option value="Profit Margin">This Week</option>
+              </select>
+              <span class="dropdown-icon"></span>
+              <!-- Down arrow icon -->
+            </div>
+            <!-- <p class="side-text">This Week</p> -->
+          </div>
+        </div>
+
+        <div class="bottomContent">
+          <span>
+            <p class="sales">All Orders</p>
+            <p class="bold">10</p>
+          </span>
+
+          <span>
+            <p class="sales">Pending</p>
+            <p class="bold">2 </p>
+          </span>
+          <span>
+            <p class="sales">Complete</p>
+            <p class="bold">
+              4
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class=" " style="width: 40%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/icon3.svg" />
+          <div class="leftAlignement">
+            <div class="dropdown-container position-relative">
+              <select
+                id="data-category"
+                class="form-control2 d-inline w-auto"
+              >
+                <option value="Revenue">All time</option>
+                <option value="Expenses">This Week</option>
+                <option value="Profit Margin">This Week</option>
+              </select>
+              <span class="dropdown-icon"></span>
+              <!-- Down arrow icon -->
+            </div>
+          </div>
+        </div>
+
+        <div class="bottomContent">
+          <span>
+            <p class="sales">Canceled</p>
+            <p class="bold">
+              0
+            </p>
+          </span>
+         
+          <span>
+            <p class="sales">Returned</p>
+            <p class="bold">
+              0
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class=" " style="width: 30%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/cart2.svg" />
+          
+        </div>
+
+        <div class="bottomContent">
+         
+     
+          <span>
+            <p class="sales text-danger">Abandoned Carts</p>
+            <p class="bold">
+              5
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div
+  class="product">
+    <div class="d-flex justify-content-between">
+      <h6>Janet’s Orders</h6>
+      <div class="d-flex gap-2">
+        <div class="search-bar">
+          <img src="./assests/svg/Search.svg" />
+          <input type="text" placeholder="Search.." />
+        </div>
+        <button class="filter-btn">
+          <img src="./assests/svg/filter1.svg" /> Filter
+        </button>
+        <button class="filter-btn">
+          <img src="./assests/svg/Calendar.svg" /> Filter
+        </button>
+        <button class="filter-btn">
+          <img src="./assests/svg/Send.svg" /> send
+        </button>
+        <div>
+          <select
+            id="itemsPerPage"
+            class="form-select form-select-sm filter-dropdown"
+            style="width: auto"
+          >
+            <option value="3">bulk Action</option>
+            <option value="5">page</option>
+            <option value="10">per page</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="table-responsive">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="select-all" />
+                  <span class="checkmark"></span>
+                </label>
+              </th>
+           
+              <th scope="col">Order Date</th>
+              <th scope="col">Order Type</th>
+              <th scope="col">Tracking ID</th>
+              <th scope="col">Order Total</th>
+              <th scope="col">Action</th>
+           
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr>
+              <td>
+                    <label class="custom-checkbox">
+                                      <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+                                      <span class="checkmark"></span>
+                                  </label>
+                  
+                  </td>
+              
+              <td>${product.name}</td>
+              <td>${product.category}</td>
+              <td>${product.price}</td>
+              <td>${product.stock}</td>
+              <td>
+                   <div class="dropdown">
+                  <button class="dropdownbtn btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      Action
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li><a style="font-size: 13px;" class="dropdown-item" href="#">Edit</a></li>
+                      <li><a style="font-size: 13px;" class="dropdown-item" href="#">Delete</a></li>
+                      <li><a style="font-size: 13px;" class="dropdown-item" href="#">View</a></li>
+                  </ul>
+              </div>
+                  </td>
+              <td><p class="statusClass">${product.status}</p></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div
+          class="pagination-container d-flex justify-content-between align-items-center"
+        >
+          <!-- Items per page dropdown -->
+          <div>
+            <select
+              id="itemsPerPage"
+              class="form-select form-select-sm"
+              style="width: auto"
+            >
+              <option value="3">3 Items per page</option>
+              <option value="5">5 Items per page</option>
+              <option value="10">10 Items per page</option>
+            </select>
+          </div>
+
+          <!-- Showing results text -->
+          <div id="showing-info" class="text-muted"></div>
+
+          <!-- Pagination -->
+          <nav aria-label="Page navigation">
+            <ul class="pagination mb-0">
+              <li class="page-item">
+                <a class="page-link" href="#" id="prev-page"
+                  >&laquo;</a
+                >
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" id="next-page"
+                  >&raquo;</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
 </div>
 <div
 class="green tab-pane fade "
@@ -1582,8 +1938,11 @@ aria-labelledby="products-tab">
     const nextPageBtn = document.getElementById("next-page");
     const selectAllCheckbox = document.getElementById("select-all");
     const addCompanyBtn = document.getElementById('addCompanyBtn');
+    const addCompanyBtn2 = document.getElementById('addCompanyBtn2');
     const newCompanyDiv = document.getElementById('newCompanyDiv');
+    const newCompanyDiv2 = document.getElementById('newCompanyDiv2');
     const cancelBtn = document.getElementById('cancelBtn');
+    const cancelBtn2 = document.getElementById('cancelBtn2');
 
     // Function to render table rows for the current page
     function renderTableRows() {
@@ -1666,12 +2025,17 @@ aria-labelledby="products-tab">
     addCompanyBtn.addEventListener('click', () => {
         newCompanyDiv.style.display = 'flex'; // Show the div
     });
+    addCompanyBtn2.addEventListener("click", function(e){
+      newCompanyDiv2.style.display= "flex";
+    })
 
     // Hide the new company div when the cancel button is clicked
     cancelBtn.addEventListener('click', () => {
         newCompanyDiv.style.display = 'none'; // Hide the div
     });
-
+cancelBtn2.addEventListener('click', ()=>{
+  newCompanyDiv2.style.display="none";
+});
     // Initial render
     renderTableRows();
 
