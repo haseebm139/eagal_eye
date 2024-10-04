@@ -855,14 +855,14 @@
                             <span class="checkmark"></span>
                           </label>
                         </th>
-                        <th></th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Unit Price</th>
-                        <th scope="col">In-Stock</th>
-                        <th scope="col">Discount</th>
-                        <th scope="col">Total Value</th>
-                        <th scope="col">Action</th>
+                       
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Orders</th>
+                        <th scope="col">Order Total</th>
+                        <th scope="col">Customer Since</th>
+                       
                         <th scope="col">Status</th>
                       </tr>
                     </thead>
@@ -1521,24 +1521,14 @@ aria-labelledby="products-tab">
                               </td>
                           <td><img src="./assests/Rectangle 3.png" /></td>
                           <td>${product.name}</td>
+                          <td>${product.phone}</td>
                           <td>${product.category}</td>
                           <td>${product.price}</td>
                           <td>${product.stock}</td>
-                          <td>${product.discount}</td>
                           <td>${product.value}</td>
-                          <td>
-                               <div class="dropdown">
-                              <button class="dropdownbtn btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Action
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <li><a style="font-size: 13px;" class="dropdown-item" href="#">Edit</a></li>
-                                  <li><a style="font-size: 13px;" class="dropdown-item" href="#">Delete</a></li>
-                                  <li><a style="font-size: 13px;" class="dropdown-item" href="#">View</a></li>
-                              </ul>
-                          </div>
-                              </td>
-                          <td><p class="${statusClass}">${product.status}</p></td>
+                          <td>${product.action}</td>
+                         
+                          <td><p class="statusClass">${product.status}</p></td>
                       </tr>
                       </tbody>
                     </table>
@@ -1961,12 +1951,13 @@ aria-labelledby="products-tab">
                             <span class="checkmark"></span>
                         </label>
                     </td>
-                    <td><img src="./assests/Rectangle 3.png" /></td>
+               
                     <td>${product.name}</td>
                     <td>${product.category}</td>
                     <td>${product.price}</td>
                     <td>${product.stock}</td>
-                    <td>${product.discount}</td>
+                   <td>${product.discount}</td>
+                  
                     <td>${product.value}</td>
                     <td><p class="${statusClass}">${product.status}</p></td>
                 </tr>`;
