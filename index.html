@@ -106,6 +106,19 @@
   align-items: center;
   z-index: 999; /* Ensure it appears above other content */
       }
+
+      NewCompany2{
+        position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it appears above other content */
+      }
       .model{
         border-radius: 20px;
       background-color: white;
@@ -131,9 +144,14 @@
         margin: 10px 0;
         width: 100% ;
         border: none;
+        color: #8B8D97;
     background-color: #EFF1F9;
     padding: 10px;
     border-radius: 12px;
+      }
+      .companyAddress{
+        color: #8B8D97;
+        font-size: 11px;
       }
     </style>
   </head>
@@ -884,41 +902,121 @@
   <img src="./assests/svg/Frame 5800.svg" />
   </button>
    </div>
-   <div>
-    <p>Company Information</p>
-   <div class="d-flex flex-column">
-    <input class="inputBox" placeholder="Company Name" />
-    <input class="inputBox" placeholder="Company Email" />
- 
-
-      <input class="inputBox"  id="phone" name="phone" type="tel" value="" />
-
-      
-   </div>
-     <div class="d-flex gap-3 mt-3">
-      <p>Add Address</p>
-      <div class="">
-        <label class="switch switch2">
-          <input type="checkbox" id="toggleSwitch" />
-          <span class="slider"></span>
-        </label>
-      </div>
+  <form>
+    <div>
+      <p>Company Information</p>
+     <div class="d-flex flex-column">
+      <input class="inputBox" placeholder="Company Name" />
+      <input class="inputBox" placeholder="Company Email" />
+   
+  
+        <input class="inputBox"  id="phone" name="phone" type="tel" value="" />
+  
+        
      </div>
-<div class="d-flex gap-3 mt-3">
-  <button class="cancel-btn2 ">Cancel</button>
-  <button class="add-btn " id="btn00">Add</button>
-</div>
-   </div>
+       <div class="d-flex gap-3 mt-3">
+        <p>Add Address</p>
+        <div class="">
+          <label class="switch switch2">
+            <input type="checkbox" id="toggleSwitch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+       </div>
+  <div class="d-flex gap-3 mt-3">
+    <button class="cancel-btn2 ">Cancel</button>
+    <button class="add-btn " id="btn00">Add</button>
+  </div>
+     </div>
+  </form>
   </div>
 </div>
 
+
+<div class="NewCompany2"  id="newCompanyDiv2">
+  <div class="model d-flex flex-column">
+   <div class="d-flex justify-content-between align-items-center">
+    <span
+    class="my-2"
+  
+    >Add a New Company</span>
+  <button class="cancel" id="cancelBtn" >
+  
+  <img src="./assests/svg/Frame 5800.svg" />
+  </button>
+   </div>
+  <form>
+    <div>
+      <p>Company Information</p>
+     <div class="d-flex flex-column">
+      <input class="inputBox" placeholder="Company Name" />
+      <input class="inputBox" placeholder="Company Email" />
+   
+  
+        <input class="inputBox"  id="phone" name="phone" type="tel" value="" />
+  
+        
+     </div>
+       <div class="d-flex gap-3 mt-3">
+        <p>Add Address</p>
+        <div class="">
+          <label class="switch switch2">
+            <input type="checkbox" id="toggleSwitch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+       </div>
+       <div>
+        <input class="inputBox" placeholder="Building No, Street Address" />
+
+            <!--Country -->
+            <div class="select-something">
+             
+              <select  class="inputBox" name="state" id="countySel" size="1">
+      <option  value="" selected="selected">Country</option>
+  </select>
           </div>
-          <div
-            class="green tab-pane fade "
-            id="products"
-            role="tabpanel"
-            aria-labelledby="products-tab"
-          >
+          <!--State -->
+      
+             <div class="d-flex gap-3">
+              <select  class="inputBox" name="countrya" id="stateSel" size="1">
+                <option value="" selected="selected">state</option>
+            </select>
+                   
+                    <!--State -->
+                   
+                       <select  class="inputBox" name="district" id="districtSel" size="1">
+                <option value="" selected="selected">city</option>
+            </select>
+             </div>
+
+             <div class="d-flex gap-2 mt-3">
+              <p>Billing Address</p>
+              <div class="d-flex gap-2">
+                <p class="companyAddress">Same as Company address</p>
+                <label class="switch switch2">
+                  <input type="checkbox" id="toggleSwitch" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+             </div>
+        
+       </div>
+  <div class="d-flex gap-3 mt-3">
+    <button class="cancel-btn2 ">Cancel</button>
+    <button class="add-btn " id="btn00">Add</button>
+  </div>
+     </div>
+  </form>
+  </div>
+</div>
+
+</div>
+<div
+class="green tab-pane fade "
+id="products"
+role="tabpanel"
+aria-labelledby="products-tab">
           <!-- page 1 -->
             <div class="container-fluid">
               <div
@@ -1360,6 +1458,7 @@
       </div>
       <!-- //call every page here dynamically -->
     </div>
+    <script src="./Country+State+District-City-Data.js"></script>
     <script src="./login/js/intlTelInputWithUtils.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -1577,8 +1676,18 @@
     renderTableRows();
 
     // Phone number validation
-    const input = document.querySelector("#phone");
-    const iti = window.intlTelInput(input, { initialCountry: "us" });
+    const inputs = document.querySelectorAll("input[type='tel']");
+    if (inputs.length > 0) {
+    // Iterate through the inputs and apply intlTelInput plugin
+    inputs.forEach((input, index) => {
+      const iti = window.intlTelInput(input, {
+        initialCountry: "us"
+      });
+    });
+  } else {
+    console.error("No 'tel' inputs found!");
+  }
+
     window.iti = iti; // useful for testing
 
     const button = document.querySelector("#btn");
