@@ -108,18 +108,7 @@
   z-index: 999; /* Ensure it appears above other content */
       }
 
-  .NewCompany2{
-        position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999; /* Ensure it appears above other content */
-      }
+
       .model{
         border-radius: 20px;
       background-color: white;
@@ -128,20 +117,11 @@
         padding: 1.5rem 1.2rem;
         z-index: 2;
       }
-      .NewCompany2 .model2{
-        border-radius: 20px;
-      background-color: white;
-        width: 400px;
-        height: auto;
-        padding: 1.5rem 1.2rem;
-        z-index: 2;
-      }
+   
       .model span{
         font-family:poppinsBold ;
       }
-      .model2 span{
-        font-family:poppinsBold ;
-      }
+ 
       .model p{
         margin-top: none;
         margin-bottom: 0;
@@ -150,14 +130,7 @@
         font-size: 13px;
         font-family: poppinsMedium;
       }
-      .model2 p{
-        margin-top: none;
-        margin-bottom: 0;
-        color: #8B8D97;
-        padding: 6px 0;
-        font-size: 13px;
-        font-family: poppinsMedium;
-      }
+ 
       .iti{
         margin: 5px 0;
       }
@@ -173,6 +146,9 @@
       .companyAddress{
         color: #8B8D97;
         font-size: 11px;
+      }
+      .addressSection{
+        display: none;
       }
     </style>
   </head>
@@ -944,83 +920,41 @@
           </label>
         </div>
        </div>
-  <div class="d-flex gap-3 mt-3">
-    <button class="cancel-btn2 ">Cancel</button>
-    <button class="add-btn " id="btn00">Add</button>
-  </div>
-     </div>
-  </form>
-  </div>
-</div>
-<div class="NewCompany2"  id="newCompanyDiv2">
-  <div class="model2 d-flex flex-column">
-   <div class="d-flex justify-content-between align-items-center">
-    <span
-    class="my-2"
-  
-    >Add a New Company</span>
-  <button class="cancel" id="cancelBtn2" >
-  
-  <img src="./assests/svg/Frame 5800.svg" />
-  </button>
-   </div>
-  <form>
-    <div>
-      <p>Company Information</p>
-     <div class="d-flex flex-column">
-      <input class="inputBox" placeholder="Company Name" />
-      <input class="inputBox" placeholder="Company Email" />
-   
-  
-        <input class="inputBox"  id="phone" name="phone" type="tel" value="" />
-  
-        
-     </div>
-       <div class="d-flex gap-3 mt-2">
-        <p>Add Address</p>
-        <div class="">
-          <label class="switch switch2">
-            <input type="checkbox" id="toggleSwitch" />
-            <span class="slider"></span>
-          </label>
-        </div>
-       </div>
-       <div>
-        <input class="inputBox" placeholder="Building No, Street Address" />
+       <div  id="addressSection" class="addressSection">
 
-            <!--Country -->
-            <div class="select-something">
+               <!--Country -->
+               <div class="select-something">
              
-              <select  class="inputBox" name="state" id="countySel" size="1">
-      <option  value="" selected="selected">Country</option>
-  </select>
-          </div>
-          <!--State -->
-      
-             <div class="d-flex gap-3">
-              <select  class="inputBox" name="countrya" id="stateSel" size="1">
-                <option value="" selected="selected">state</option>
-            </select>
-                   
-                    <!--State -->
-                   
-                       <select  class="inputBox" name="district" id="districtSel" size="1">
-                <option value="" selected="selected">city</option>
-            </select>
-             </div>
-
-             <div class="d-flex gap-2 mt-3">
-              <p>Billing Address</p>
-              <div class="d-flex gap-2">
-                <p class="companyAddress">Same as Company address</p>
-                <label class="switch switch2">
-                  <input type="checkbox" id="toggleSwitch" />
-                  <span class="slider"></span>
-                </label>
-              </div>
-             </div>
+                <select  class="inputBox" name="state" id="countySel" size="1">
+        <option  value="" selected="selected">Country</option>
+      </select>
+            </div>
+            <!--State -->
         
+               <div class="d-flex gap-3">
+                <select  class="inputBox" name="countrya" id="stateSel" size="1">
+                  <option value="" selected="selected">state</option>
+              </select>
+                     
+                      <!--State -->
+                     
+                         <select  class="inputBox" name="district" id="districtSel" size="1">
+                  <option value="" selected="selected">city</option>
+              </select>
+               </div>
+      
+               <div class="d-flex gap-2 mt-3">
+                <p>Billing Address</p>
+                <div class="d-flex gap-2">
+                  <p class="companyAddress">Same as Company address</p>
+                  <label class="switch switch2">
+                    <input type="checkbox" id="toggleSwitch" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+               </div>
        </div>
+  
   <div class="d-flex gap-3 mt-3">
     <button class="cancel-btn2 ">Cancel</button>
     <button class="add-btn " id="btn00">Add</button>
@@ -1029,6 +963,7 @@
   </form>
   </div>
 </div>
+
 
 <div class="container-fluid ">
   <div class="Width d-flex justify-content-between align-items-center customer2">
@@ -1928,11 +1863,10 @@ aria-labelledby="products-tab">
     const nextPageBtn = document.getElementById("next-page");
     const selectAllCheckbox = document.getElementById("select-all");
     const addCompanyBtn = document.getElementById('addCompanyBtn');
-    const addCompanyBtn2 = document.getElementById('addCompanyBtn2');
     const newCompanyDiv = document.getElementById('newCompanyDiv');
-    const newCompanyDiv2 = document.getElementById('newCompanyDiv2');
+
     const cancelBtn = document.getElementById('cancelBtn');
-    const cancelBtn2 = document.getElementById('cancelBtn2');
+
 
     // Function to render table rows for the current page
     function renderTableRows() {
@@ -2016,17 +1950,23 @@ aria-labelledby="products-tab">
     addCompanyBtn.addEventListener('click', () => {
         newCompanyDiv.style.display = 'flex'; // Show the div
     });
-    addCompanyBtn2.addEventListener("click", function(e){
-      newCompanyDiv2.style.display= "flex";
-    })
+
 
     // Hide the new company div when the cancel button is clicked
     cancelBtn.addEventListener('click', () => {
         newCompanyDiv.style.display = 'none'; // Hide the div
     });
-cancelBtn2.addEventListener('click', ()=>{
-  newCompanyDiv2.style.display="none";
+    document.getElementById('toggleSwitch').addEventListener('change', function () {
+  const addressSection = document.getElementById('addressSection');
+  
+  // Show or hide address section based on the checkbox state
+  if (this.checked) {
+    addressSection.style.display = 'block';
+  } else {
+    addressSection.style.display = 'none';
+  }
 });
+
     // Initial render
     renderTableRows();
 
