@@ -133,7 +133,7 @@
     content: "";
     width: 0; /* Initial width set to 0 */
     height: 3px;
-    background-color: #575ae7; /* Change to your preferred progress color */
+    background-color: #0b0b0e; /* Change to your preferred progress color */
     position: absolute;
     top: 50%;
     left: 0;
@@ -144,8 +144,12 @@
 
 .stepper-header input[type="radio"] {
     position: relative;
+    background-color: #000;
     z-index: 2; /* Ensure radio buttons appear above the progress bar */
-    margin: 0 15px; /* Adjust spacing */
+    margin: 0;
+    accent-color: black;
+    
+    /* Adjust spacing */
 }
         .progress {
             content: "";
@@ -157,7 +161,7 @@
             transition: width 1s;
         }
 
-        .screen-indicator {
+         .screen-indicator {
 
             border-radius: 50%;
             border: 3px solid rgb(143, 142, 142);

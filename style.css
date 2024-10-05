@@ -33,6 +33,25 @@ body {
     font-size: 13px;
 }
 
+.mediumFontBorder{
+    background-color: white;
+    border: none;
+    text-align: center;
+    font-family: InterMedium;
+    font-size: 12px;
+    padding: 15px 20px;
+margin-right: 25px;
+}
+.mediumFontBorder.active{
+    background-color: white;
+    text-align: center;
+   border-bottom: 2px solid black;
+    font-family: InterMedium;
+    font-size: 12px;
+    padding: 15px 20px;
+margin-right: 25px;
+}
+
 .mediumFont2{
    
     font-family: InterMedium;
@@ -451,6 +470,9 @@ color: #fff;
     font-size: 13px;
     font-weight: 500;
 }
+.table .orderTable th{
+    background-color: #d9d9d9 !important;
+}
 .table thead .th {
     font-size: 13px;
     vertical-align: bottom;
@@ -563,6 +585,9 @@ padding: 2px 6px
     padding: 0;
     font-size: 13px;
    
+}
+.table-responsive {
+    overflow-x: auto;
 }
 /* Responsive behavior */
 @media (max-width: 768px) {
