@@ -426,6 +426,23 @@ color: #fff;
     font-size: 13px;
 
 }
+.calendarbtn{
+    margin: 14px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: InterMedium;
+    color: black;
+    background-color: #ffd014;
+    border: 1px solid #ffd014;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+
+}
 
 .cancel-btn2{
     font-family: InterMedium;
@@ -445,6 +462,7 @@ color: #fff;
 .custom-checkbox {
     position: relative;
     display: flex;
+    gap: 6px;
     align-items: center;
 }
 
@@ -515,9 +533,26 @@ color: #fff;
     justify-content: center;
 }
 
+.checkmark2 {
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1; /* Default background */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .custom-checkbox input:checked + .checkmark {
     background-color: #007bff; /* Change to blue when checked */
     border-color: #a9cef7;
+}
+
+.custom-checkbox input:checked + .checkmark2 {
+    background-color: #000000; /* Change to blue when checked */
+    border-color: #a5a5a5;
 }
 .search-bar{
 border: 1px solid rgb(207, 207, 207);
@@ -789,7 +824,7 @@ padding: 4px 10px;
     overflow: hidden;
     background-color: #e0e0e0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 6px 0;
+    margin: 14px 0;
   }
   
   .toggle-option {

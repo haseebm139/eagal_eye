@@ -246,13 +246,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .modal-content2 {
-
-
+  display: none;
   position: absolute;
   background-color: white;
-  margin: 10% auto;
-  padding: 4px;
-  border-radius: 8px;
+  margin: 7% auto;
+  padding: 16px;
   width: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -279,6 +277,7 @@
   font-family: InterLight !important;
 
 }
+
 
 .amount-fields {
   display: flex;
@@ -320,7 +319,7 @@
 
 }
 .mainCalendar{
-  background-color: #D9D9D9;
+  background-color: #f4f5fa;
   border-radius: 13px;
 }
 .calendar header {
@@ -400,6 +399,23 @@
 }
 .dates li.inactive {
   color: #ccc;
+}
+.selected-range {
+ 
+  background-color: #b4ddff; /* Light blue to indicate selection */
+  color: black;
+}
+.start-date {
+  border-radius: 50%;
+  background-color: #000000; /* Green background for start date */
+  color: white;
+}
+
+
+.end-date {
+  border-radius: 50%;
+  background-color: #000000; /* Red background for end date */
+  color: white;
 }
 </style>
   </head>
@@ -970,28 +986,64 @@
             </div>
           </div>
        
-        <button class="filter-btn">
+        <button  type="button" class="filter-btn" id="openModalButton2">
           <img src="./assests/svg/Calendar.svg" /> Calendar
         </button>
-       
-        <div class="modal-content2">
+        <div id="modal-content2" class="modal-content2">
          
             <h6>By Date</h6>
 
-           <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
-            <label><input  class="" type="checkbox" />This Week</label>
-          <label><input type="checkbox" />Last Week</label>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column align-items-baseline mt-1  filter-group2">
+              <label class="custom-checkbox">
+                <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+                <span class="checkmark2"></span>
+                This Week
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+              <span class="checkmark2"></span>
+              This Month
+          </label>
+  
+          <label class="custom-checkbox">
+            <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+            <span class="checkmark2"></span>
+            This Year
+        </label>
+
+        <label class="custom-checkbox">
+          <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+          <span class="checkmark2"></span>
+          Date range
+      </label>
+            
+            </div>
+  
+            <div class="d-flex flex-column align-items-baseline mt-1  filter-group2">
+              <label class="custom-checkbox">
+                <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+                <span class="checkmark2"></span>
+                Last Week
+            </label>
+             
+          
+            <label class="custom-checkbox">
+              <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+              <span class="checkmark2"></span>
+              Last Month
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+            <span class="checkmark2"></span>
+            Last Year
+        </label>
+
+
+            </div>
           </div>
 
-          <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
-            <label><input  class="" type="checkbox" />This Month</label>
-          <label><input type="checkbox" />Last Month</label>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
-            <label><input  class="" type="checkbox" />This Year</label>
-          <label><input type="checkbox" />Last Year</label>
-          </div> 
+     
           <div class="toggle-button">
             <button class="toggle-option active" id="from-btn">From</button>
             <button class="toggle-option" id="to-btn">To</button>
@@ -1018,8 +1070,10 @@
               <ul class="dates"></ul>
             </section>
           </div>
+          <button class="calendarbtn">
+          filter
+          </button>
         </div>
-
         <button class="filter-btn">
           <img src="./assests/svg/Send.svg" /> Send
         </button>
@@ -2256,21 +2310,7 @@ aria-labelledby="products-tab">
       fetchData(); // Call the function to fetch an
       document.addEventListener("DOMContentLoaded", function () {
 
-        //toggle button of calender
-        
-        const fromBtn = document.getElementById('from-btn');
-  const toBtn = document.getElementById('to-btn');
 
-  fromBtn.addEventListener('click', () => {
-    fromBtn.classList.add('active');
-    toBtn.classList.remove('active');
-  });
-
-  toBtn.addEventListener('click', () => {
-    toBtn.classList.add('active');
-    fromBtn.classList.remove('active');
-  });
- //toggle button of calender
 
  //pagination of table
 
@@ -2546,9 +2586,17 @@ document.addEventListener('click', function (event) {
 const openModalButton = document.getElementById('openModalButton');
 const modal = document.getElementById('modal-content');
 
+const openModalButton2 = document.getElementById('openModalButton2');
+const modal2 = document.getElementById('modal-content2');
+
 // Open the modal when the button is clicked
 openModalButton.addEventListener('click', function(event) {
   modal.style.display = 'block';
+  event.stopPropagation(); // Prevent the modal from closing when you click the button
+});
+
+openModalButton2.addEventListener('click', function(event) {
+  modal2.style.display = 'block';
   event.stopPropagation(); // Prevent the modal from closing when you click the button
 });
 
@@ -2558,17 +2606,23 @@ window.addEventListener('click', function(event) {
     modal.style.display = 'none';
   }
 });
+window.addEventListener('click', function(event) {
+  if (event.target !== modal2 && !modal2.contains(event.target)) {
+    modal.style.display = 'none';
+  }
+});
 
 // Prevent modal close when clicking inside the modal
 modal.addEventListener('click', function(event) {
   event.stopPropagation();
 });
+modal2.addEventListener('click', function(event) {
+  event.stopPropagation();
+});
 
 
 
-const yearSelect = document.querySelector("#year-select");
-const monthSelect = document.querySelector("#month-select");
-const dates = document.querySelector(".dates");
+
 const navs = document.querySelectorAll("#prev, #next");
 
 const months = [
@@ -2580,21 +2634,12 @@ let date = new Date();
 let month = date.getMonth();
 let year = date.getFullYear();
 
-// Populate year dropdown (for example, from 1970 to the current year + 50)
-for (let i = year - 50; i <= year + 50; i++) {
-  const option = document.createElement("option");
-  option.value = i;
-  option.textContent = i;
-  yearSelect.appendChild(option);
-}
+const dates = document.querySelector(".dates");
+const yearSelect = document.getElementById("year-select");
+const monthSelect = document.getElementById("month-select");
 
-// Populate month dropdown
-months.forEach((monthName, index) => {
-  const option = document.createElement("option");
-  option.value = index;
-  option.textContent = monthName;
-  monthSelect.appendChild(option);
-});
+let fromDate = null;
+let toDate = null;
 
 function renderCalendar() {
   const start = new Date(year, month, 1).getDay();
@@ -2609,19 +2654,59 @@ function renderCalendar() {
   }
 
   for (let i = 1; i <= endDate; i++) {
-    let className = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()
-      ? ' class="today"'
-      : "";
-    datesHtml += `<li${className}>${i}</li>`;
-  }
+    let className = "";
 
+    // Highlight today
+    if (i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+      className = "today";
+    }
+
+    // Highlight selected range
+    if (i === fromDate) {
+      className = "start-date";
+    } else if (i === toDate) {
+      className = "end-date";
+    } else if (fromDate && toDate && i >= fromDate && i <= toDate) {
+      className = "selected-range";
+    }
+
+    datesHtml += `<li class="${className}" data-date="${i}">${i}</li>`;
+  }
   for (let i = end; i < 6; i++) {
     datesHtml += `<li class="inactive">${i - end + 1}</li>`;
   }
 
   dates.innerHTML = datesHtml;
+
   yearSelect.value = year;  // Set the current year in the dropdown
   monthSelect.value = month;  // Set the current month in the dropdown
+
+  // Add click event listener to each date
+  document.querySelectorAll(".dates li").forEach((li) => {
+    li.addEventListener("click", onDateClick);
+  });
+}
+
+// Handle clicking on dates
+function onDateClick(e) {
+  const selectedDay = parseInt(e.target.getAttribute("data-date"));
+
+  if (!fromDate || (fromDate && toDate)) {
+    // If no "From" date is selected or both "From" and "To" dates are already selected, reset the selection
+    fromDate = selectedDay;
+    toDate = null;
+  } else if (fromDate && !toDate) {
+    // If "From" date is selected but "To" date is not selected yet
+    if (selectedDay > fromDate) {
+      toDate = selectedDay;
+    } else {
+      // Swap the dates if "To" is earlier than "From"
+      toDate = fromDate;
+      fromDate = selectedDay;
+    }
+  }
+
+  renderCalendar();
 }
 
 // Add event listeners for the year and month dropdowns
@@ -2635,26 +2720,29 @@ monthSelect.addEventListener("change", (e) => {
   renderCalendar();
 });
 
-// Add event listeners for navigation buttons
-navs.forEach((nav) => {
-  nav.addEventListener("click", (e) => {
-    const btnId = e.target.id;
+// Initialize year and month dropdowns
+function initDropdowns() {
+  // Populate the year dropdown
+  for (let i = 2020; i <= 2030; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = i;
+    yearSelect.appendChild(option);
+  }
 
-    if (btnId === "prev" && month === 0) {
-      year--;
-      month = 11;
-    } else if (btnId === "next" && month === 11) {
-      year++;
-      month = 0;
-    } else {
-      month = btnId === "next" ? month + 1 : month - 1;
-    }
+  // Populate the month dropdown
+  for (let i = 0; i < 12; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = new Date(0, i).toLocaleString("en", { month: "long" });
+    monthSelect.appendChild(option);
+  }
 
-    date = new Date(year, month, new Date().getDate());
-    renderCalendar();
-  });
-});
+  yearSelect.value = year;
+  monthSelect.value = month;
+}
 
+initDropdowns();
 renderCalendar();
 
 
