@@ -201,7 +201,16 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 
-  
-     
-
-
+    const fromBtn = document.getElementById('from-btn');
+    const toBtn = document.getElementById('to-btn');
+    
+    fromBtn.addEventListener('click', () => {
+      fromBtn.classList.add('active');
+      toBtn.classList.remove('active');
+    });
+    
+    toBtn.addEventListener('click', () => {
+      toBtn.classList.add('active');
+      fromBtn.classList.remove('active');
+    });
+    

@@ -25,6 +25,8 @@
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
       rel="stylesheet"
     />
+
+
     <title>Dashboard</title>
     <link href="./style.css" rel="stylesheet" />
     <link
@@ -233,10 +235,6 @@
 .dropdown-like.show {
   display: block;
 }
-
-
-
-
 .modal-content {
   display: none;
   position: absolute;
@@ -247,11 +245,20 @@
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.modal-content2 {
 
+
+  position: absolute;
+  background-color: white;
+  margin: 10% auto;
+  padding: 4px;
+  border-radius: 8px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 .modal-header {
   font-family: InterMedium;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-bottom: 5px;
 }
@@ -300,9 +307,101 @@
   border-radius: 12px;
   cursor: pointer;
 }
+.year-select{
+  border: none;
+    color: gray;
+    font-size: 14px;
+}
+.calendar {
+  top: 1rem;
+  margin: 0 auto;
+  width:300px;
+  background: #fff;
 
-
-    </style>
+}
+.mainCalendar{
+  background-color: #D9D9D9;
+  border-radius: 13px;
+}
+.calendar header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendar nav {
+  display: flex;
+  align-items: center;
+}
+.calendar ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.calendar ul li {
+  width: calc(100% / 7);
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#prev,
+#next {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#prev::before,
+#next::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  border-color: #ccc;
+}
+#next::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#prev::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+#prev:hover::before,
+#next:hover::before {
+  border-color: #000;
+}
+.days {
+  font-weight: 600;
+}
+.dates li.today {
+  color: #000000;
+}
+.dates li.today::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: -1;
+}
+.dates li.inactive {
+  color: #ccc;
+}
+</style>
   </head>
 
   <body>
@@ -807,7 +906,7 @@
       <div class="product">
       <div class="d-flex justify-content-between">
     <h6>Customer Orders</h6>
-    <form>
+  
       <div class="d-flex gap-2 position-relative">
         <div class="search-bar">
           <img src="./assests/svg/Search.svg" />
@@ -815,8 +914,8 @@
         </div>
 
    
-        <button class="filter-btn"  id="openModalButton">
-          <img src="./assests/svg/Calendar.svg" /> Filter
+        <button type="button" class="filter-btn"  id="openModalButton">
+          <img src="./assests/svg/filter1.svg" /> Filter
         </button>
       
           <div class="modal-content" id="modal-content">
@@ -872,7 +971,57 @@
           </div>
        
         <button class="filter-btn">
-          <img src="./assests/svg/Send.svg" /> send
+          <img src="./assests/svg/Calendar.svg" /> Calendar
+        </button>
+       
+        <div class="modal-content2">
+         
+            <h6>By Date</h6>
+
+           <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
+            <label><input  class="" type="checkbox" />This Week</label>
+          <label><input type="checkbox" />Last Week</label>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
+            <label><input  class="" type="checkbox" />This Month</label>
+          <label><input type="checkbox" />Last Month</label>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-1  filter-group2">
+            <label><input  class="" type="checkbox" />This Year</label>
+          <label><input type="checkbox" />Last Year</label>
+          </div> 
+          <div class="toggle-button">
+            <button class="toggle-option active" id="from-btn">From</button>
+            <button class="toggle-option" id="to-btn">To</button>
+          </div>
+          
+          <div class="calendar">
+            <header>
+              <h6>
+                <select class="year-select" id="year-select"></select>
+                <select class="year-select" id="month-select"></select>
+              </h6>
+             
+            </header>
+            <section class="mainCalendar">
+              <ul class="days">
+                <li>S</li>
+                <li>M</li>
+                <li>T</li>
+                <li>W</li>
+                <li>T</li>
+                <li>F</li>
+                <li>S</li>
+              </ul>
+              <ul class="dates"></ul>
+            </section>
+          </div>
+        </div>
+
+        <button class="filter-btn">
+          <img src="./assests/svg/Send.svg" /> Send
         </button>
         <div>
           <select
@@ -886,7 +1035,7 @@
           </select>
         </div>
       </div>
-    </form>
+   
 
   </div>
   <div class="container mt-4">
@@ -1163,8 +1312,9 @@
                     <img src="./assests/svg/filter1.svg" /> Filter
                   </button>
                   <button class="filter-btn">
-                    <img src="./assests/svg/Calendar.svg" /> Filter
+                    <img src="./assests/svg/Calendar.svg" /> Calendar
                   </button>
+                  
                   <button class="filter-btn">
                     <img src="./assests/svg/Send.svg" /> send
                   </button>
@@ -2105,6 +2255,25 @@ aria-labelledby="products-tab">
       }
       fetchData(); // Call the function to fetch an
       document.addEventListener("DOMContentLoaded", function () {
+
+        //toggle button of calender
+        
+        const fromBtn = document.getElementById('from-btn');
+  const toBtn = document.getElementById('to-btn');
+
+  fromBtn.addEventListener('click', () => {
+    fromBtn.classList.add('active');
+    toBtn.classList.remove('active');
+  });
+
+  toBtn.addEventListener('click', () => {
+    toBtn.classList.add('active');
+    fromBtn.classList.remove('active');
+  });
+ //toggle button of calender
+
+ //pagination of table
+
         const products = [
           {
             id: 1,
@@ -2300,6 +2469,10 @@ aria-labelledby="products-tab">
   } else {
     addressSection.style.display = 'none';
   }
+
+
+
+  
 });
 
     // Initial render
@@ -2390,6 +2563,100 @@ window.addEventListener('click', function(event) {
 modal.addEventListener('click', function(event) {
   event.stopPropagation();
 });
+
+
+
+const yearSelect = document.querySelector("#year-select");
+const monthSelect = document.querySelector("#month-select");
+const dates = document.querySelector(".dates");
+const navs = document.querySelectorAll("#prev, #next");
+
+const months = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+let date = new Date();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+// Populate year dropdown (for example, from 1970 to the current year + 50)
+for (let i = year - 50; i <= year + 50; i++) {
+  const option = document.createElement("option");
+  option.value = i;
+  option.textContent = i;
+  yearSelect.appendChild(option);
+}
+
+// Populate month dropdown
+months.forEach((monthName, index) => {
+  const option = document.createElement("option");
+  option.value = index;
+  option.textContent = monthName;
+  monthSelect.appendChild(option);
+});
+
+function renderCalendar() {
+  const start = new Date(year, month, 1).getDay();
+  const endDate = new Date(year, month + 1, 0).getDate();
+  const end = new Date(year, month, endDate).getDay();
+  const endDatePrev = new Date(year, month, 0).getDate();
+
+  let datesHtml = "";
+
+  for (let i = start; i > 0; i--) {
+    datesHtml += `<li class="inactive">${endDatePrev - i + 1}</li>`;
+  }
+
+  for (let i = 1; i <= endDate; i++) {
+    let className = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()
+      ? ' class="today"'
+      : "";
+    datesHtml += `<li${className}>${i}</li>`;
+  }
+
+  for (let i = end; i < 6; i++) {
+    datesHtml += `<li class="inactive">${i - end + 1}</li>`;
+  }
+
+  dates.innerHTML = datesHtml;
+  yearSelect.value = year;  // Set the current year in the dropdown
+  monthSelect.value = month;  // Set the current month in the dropdown
+}
+
+// Add event listeners for the year and month dropdowns
+yearSelect.addEventListener("change", (e) => {
+  year = parseInt(e.target.value);
+  renderCalendar();
+});
+
+monthSelect.addEventListener("change", (e) => {
+  month = parseInt(e.target.value);
+  renderCalendar();
+});
+
+// Add event listeners for navigation buttons
+navs.forEach((nav) => {
+  nav.addEventListener("click", (e) => {
+    const btnId = e.target.id;
+
+    if (btnId === "prev" && month === 0) {
+      year--;
+      month = 11;
+    } else if (btnId === "next" && month === 11) {
+      year++;
+      month = 0;
+    } else {
+      month = btnId === "next" ? month + 1 : month - 1;
+    }
+
+    date = new Date(year, month, new Date().getDate());
+    renderCalendar();
+  });
+});
+
+renderCalendar();
+
 
 
     </script>
