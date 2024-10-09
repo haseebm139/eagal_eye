@@ -89,6 +89,8 @@
         background-color: #f6f7fb;
       }
       .product{
+        font-family: InterLight;
+        color: #ABAFB1;
         background: #f6f7fb;
                   margin: 5px 0;
                   padding: 1rem;
@@ -469,8 +471,7 @@
 
 .product-wrapper .quantity-controls img {
   width: 32px;
-    background: #dde2d5;
-    padding: 6px 12px;
+    
     cursor: pointer;
 }
 .subFormleft h6{
@@ -483,6 +484,9 @@
 }
 .discount{
   font-family: InterLight;
+  color: #8B8D97;
+}
+.Description{
   color: #8B8D97;
 }
 </style>
@@ -2156,209 +2160,273 @@ aria-labelledby="products-tab">
                 <div class="mainBar">
                   <form class="d-flex gap-5">
                     <div class="d-flex flex-column gap-3 rightForm">
+                  
+                      <!-- Product Name -->
                       <div class="inpuBox">
-                        <input class="product" placeholder="Product Name" />
+                        <input type="text" id="productName" name="productName" class="product" placeholder="Product Name" />
                       </div>
-
+                  
+                      <!-- Product Category -->
                       <div class="">
-                        <select
-                          id="itemsPerPage"
-                          class="form-select form-select-sm ProductList"
-                        >
-                          <option value="3">Select Product Category</option>
-                          <option value="5">page</option>
-                          <option value="10">per page</option>
+                        <select id="productCategory" name="productCategory" class="form-select form-select-sm ProductList">
+                          <option value="">Select Product Category</option>
+                          <option value="category1">Category 1</option>
+                          <option value="category2">Category 2</option>
+                          <option value="category3">Category 3</option>
                         </select>
                       </div>
-
+                  
+                      <!-- Selling Price and Another Product Name (if needed) -->
                       <div class="inpuBox d-flex gap-2">
-                        <input class="product" placeholder="Selling Price" />
-                        <input class="product" placeholder="Product Name" />
+                        <input type="number" id="sellingPrice" name="sellingPrice" class="product" placeholder="Selling Price" />
+                        <input type="text" id="anotherProductName" name="anotherProductName" class="product" placeholder="Another Product Name" />
                       </div>
-
+                  
+                      <!-- Quantity in Stock -->
                       <div class="inpuBox product-wrapper">
-                        <input
-                          type="number"
-                          class="product quantityInput"
-                          id="quantityInput"
-                          placeholder="Quantity in Stock"
-                        />
-
+                        <input type="number" id="quantityInStock" name="quantityInStock" class="product quantityInput" placeholder="Quantity in Stock" />
+                  
+                        <!-- Quantity Controls -->
                         <div class="quantity-controls">
-                        
-                            <img class="up-btn" aria-label="Increase quantity" id="increaseBtn" src="./assests/svg/Polygon 1 (1).svg" />
-                         
-                     
-                          
-
-                            <img class="down-btn" aria-label="Decrease quantity" id="decreaseBtn" src="./assests/svg/Polygon 1.svg" />
-                         
+                          <img class="up-btn" id="increaseBtn" aria-label="Increase quantity" src="./assests/svg/Frame 5.svg" />
+                          <img class="down-btn" id="decreaseBtn" aria-label="Decrease quantity" src="./assests/svg/Frame 6.svg" />
                         </div>
                       </div>
-
+                  
+                      <!-- Order Type -->
                       <div class="">
-                        <select
-                          id="itemsPerPage"
-                          class="form-select form-select-sm ProductList"
-                        >
-                          <option value="3">Order Type</option>
-                          <option value="5">page</option>
-                          <option value="10">per page</option>
+                        <select id="orderType" name="orderType" class="form-select form-select-sm ProductList">
+                          <option value="">Order Type</option>
+                          <option value="online">Online Order</option>
+                          <option value="pickup">Pickup</option>
                         </select>
                       </div>
-
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
+                  
+                      <!-- Discount Toggle -->
+                      <div class="d-flex justify-content-between align-items-center">
                         <h6>Discount</h6>
                         <div class="d-flex align-items-center gap-3">
                           <p class="discount">Add Discount</p>
                           <div class="">
                             <label class="switch">
-                              <input type="checkbox" id="toggleSwitch" />
+                              <input type="checkbox" id="discountToggle" name="discountToggle" />
                               <span class="slider"></span>
                             </label>
                           </div>
                         </div>
                       </div>
-
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
+                  
+                      <!-- Expiry Date Toggle -->
+                      <div class="d-flex justify-content-between align-items-center">
                         <h6>Expiry Date</h6>
                         <div class="d-flex align-items-center gap-3">
                           <p class="discount">Add Expiry Date</p>
                           <div class="">
                             <label class="switch">
-                              <input type="checkbox" id="toggleSwitch" />
+                              <input type="checkbox" id="expiryDateToggle" name="expiryDateToggle" />
                               <span class="slider"></span>
                             </label>
                           </div>
                         </div>
                       </div>
                     </div>
-
+                  
+                    <!-- Left Side (Text Descriptions and Others) -->
                     <div class="subFormleft">
-                      <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Short Description"></textarea>
-                   
-                        <div class="mb-3 mt-3" style="width: 100%;">
-                          <label for="productDescription" class="form-label Description ">Product Long Description</label>
-                          
-                          <div id="toolbar">
-                            <!-- Font options -->
-                            <select class="ql-font"></select>
-                            <!-- Paragraph format -->
-                            <select class="ql-header">
-                                <option selected></option>
-                                <option value="1"></option>
-                                <option value="2"></option>
-                            </select>
-                            <!-- Text formatting options -->
-                            <button class="ql-bold"></button>
-                            <button class="ql-underline"></button>
-                            <button class="ql-italic"></button>
-                            <!-- Alignment options -->
-                            <button class="ql-align" value=""></button>
-                            <button class="ql-align" value="center"></button>
-                            <button class="ql-align" value="right"></button>
+                      <!-- Short Description -->
+                      <textarea class="ShotDescription" id="shortDescription" name="shortDescription" rows="4" cols="50" placeholder="Short Description"></textarea>
+                  
+                      <!-- Long Description -->
+                      <div class="mb-3 mt-3" style="width: 100%;">
+                        <label for="productDescription" class="form-label Description">Product Long Description</label>
+                  
+                        <!-- Toolbar (Optional) -->
+                        <div id="toolbar">
+                          <!-- Font options -->
+                          <select class="ql-font"></select>
+                          <!-- Paragraph format -->
+                          <select class="ql-header">
+                            <option selected></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                          </select>
+                          <!-- Text formatting options -->
+                          <button class="ql-bold"></button>
+                          <button class="ql-underline"></button>
+                          <button class="ql-italic"></button>
+                          <!-- Alignment options -->
+                          <button class="ql-align" value=""></button>
+                          <button class="ql-align" value="center"></button>
+                          <button class="ql-align" value="right"></button>
                         </div>
+                  
+                        <!-- Text Editor for Long Description -->
                         <div id="editor">
-                            <p>Your text goes here</p>
+                          <p>Your text goes here</p>
                         </div>
-                      
-                          
-                          <div class="form-text mt-2 " style="color: #8f8787">Add a long description for your product</div>
-                        </div>
-
-                        <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
+                  
+                        <div class="form-text mt-2" style="color: #8f8787">Add a long description for your product</div>
+                      </div>
+                  
+                      <!-- Return Policy -->
+                      <div class="d-flex justify-content-between align-items-center">
                         <h6>Return Policy</h6>
                         <div class="d-flex align-items-center gap-3">
                           <p class="discount">Add Discount</p>
                           <div class="">
                             <label class="switch">
-                              <input type="checkbox" id="toggleSwitch" />
+                              <input type="checkbox" id="returnPolicyToggle" name="returnPolicyToggle" />
                               <span class="slider"></span>
                             </label>
                           </div>
                         </div>
                       </div>
-
-                       <div class="d-flex flex-column dateTime">
-                        <p >Date & Time</p>
+                  
+                      <!-- Date & Time -->
+                      <div class="d-flex flex-column dateTime">
+                        <p>Date & Time</p>
                         <div class="d-flex gap-3">
-                         <input type="date" class="date" 
-                         value="2024-01-01" />
-                         <input type="time" class="date" 
-                         value="00:00" />
+                          <input type="date" id="date" name="date" class="date" value="2024-01-01" />
+                          <input type="time" id="time" name="time" class="date" value="00:00" />
                         </div>
-                       </div>
-                    
+                      </div>
                     </div>
                   </form>
+                  
                 </div>
                 <div class="leftBar">
-              
+                  <div
+                    class="d-flex flex-column justify-content-center align-items-center image-uploader gap-3"
+                    id="imageUploader"
+                    onclick="document.getElementById('imageInput').click()"
+                  >
+                    <!-- Preview Image Container -->
+                    <img
+                      id="previewImage"
+                      class="previewImage"
+                      src="./assests/Image.png"
+                      alt="Product Cover Image Preview"
+                      style="width: 30px; transition: all 0.5s ease;"
+                    />
                 
-                <div class="d-flex flex-column justify-content-center align-items-center image-uploader gap-3" id="imageUploader" onclick="document.getElementById('imageInput').click()">
-    <!-- Preview Image Container -->
-    <img id="previewImage" class="previewImage" src="./assests/Image.png" style="width: 30px; transition: all 0.5s ease;" />
-
-    <div class="d-flex justify-content-center align-items-center gap-2" id="uploadPlaceholder">
-        <img src="./assests/svg/fi_upload-cloud.svg" />
-        <h6>Upload Image</h6>
-    </div>
-
-    <p class="text-center">Upload a cover image for your product. <br />
-        File Format <span class="bold2">jpeg, png </span>Recommended Size <span class="bold2">600x600 (1:1)</span>
-    </p>
-
-    <!-- Hidden Input for Image Upload -->
-    <input type="file" id="imageInput" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile(event)" />
-</div>
-
+                    <div
+                      class="d-flex justify-content-center align-items-center gap-2"
+                      id="uploadPlaceholder"
+                    >
+                      <img src="./assests/svg/fi_upload-cloud.svg" alt="Upload Icon" />
+                      <h6>Upload Image</h6>
+                    </div>
                 
+                    <p class="text-center imageContent">
+                      Upload a cover image for your product. <br />
+                      File Format <span class="bold2">jpeg, png</span> Recommended Size
+                      <span class="bold2">600x600 (1:1)</span>
+                    </p>
+                
+                    <!-- Hidden Input for Image Upload -->
+                    <input
+                      type="file"
+                      id="imageInput"
+                      name="productCoverImage"
+                      style="display: none;"
+                      accept="image/jpeg, image/png"
+                      onchange="previewUploadedFile(event)"
+                    />
+                  </div>
                 
                   <div class="mt-3">
                     <h6>Additional Images</h6>
-                    <div class="d-flex flex-wrap gap-3 ">
-
-                      <div class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3" id="imageUploader2" onclick="document.getElementById('imageInput2').click()">
+                    <div class="d-flex flex-wrap gap-3">
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3"
+                        id="imageUploader2"
+                        onclick="document.getElementById('imageInput2').click()"
+                      >
                         <!-- Preview Image Container -->
-                        <img id="previewImage2" class="previewImage" src="./assests/Image.png" style="width: 30px; transition: all 0.5s ease;" />
-                    
-                        <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap" id="uploadPlaceholder2">
-                            <img src="./assests/svg/fi_upload-cloud.svg" style="width: 16px;" />
-                            <p class="bold2 p-0 m-0">Upload Image</p>
-                        </div>
-                        
-                        <!-- Hidden Input for Image Upload -->
-                        <input type="file" id="imageInput2" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile2(event)" />
-                    </div>
-                    
-
-                    <div class="d-flex flex-column justify-content-center align-items-center image-uploader3 gap-3" id="imageUploader3" onclick="document.getElementById('imageInput3').click()">
-                      <!-- Preview Image Container -->
-                      <img id="previewImage3" class="previewImage" src="./assests/Image.png" style="width: 0px; transition: all 0.5s ease;"  />
-                  
-                      <!-- Hidden Input for Image Upload -->
-                      <input type="file" id="imageInput3" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile3(event)" />
-                  </div>
-
-
-                  <div class="d-flex flex-column justify-content-center align-items-center image-uploader4 gap-3" id="imageUploader4" onclick="document.getElementById('imageInput4').click()">
-                    <!-- Preview Image Container -->
-                    <img id="previewImage4" class="previewImage" src="./assests/Image.png" style="width: 0px; transition: all 0.5s ease;"  />
+                        <img
+                          id="previewImage2"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 1"
+                          style="width: 30px; transition: all 0.5s ease;"
+                        />
                 
-                    <!-- Hidden Input for Image Upload -->
-                    <input type="file" id="imageInput4" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile4(event)" />
-                </div>
-                   
-
+                        <div
+                          class="d-flex justify-content-center align-items-center gap-2 flex-wrap"
+                          id="uploadPlaceholder2"
+                        >
+                          <img
+                            src="./assests/svg/fi_upload-cloud.svg"
+                            alt="Upload Icon"
+                            style="width: 16px;"
+                          />
+                          <p class="bold2 p-0 m-0">Upload Image</p>
+                        </div>
+                
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput2"
+                          name="additionalImage1"
+                          style="display: none;"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile2(event)"
+                        />
+                      </div>
+                
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader3 gap-3"
+                        id="imageUploader3"
+                        onclick="document.getElementById('imageInput3').click()"
+                      >
+                        <!-- Preview Image Container -->
+                        <img
+                          id="previewImage3"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 2"
+                          style="width: 0px; transition: all 0.5s ease;"
+                        />
+                
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput3"
+                          name="additionalImage2"
+                          style="display: none;"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile3(event)"
+                        />
+                      </div>
+                
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader4 gap-3"
+                        id="imageUploader4"
+                        onclick="document.getElementById('imageInput4').click()"
+                      >
+                        <!-- Preview Image Container -->
+                        <img
+                          id="previewImage4"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 3"
+                          style="width: 0px; transition: all 0.5s ease;"
+                        />
+                
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput4"
+                          name="additionalImage3"
+                          style="display: none;"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile4(event)"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>

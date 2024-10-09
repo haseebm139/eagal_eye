@@ -613,6 +613,7 @@ padding: 2px 6px
     border-radius: 8px;
     padding: 9px 19px;
     font-size: 13px;
+    color: #ABAFB1;
 }
 .dateTime p{
     margin-top: 10px;
@@ -676,8 +677,35 @@ border-radius: 11px;
 padding: 9px ;
     background-color: #eeeef0;
 }
+.ShotDescription{
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #ABAFB1;
+    font-family: InterLight;
+    font-size: 13px;
+}
+.ql-snow .ql-picker {
+    font-family: InterLight;
+    border-radius: 6px;
+    margin: 0 4px;
+    font-size: 13px;
+    border: 1px solid #ABAFB1;;
+    color: #ABAFB1;
+}
+.ql-editor p{
+    color: #ABAFB1;
+    font-size: 13px;
+}
+.ql-toolbar.ql-snow {
+     border: none;
+}
+.ql-container.ql-snow{
+    border: none;
+}
 .ProductList{
-color: #8f8787;
+    font-family: InterLight;
+    color: #ABAFB1;
     border: none;
 font-size: 13px;
 border-radius: 11px;
@@ -702,7 +730,10 @@ border-radius: 11px;
     object-fit: cover; /* Maintain aspect ratio */
     transition: all 0.5s ease; /* Smooth transition */
 }
-
+.imageContent{
+    font-family: InterLight;
+    color: #8f8787;
+}
 
 .image-uploader3{
    
@@ -774,7 +805,8 @@ background-color: #f6f7fb;
     font-size: 13px;
 }
 .bold2{
-    font-weight: 500;
+   
+    font-family: InterBold;
 }
 
 .switch {
