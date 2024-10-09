@@ -53,6 +53,13 @@
         font-family: poppinsMedium;
         src: url('./assests/Poppins/Poppins-Medium.ttf');
       }
+      .viewOrderDetails{
+        font-family: InterMedium;
+        font-size: 13px;
+      }
+      .viewOrderDetails span{
+        font-family: InterLight;
+      }
       .custom-active {
         background-color: #5570f129; /* Custom green */
         color: rgb(0, 0, 0);
@@ -461,10 +468,22 @@
 }
 
 .product-wrapper .quantity-controls img {
- 
+ width: 15px;
   background: #dde2d5;
     padding: 2px 4px;
     cursor: pointer;
+}
+.subFormleft h6{
+  font-family: InterMedium;
+  color: #8B8D97;
+}
+.rightForm h6{
+  font-family: InterMedium;
+  color: #8B8D97;
+}
+.discount{
+  font-family: InterLight;
+  color: #8B8D97;
 }
 </style>
   </head>
@@ -540,6 +559,7 @@
     <div class="main-content" id="main-content">
       <div class="toggle-btn" id="toggle-btn">
         <img src="./assests/svg/Home.svg" />
+        <span id="tabName" class="ms-2">pp</span>
       </div>
       <div
         class="dashboard-header d-flex align-items-center justify-content-between"
@@ -560,6 +580,7 @@
             class="avatar"
             alt="Avatar"
           />
+          
         </div>
       </div>
       <div id="dynamic-content">
@@ -842,7 +863,7 @@
             role="tabpanel"
             aria-labelledby="orders-tab"
           >
-            <div class="container-fluid order-container">
+            <div class="container-fluid order-container" id="orderContainer">
               <div
                 class="Width d-flex justify-content-between align-items-center"
               
@@ -1188,7 +1209,7 @@
                   </label>
               </td>
               
-                <td onclick="showNewOrdersContent()">${product.name}</td>
+                <td id="customerName">${product.name}</td>
             <td>${product.category}</td>
             <td>${product.price}</td>
             <td>${product.stock}</td>
@@ -1298,14 +1319,19 @@
 
 </div>
             </div>
+            <div class="viewOrder container" id="viewOrder" style="display: none;">
+              <div class="d-flex justify-content-start align-items-baseline gap-3">
+                <p class="viewOrderDetails">Order Number <span>#7875</span></p>
+                <p class="viewOrderDetails">Order date <span>12 spt 2024 - 12:00 pm</span></p>
+                <p class="viewOrderDetails">Tracking ID <span>46737f475</span></p>
 
-            <div id="newOrders">
-              <h2>New Orders</h2>
-              <p>Showing orders for:</p>
+                <img src="./assests/svg/copyIcon.svg" />
+              </div>
             </div>
+           
           </div>
           <div
-            class="red tab-pane fade "
+            class="black tab-pane fade "
             id="customers"
             role="tabpanel"
             aria-labelledby="customers-tab"
@@ -1582,8 +1608,6 @@
   </form>
   </div>
 </div>
-
-
 <div class="container-fluid ">
   <div class="Width d-flex justify-content-between align-items-center customer2">
    <div class="d-flex align-items-center justify-content-center gap-3">
@@ -2387,6 +2411,9 @@ aria-labelledby="products-tab">
 
 
 
+
+        
+
  //pagination of table
 
         const products = [
@@ -2584,9 +2611,6 @@ aria-labelledby="products-tab">
   } else {
     addressSection.style.display = 'none';
   }
-
-
-
   
 });
 
@@ -2853,6 +2877,19 @@ decreaseBtn.addEventListener('click', () => {
     quantityInput.value = currentValue - 1;
   }
 });
+// Get references to the elements
+const customerName = document.getElementById('customerName');
+const orderContainer = document.getElementById('orderContainer');
+const viewOrder = document.getElementById('viewOrder');
+
+// Add click event listener to the Customer Name td
+customerName.addEventListener('click', () => {
+  // Hide the order-container div and show the ppp div
+  orderContainer.style.display = 'none';
+  viewOrder.style.display = 'block';
+});
+
+
 
 
     </script>
