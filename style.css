@@ -608,7 +608,7 @@ padding: 2px 6px
 .date{
     width: 100%;
     outline: none;
-    background-color: #eeeef0;
+    background-color: #f6f7fb;
     border: none;
     border-radius: 8px;
     padding: 9px 19px;
@@ -664,7 +664,7 @@ padding: 2px 6px
     font-size: 13px;
     border-radius: 10px;
     border: 1px solid  #eeeef0;
-    background:  #eeeef0;
+    background:  #f6f6fb;
     padding: 9px ;
 }
 .product{
@@ -681,40 +681,78 @@ color: #8f8787;
     border: none;
 font-size: 13px;
 border-radius: 11px;
-padding: 9px ;
-    background-color: #eeeef0;
+padding: 1rem;
+    background-color: #f6f7fb;
 }
 .image-uploader2{
-    padding:20px 13px;
+    position: relative;
+    overflow: hidden;
+ height: 130px;
     width: 100%;
     color: #8f8787;
     border: none;
 font-size: 13px;
 border-radius: 11px;
-    background-color: #eeeef0;  
+    background-color: #f6f7fb;  
+}
+.image-uploader2 .previewImage{
+   
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: all 0.5s ease; /* Smooth transition */
 }
 
+
 .image-uploader3{
+   
+
+    position: relative;
+    overflow: hidden;
+ height: 130px;
     width: 100%;
     border: 1px dashed #585757 !important;
     color: #8f8787;
 font-size: 13px;
 border-radius: 11px;
-padding: 9px ;
-    background-color: #ffffff; 
-}
-.image-uploader{
 
+ 
+}
+.image-uploader3 .previewImage{
+   
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: all 0.5s ease; /* Smooth transition */
+}
+
+.image-uploader{
+    position: relative;
+    overflow: hidden; 
     height: 240px;
     color: #8f8787;
     border: none;
 font-size: 13px;
 border-radius: 11px;
 padding: 9px ;
-    background-color: #eeeef0;
+background-color: #f6f7fb;  
 }
+
+
+
 .image-uploader .previewImage{
-    width: 40px;
+   
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: all 0.5s ease; /* Smooth transition */
+   
+
+}
+
+.previewImage.full {
+    width: 100%; /* Full width when image is uploaded */
+    height: 100%; /* Full height when image is uploaded */
 }
 .image-uploader p{
     font-size: 13px;
@@ -752,7 +790,7 @@ padding: 9px ;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ddd;
+    background-color: #f6f7fb;
     border-radius: 34px;
     transition: 0.4s;
   }

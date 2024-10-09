@@ -179,8 +179,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 
 
-      function previewUploadedFile(event) {
-        const imageUploader = document.getElementById('imageUploader');
+    function previewUploadedFile(event) {
         const previewImage = document.getElementById('previewImage');
         const uploadPlaceholder = document.getElementById('uploadPlaceholder');
         
@@ -190,13 +189,75 @@ document.querySelectorAll('.nav-link').forEach(link => {
             const reader = new FileReader();
             
             reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewImage.style.display = 'block';
-                uploadPlaceholder.style.display = 'none';
-            }
+                previewImage.src = e.target.result; // Set the image source to the uploaded file
+                
+                // Remove the initial size and apply the full class to expand the image
+                previewImage.style.width = '100%';  // Set width to 100% to fill the container
+                previewImage.style.height = '100%'; // Set height to 100% to fill the container
+                previewImage.style.position = 'absolute';
+                previewImage.style.top = "0"
+                previewImage.style.left ="0"
+                previewImage.style.objectFit = 'cover'; // Ensure the image covers the whole div
+                uploadPlaceholder.style.display = 'none'; // Hide the upload placeholder
+            };
             
             reader.readAsDataURL(file);
         }
+    }
+    
+
+    function previewUploadedFile2(event) {
+       
+        const previewImage2 = document.getElementById('previewImage2');
+        const uploadPlaceholder2 = document.getElementById('uploadPlaceholder2');
+        
+        const file = event.target.files[0];
+        
+        if (file) {
+            const reader2 = new FileReader();
+            
+            reader2.onload = function(e) {
+                previewImage2.src = e.target.result; // Set the image source to the uploaded file
+                
+                // Remove the initial size and apply the full class to expand the image
+                previewImage2.style.width = '100%';  // Set width to 100% to fill the container
+                previewImage2.style.height = '100%'; // Set height to 100% to fill the container
+                previewImage2.style.position = 'absolute';
+                previewImage2.style.top = "0"
+                previewImage2.style.left ="0"
+                previewImage2.style.objectFit = 'cover'; // Ensure the image covers the whole div
+                uploadPlaceholder2.style.display = 'none'; // Hide the upload placeholder
+            }
+            
+            reader2.readAsDataURL(file);
+        }
+    }
+    function previewUploadedFile3(event) {
+      
+        const previewImage3 = document.getElementById('previewImage3');
+        const uploadPlaceholder3 = document.getElementById('uploadPlaceholder3');
+        
+        const file = event.target.files[0];
+        
+        if (file) {
+            const reader2 = new FileReader();
+            
+            reader2.onload = function(e) {
+                previewImage3.src = e.target.result; // Set the image source to the uploaded file
+                
+                // Remove the initial size and apply the full class to expand the image
+                previewImage3.style.width = '100%';  // Set width to 100% to fill the container
+                previewImage3.style.height = '100%'; // Set height to 100% to fill the container
+                previewImage3.style.position = 'absolute';
+                previewImage3.style.top = "0"
+                previewImage3.style.left ="0"
+                previewImage3.style.objectFit = 'cover'; // Ensure the image covers the whole div
+                uploadPlaceholder3.style.display = 'none'; // Hide the upload placeholder
+            }
+            
+            reader2.readAsDataURL(file);
+        }
+            
     }
 
 

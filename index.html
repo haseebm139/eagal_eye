@@ -71,7 +71,7 @@
       }
     
       .ql-container {
-        background-color: #eeeef0;
+        background-color: #f6f7fb;
     height: 20vh;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
@@ -79,11 +79,19 @@
       .ql-toolbar.ql-snow{
         border-top-right-radius: 12px;
         border-top-left-radius: 12px;
-        background-color: #eeeef0;
+        background-color: #f6f7fb;
       }
       .product{
+        background: #f6f7fb;
+                  margin: 5px 0;
+                  padding: 1rem;
+                  border-radius: 15px;
+      }
+
+
+      .product2{
         background: white;
-                  margin: 20px 0;
+                  margin: 5px 0;
                   padding: 1rem;
                   border-radius: 15px;
       }
@@ -416,6 +424,9 @@
   border-radius: 50%;
   background-color: #000000; /* Red background for end date */
   color: white;
+}
+.nav-tabs{
+  background: white;
 }
 </style>
   </head>
@@ -793,7 +804,7 @@
             role="tabpanel"
             aria-labelledby="orders-tab"
           >
-            <div class="container-fluid">
+            <div class="container-fluid order-container">
               <div
                 class="Width d-flex justify-content-between align-items-center"
               
@@ -919,7 +930,7 @@
                   </div>
                 </div>
               </div>
-      <div class="product">
+      <div class="product2">
       <div class="d-flex justify-content-between">
     <h6>Customer Orders</h6>
   
@@ -1139,7 +1150,7 @@
                   </label>
               </td>
               
-                <td>${product.name}</td>
+                <td onclick="showNewOrdersContent()">${product.name}</td>
             <td>${product.category}</td>
             <td>${product.price}</td>
             <td>${product.stock}</td>
@@ -1249,6 +1260,11 @@
 
 </div>
             </div>
+
+            <div id="newOrders">
+              <h2>New Orders</h2>
+              <p>Showing orders for:</p>
+            </div>
           </div>
           <div
             class="red tab-pane fade "
@@ -1354,7 +1370,7 @@
               </div>
               
             </div>
-            <div class="product">
+            <div class="product2">
               <div class="d-flex justify-content-between">
                 <h6>Customers</h6>
                 <div class="d-flex gap-2">
@@ -1932,7 +1948,7 @@ aria-labelledby="products-tab">
               </div>
 
               <div
-              class="product">
+              class="product2">
                 <div class="d-flex justify-content-between">
                   <h6>Products</h6>
                   <div class="d-flex gap-2">
@@ -2211,49 +2227,49 @@ aria-labelledby="products-tab">
                 <div class="leftBar">
               
                 
-                  <div class="d-flex flex-column justify-content-center align-items-center image-uploader gap-3" id="imageUploader" onclick="document.getElementById('imageInput').click()">
-                    <!-- Preview Image Container -->
-                    <img id="previewImage" class="previewImage" src="./assests/Image.png" />
-                
-                    <div class="d-flex justify-content-center align-items-center gap-2" id="uploadPlaceholder">
-                        <img src="./assests/svg/fi_upload-cloud.svg" />
-                        <h6>Upload Image</h6>
-                    </div>
-                
-                    <p class="text-center">Upload a cover image for your product. <br />
-                        File Format <span class="bold2">jpeg, png </span>Recommened Size <span class="bold2">600x600 (1:1)</span>
-                    </p>
-                
-                    <!-- Hidden Input for Image Upload -->
-                    <input type="file" id="imageInput" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile(event)" />
-                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center image-uploader gap-3" id="imageUploader" onclick="document.getElementById('imageInput').click()">
+    <!-- Preview Image Container -->
+    <img id="previewImage" class="previewImage" src="./assests/Image.png" style="width: 30px; transition: all 0.5s ease;" />
+
+    <div class="d-flex justify-content-center align-items-center gap-2" id="uploadPlaceholder">
+        <img src="./assests/svg/fi_upload-cloud.svg" />
+        <h6>Upload Image</h6>
+    </div>
+
+    <p class="text-center">Upload a cover image for your product. <br />
+        File Format <span class="bold2">jpeg, png </span>Recommended Size <span class="bold2">600x600 (1:1)</span>
+    </p>
+
+    <!-- Hidden Input for Image Upload -->
+    <input type="file" id="imageInput" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile(event)" />
+</div>
+
                 
                 
                   <div class="mt-3">
                     <h6>Additional Images</h6>
                     <div class="d-flex gap-3 ">
 
-                      <div class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3" id="imageUploader" onclick="document.getElementById('imageInput').click()">
+                      <div class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3" id="imageUploader2" onclick="document.getElementById('imageInput2').click()">
                         <!-- Preview Image Container -->
-                        <img id="previewImage" class="previewImage" src="./assests/Image.png" style="width: 30px;" />
+                        <img id="previewImage2" class="previewImage" src="./assests/Image.png" style="width: 30px; transition: all 0.5s ease;" />
                     
-                        <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap" id="uploadPlaceholder">
+                        <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap" id="uploadPlaceholder2">
                             <img src="./assests/svg/fi_upload-cloud.svg" style="width: 16px;" />
                             <p class="bold2 p-0 m-0">Upload Image</p>
                         </div>
-                    
-                    
-                    
+                        
                         <!-- Hidden Input for Image Upload -->
-                        <input type="file" id="imageInput" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile(event)" />
+                        <input type="file" id="imageInput2" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile2(event)" />
                     </div>
+                    
 
-                    <div class="d-flex flex-column justify-content-center align-items-center image-uploader3 gap-3" id="imageUploader" onclick="document.getElementById('imageInput').click()">
+                    <div class="d-flex flex-column justify-content-center align-items-center image-uploader3 gap-3" id="imageUploader3" onclick="document.getElementById('imageInput3').click()">
                       <!-- Preview Image Container -->
-                      <img id="previewImage" class="previewImage" src="./assests/Image.png" style="display: none;" />
+                      <img id="previewImage3" class="previewImage" src="./assests/Image.png" style="width: 0px; transition: all 0.5s ease;"  />
                   
                       <!-- Hidden Input for Image Upload -->
-                      <input type="file" id="imageInput" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile(event)" />
+                      <input type="file" id="imageInput3" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile3(event)" />
                   </div>
                    
 
@@ -2583,42 +2599,49 @@ document.addEventListener('click', function (event) {
   }
 });
 
+
+
+
 const openModalButton = document.getElementById('openModalButton');
 const modal = document.getElementById('modal-content');
 
 const openModalButton2 = document.getElementById('openModalButton2');
 const modal2 = document.getElementById('modal-content2');
 
-// Open the modal when the button is clicked
+// Open the first modal when its button is clicked
 openModalButton.addEventListener('click', function(event) {
   modal.style.display = 'block';
-  event.stopPropagation(); // Prevent the modal from closing when you click the button
+  event.stopPropagation(); // Prevent closing the modal when clicking on the button
 });
 
+// Open the second modal when its button is clicked
 openModalButton2.addEventListener('click', function(event) {
   modal2.style.display = 'block';
-  event.stopPropagation(); // Prevent the modal from closing when you click the button
+  event.stopPropagation(); // Prevent closing the modal when clicking on the button
 });
 
-// Close the modal when clicking outside the modal content
+// Close the modal when clicking outside of modal content
 window.addEventListener('click', function(event) {
-  if (event.target !== modal && !modal.contains(event.target)) {
+  // Close modal 1 if it's open and clicked outside
+  if (modal.style.display === 'block' && !modal.contains(event.target) && event.target !== openModalButton) {
     modal.style.display = 'none';
   }
-});
-window.addEventListener('click', function(event) {
-  if (event.target !== modal2 && !modal2.contains(event.target)) {
-    modal.style.display = 'none';
+
+  // Close modal 2 if it's open and clicked outside
+  if (modal2.style.display === 'block' && !modal2.contains(event.target) && event.target !== openModalButton2) {
+    modal2.style.display = 'none';
   }
 });
 
-// Prevent modal close when clicking inside the modal
+// Prevent modal close when clicking inside the modal content
 modal.addEventListener('click', function(event) {
-  event.stopPropagation();
+  event.stopPropagation(); // Prevent modal from closing when clicking inside modal content
 });
+
 modal2.addEventListener('click', function(event) {
-  event.stopPropagation();
+  event.stopPropagation(); // Prevent modal2 from closing when clicking inside modal content
 });
+
 
 
 
@@ -2745,7 +2768,12 @@ function initDropdowns() {
 initDropdowns();
 renderCalendar();
 
-
+function showNewOrdersContent() {
+    document.querySelector('.order-container').innerHTML = `
+     
+      
+    `;
+  }
 
     </script>
   </body>
