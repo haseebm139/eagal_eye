@@ -688,7 +688,7 @@ padding: 1rem;
     position: relative;
     overflow: hidden;
  height: 130px;
-    width: 100%;
+    width: 130px;
     color: #8f8787;
     border: none;
 font-size: 13px;
@@ -710,7 +710,7 @@ border-radius: 11px;
     position: relative;
     overflow: hidden;
  height: 130px;
-    width: 100%;
+    width: 130px;
     border: 1px dashed #585757 !important;
     color: #8f8787;
 font-size: 13px;
@@ -725,7 +725,23 @@ border-radius: 11px;
     object-fit: cover; /* Maintain aspect ratio */
     transition: all 0.5s ease; /* Smooth transition */
 }
-
+.image-uploader4{
+    position: relative;
+    overflow: hidden;
+ height: 130px;
+    width: 130px;
+    color: #8f8787;
+    border: 1px dashed #585757 !important;
+font-size: 13px;
+border-radius: 11px;
+}
+.image-uploader4 .previewImage{
+   
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: all 0.5s ease; /* Smooth transition */
+}
 .image-uploader{
     position: relative;
     overflow: hidden; 
@@ -866,8 +882,9 @@ padding: 4px 10px;
   }
   
   .toggle-option {
+    font-size: 13px;
     width: 50%;
-    padding: 10px 20px;
+    padding: 6px 20px;
     border: none;
     background-color: transparent;
     cursor: pointer;

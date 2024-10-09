@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* For Webkit browsers (Chrome, Safari, Edge) */
+
+
+/* Custom styles */
+.product {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Arrow buttons styling */
+.product-wrapper {
+    position: relative;
+}
+
+.product-wrapper input[type="number"] {
+    padding-right: 40px;
+}
+
+.product-wrapper .quantity-controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-wrapper .quantity-controls button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.product-wrapper .quantity-controls button:active {
+    background-color: #ccc;
+}
+
+.quantity-controls button svg {
+    width: 10px;
+    height: 10px;
+    fill: #666;
+}
+
+.quantity-controls button:disabled svg {
+    fill: #ccc;
+}
+
+</style>
+<body>
+    <!-- <div class="product-wrapper">
+        <input type="number" class="product" placeholder="Quantity in Stock" />
+        <div class="quantity-controls">
+          <button class="up-btn" aria-label="Increase quantity">
+          <img src="./assests/svg/Frame 5.svg" />
+          </button>
+          <button class="down-btn" aria-label="Decrease quantity">
+            <img src="./assests/svg/Frame 6.svg" />
+          </button>
+        </div>
+      </div> -->
+
+
+      <div class="product-wrapper">
+        <input type="number" class="product" id="quantityInput" placeholder="Quantity in Stock" value="0" />
+        <div class="quantity-controls">
+          <button class="up-btn" aria-label="Increase quantity" id="increaseBtn">
+            <img src="./assests/svg/Frame 5.svg" />
+          </button>
+          <button class="down-btn" aria-label="Decrease quantity" id="decreaseBtn">
+            <img src="./assests/svg/Frame 6.svg" />
+          </button>
+        </div>
+      </div>
+      
+
+
+      <script>
+        const quantityInput = document.getElementById('quantityInput');
+const increaseBtn = document.getElementById('increaseBtn');
+const decreaseBtn = document.getElementById('decreaseBtn');
+
+// Function to increase value
+increaseBtn.addEventListener('click', () => {
+  const currentValue = parseInt(quantityInput.value) || 0;
+  quantityInput.value = currentValue + 1;
+});
+
+// Function to decrease value
+decreaseBtn.addEventListener('click', () => {
+  const currentValue = parseInt(quantityInput.value) || 0;
+  if (currentValue > 0) {
+    quantityInput.value = currentValue - 1;
+  }
+});
+
+      </script>
+      
+</body>
+</html>

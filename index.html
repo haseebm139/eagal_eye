@@ -276,12 +276,14 @@
 }
 
 .filter-group label {
+  font-size: 13px;
   color: #53545C;
   font-family: InterMedium;
   display: block;
   margin-bottom: 5px;
 }
 .filter-group2 label {
+  font-size: 13px;
   font-family: InterLight !important;
 
 }
@@ -292,6 +294,7 @@
   gap: 10px;
 }
 .select{
+  font-size: 13px;
   outline: none;
   border: 1px solid #D9D9D9;
   width: 100%;
@@ -427,6 +430,41 @@
 }
 .nav-tabs{
   background: white;
+}
+
+.product-wrapper {
+    position: relative;
+}
+
+.product-wrapper input[type="number"]::-webkit-outer-spin-button,
+.product-wrapper input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+.product-wrapper input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+
+.product-wrapper .quantity-controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.product-wrapper .quantity-controls img {
+ 
+  background: #dde2d5;
+    padding: 2px 4px;
+    cursor: pointer;
 }
 </style>
   </head>
@@ -2114,12 +2152,24 @@ aria-labelledby="products-tab">
                         <input class="product" placeholder="Product Name" />
                       </div>
 
-                      <div class="inpuBox">
+                      <div class="inpuBox product-wrapper">
                         <input
                           type="number"
-                          class="product"
+                          class="product quantityInput"
+                          id="quantityInput"
                           placeholder="Quantity in Stock"
                         />
+
+                        <div class="quantity-controls">
+                        
+                            <img class="up-btn" aria-label="Increase quantity" id="increaseBtn" src="./assests/svg/Polygon 1 (1).svg" />
+                         
+                     
+                          
+
+                            <img class="down-btn" aria-label="Decrease quantity" id="decreaseBtn" src="./assests/svg/Polygon 1.svg" />
+                         
+                        </div>
                       </div>
 
                       <div class="">
@@ -2248,7 +2298,7 @@ aria-labelledby="products-tab">
                 
                   <div class="mt-3">
                     <h6>Additional Images</h6>
-                    <div class="d-flex gap-3 ">
+                    <div class="d-flex flex-wrap gap-3 ">
 
                       <div class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3" id="imageUploader2" onclick="document.getElementById('imageInput2').click()">
                         <!-- Preview Image Container -->
@@ -2271,6 +2321,15 @@ aria-labelledby="products-tab">
                       <!-- Hidden Input for Image Upload -->
                       <input type="file" id="imageInput3" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile3(event)" />
                   </div>
+
+
+                  <div class="d-flex flex-column justify-content-center align-items-center image-uploader4 gap-3" id="imageUploader4" onclick="document.getElementById('imageInput4').click()">
+                    <!-- Preview Image Container -->
+                    <img id="previewImage4" class="previewImage" src="./assests/Image.png" style="width: 0px; transition: all 0.5s ease;"  />
+                
+                    <!-- Hidden Input for Image Upload -->
+                    <input type="file" id="imageInput4" style="display: none;" accept="image/jpeg, image/png" onchange="previewUploadedFile4(event)" />
+                </div>
                    
 
                     </div>
@@ -2774,6 +2833,27 @@ function showNewOrdersContent() {
       
     `;
   }
+
+
+
+  const quantityInput = document.getElementById('quantityInput');
+const increaseBtn = document.getElementById('increaseBtn');
+const decreaseBtn = document.getElementById('decreaseBtn');
+
+// Function to increase value
+increaseBtn.addEventListener('click', () => {
+  const currentValue = parseInt(quantityInput.value) || 0;
+  quantityInput.value = currentValue + 1;
+});
+
+// Function to decrease value
+decreaseBtn.addEventListener('click', () => {
+  const currentValue = parseInt(quantityInput.value) || 0;
+  if (currentValue > 0) {
+    quantityInput.value = currentValue - 1;
+  }
+});
+
 
     </script>
   </body>

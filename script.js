@@ -261,6 +261,35 @@ document.querySelectorAll('.nav-link').forEach(link => {
     }
 
 
+    function previewUploadedFile4(event) {
+      
+        const previewImage4 = document.getElementById('previewImage4');
+        const uploadPlaceholder4 = document.getElementById('uploadPlaceholder4');
+        
+        const file = event.target.files[0];
+        
+        if (file) {
+            const reader4 = new FileReader();
+            
+            reader4.onload = function(e) {
+                previewImage4.src = e.target.result; // Set the image source to the uploaded file
+                
+                // Remove the initial size and apply the full class to expand the image
+                previewImage4.style.width = '100%';  // Set width to 100% to fill the container
+                previewImage4.style.height = '100%'; // Set height to 100% to fill the container
+                previewImage4.style.position = 'absolute';
+                previewImage4.style.top = "0"
+                previewImage4.style.left ="0"
+                previewImage4.style.objectFit = 'cover'; // Ensure the image covers the whole div
+                uploadPlaceholder4.style.display = 'none'; // Hide the upload placeholder
+            }
+            
+            reader4.readAsDataURL(file);
+        }
+            
+    }
+
+
 
     const fromBtn = document.getElementById('from-btn');
     const toBtn = document.getElementById('to-btn');
