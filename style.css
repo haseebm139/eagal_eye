@@ -67,6 +67,15 @@ margin-right: 25px;
     border-radius: 12px;
     color: #408553;
 }
+
+.CustomerStatusPending{
+    background-color: #eef0fa;
+    padding: 4px 9px;
+    font-size: 12px;
+    border: none;
+    border-radius: 12px;
+    color: #408553;
+}
 .mediumFont3{
    
     font-family: InterMedium;
@@ -397,6 +406,9 @@ width: 30px;
 }
 .alignmentOfPIChart{
     width: 49%;
+}
+.alignmentOfPIChart .card{
+    height: 100% !important;
 }
 
 .leftSideContent{
