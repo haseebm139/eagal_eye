@@ -1642,7 +1642,7 @@
       id="data-category"
       class="form-control4 d-inline w-auto"
     >
-      <option value="Revenue">This Week</option>
+      <option value="Revenue">Edit Customer</option>
       <option value="Expenses">This Week</option>
       <option value="Profit Margin">This Week</option>
     </select>
@@ -1713,14 +1713,27 @@
     </div>
     <div class=" " style="width: 30%">
       <div class="card text-center">
-        <div class="alignemnt">
+        <div class="d-flex justify-content-between CustomerOrders">
           <img src="./assests/svg/orders.svg" />
+
+          <div class="dropdown-container position-relative">
+            <select
+              id="data-category"
+              class="form-control2 d-inline w-auto"
+            >
+              <option value="Revenue">All time</option>
+              <option value="Expenses">This Week</option>
+              <option value="Profit Margin">This Week</option>
+            </select>
+            <span class="dropdown-icon"></span>
+            <!-- Down arrow icon -->
+          </div>
         </div>
 
         <div class="bottomContent">
           <span  class="bottomSpan">
             <p class="sales">Total Orders</p>
-            <p class="bold">
+            <p class="bold3">
               $1,250 
             </p>
           </span>
@@ -1741,7 +1754,7 @@
                 id="data-category"
                 class="form-control2 d-inline w-auto"
               >
-                <option value="Revenue">This Week</option>
+                <option value="Revenue">All time</option>
                 <option value="Expenses">This Week</option>
                 <option value="Profit Margin">This Week</option>
               </select>

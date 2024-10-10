@@ -185,6 +185,17 @@ height: 180px !important;
     font-size: 13px;
    
 }
+.CustomerOrders img{
+width: 30px;
+}
+.bold3{
+    text-align: left;
+    padding-right: 10px;
+    font-family: InterBold;
+    margin: 0;
+    padding-top: 8px;
+    font-size: 20px;
+}
 .rates{
     font-family: InterLight;
     font-size: 11px;
