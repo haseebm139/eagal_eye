@@ -160,17 +160,20 @@
         color: #8B8D97;
         padding: 6px 0;
         font-size: 13px;
-        font-family: poppinsMedium;
+        font-family: InterMedium;
       }
  
       .iti{
         margin: 5px 0;
       }
       .inputBox{
+        outline: none;
         margin: 5px 0;
         width: 100% ;
         border: none;
         color: #8B8D97;
+        font-size: 13px;
+        font-family: InterMedium;
     background-color: #EFF1F9;
     padding: 10px;
     border-radius: 12px;
@@ -1288,14 +1291,16 @@
               <nav aria-label="Page navigation">
                 <ul class="pagination mb-0">
                   <li class="page-item">
-                    <a class="page-link" href="#" id="prev-page"
-                      >&laquo;</a
-                    >
+                    <a class="page-link" href="#" id="prev-page">
+      
+                    <img src="./assests/svg/Arrow-Down4.svg"/>
+                    </a>
                   </li>
                   <li class="page-item">
                     <a class="page-link" href="#" id="next-page"
-                      >&raquo;</a
-                    >
+                      >
+                      <img src="./assests/svg/Arrow-Down3.svg"/>
+                      </a>
                   </li>
                 </ul>
               </nav>
@@ -1501,43 +1506,55 @@
                   </table>
 
                   <!-- Pagination Controls -->
-                  <div
-                    class="pagination-container d-flex justify-content-between align-items-center"
-                  >
-                    <!-- Items per page dropdown -->
-                    <div>
-                      <select
-                        id="itemsPerPage"
-                        class="form-select form-select-sm"
-                        style="width: auto"
-                      >
-                        <option value="3">3 </option>
-                        <option value="5">5 </option>
-                        <option value="10">10 </option>
-                       
-                      </select>
-                      <p>Items Per page</p>
-                    </div>
+        <div
+        class="pagination-container d-flex justify-content-between align-items-center"
+      >
+        <!-- Items per page dropdown -->
+        <div class="PaginationDropdown d-flex justify-content-center align-items-center gap-2">
+          <select
+          id="itemsPerPage"
+          class="form-select productDropdown3 form-select-sm filter-dropdown"
+         
+        >
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+          <p> Items per page</p>
+          <p class="TotalItems">1-10 of 100 items</p>
+        </div>
 
-                    <!-- Showing results text -->
-                    <div id="showing-info" class="text-muted"></div>
+        <!-- Showing results text -->
+        <div id="showing-info" class="text-muted"></div>
+       
+        <!-- Pagination -->
+        <nav class="d-flex justify-content align-items-center gap-2" aria-label="Page navigation ">
+          <select
+          id="itemsPerPage"
+          class="form-select productDropdown3 form-select-sm filter-dropdown"
+         
+        >
+          <option value="3">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+        <p class="TotalItems">1-10 of 100 items</p>
+          <ul class="pagination mb-0">
+            <li class="page-item">
+              <a class="page-link" href="#" id="prev-page">
 
-                    <!-- Pagination -->
-                    <nav aria-label="Page navigation">
-                      <ul class="pagination mb-0">
-                        <li class="page-item">
-                          <a class="page-link" href="#" id="prev-page"
-                            >&laquo;</a
-                          >
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" id="next-page"
-                            >&raquo;</a
-                          >
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
+              <img src="./assests/svg/Arrow-Down4.svg"/>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" id="next-page"
+                >
+                <img src="./assests/svg/Arrow-Down3.svg"/>
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
                 </div>
               </div>
             </div>
@@ -1556,7 +1573,7 @@
    </div>
   <form>
     <div>
-      <p>Company Information</p>
+      <p  class="CustomerPopup">Company Information</p>
      <div class="d-flex flex-column">
       <input class="inputBox" placeholder="Company Name" />
       <input class="inputBox" placeholder="Company Email" />
@@ -1622,18 +1639,21 @@
   <div class="Width d-flex justify-content-between align-items-center customer2">
    <div class="d-flex align-items-center justify-content-center gap-3">
     <span class="d-flex gap-2">
-      <p class="mediumFont">Order Number</p>
-      <p class="LightFont">#88540</p>
+      <p class="mediumFont m-0">Order Number</p>
+      <p class="LightFont m-0">#88540</p>
     </span>
 
     <span class="d-flex gap-2">
-      <p class="mediumFont">Customer Since</p>
-      <p class="LightFont">12Sept 2022 - 12:55pm</p>
+      <p class="mediumFont m-0">Customer Since</p>
+      <p class="LightFont m-0">12Sept 2022 - 12:55pm</p>
     </span>
 
     <span class="d-flex gap-2">
-      <p class="mediumFont">Tracking ID</p>
-      <p class="LightFont">1534ft9</p>
+      <p class="mediumFont m-0">Tracking ID</p>
+      <p class="LightFont m-0 ">1534ft9</p>
+    </span>
+    <span>
+      <img src="./assests/svg/copyIconBlue.svg" />
     </span>
    </div>
  <div class="d-flex gap-3">
@@ -1958,14 +1978,16 @@
         <p class="TotalItems">1-10 of 100 items</p>
           <ul class="pagination mb-0">
             <li class="page-item">
-              <a class="page-link" href="#" id="prev-page"
-                >&laquo;</a
-              >
+              <a class="page-link" href="#" id="prev-page">
+
+              <img src="./assests/svg/Arrow-Down4.svg"/>
+              </a>
             </li>
             <li class="page-item">
               <a class="page-link" href="#" id="next-page"
-                >&raquo;</a
-              >
+                >
+                <img src="./assests/svg/Arrow-Down3.svg"/>
+                </a>
             </li>
           </ul>
         </nav>
@@ -2184,18 +2206,20 @@ aria-labelledby="products-tab">
                         <option value="10">10</option>
                       </select>
                       <p class="TotalItems">1-10 of 100 items</p>
-                        <ul class="pagination mb-0">
-                          <li class="page-item">
-                            <a class="page-link" href="#" id="prev-page"
-                              >&laquo;</a
+                      <ul class="pagination mb-0">
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="prev-page">
+            
+                          <img src="./assests/svg/Arrow-Down4.svg"/>
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="next-page"
                             >
-                          </li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" id="next-page"
-                              >&raquo;</a
-                            >
-                          </li>
-                        </ul>
+                            <img src="./assests/svg/Arrow-Down3.svg"/>
+                            </a>
+                        </li>
+                      </ul>
                       </nav>
                     </div>
                   </div>

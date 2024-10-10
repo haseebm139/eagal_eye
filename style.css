@@ -188,6 +188,10 @@ height: 180px !important;
 .CustomerOrders img{
 width: 30px;
 }
+.CustomerPopup{
+    font-family: InterMedium;
+    font-size: 15px !important;
+}
 .bold3{
     text-align: left;
     padding-right: 10px;
