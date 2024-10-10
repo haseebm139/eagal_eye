@@ -104,6 +104,9 @@
                   padding: 1rem;
                   border-radius: 15px;
       }
+      .product2 h6{
+        font-family: InterMedium;
+      }
       .dropdownbtn{
         padding: 5px .75rem;    
           font-size: 12px;
@@ -1265,16 +1268,17 @@
               class="pagination-container d-flex justify-content-between align-items-center"
             >
               <!-- Items per page dropdown -->
-              <div>
+              <div class="d-flex gap-2">
                 <select
                   id="itemsPerPage"
                   class="form-select form-select-sm"
                   style="width: auto"
                 >
-                  <option value="3">3 Items per page</option>
-                  <option value="5">5 Items per page</option>
-                  <option value="10">10 Items per page</option>
+                  <option value="3">3 </option>
+                  <option value="5">5 </option>
+                  <option value="10">10 </option>
                 </select>
+                <p>Items Per Page</p>
               </div>
 
               <!-- Showing results text -->
@@ -1507,10 +1511,12 @@
                         class="form-select form-select-sm"
                         style="width: auto"
                       >
-                        <option value="3">3 Items per page</option>
-                        <option value="5">5 Items per page</option>
-                        <option value="10">10 Items per page</option>
+                        <option value="3">3 </option>
+                        <option value="5">5 </option>
+                        <option value="10">10 </option>
+                       
                       </select>
+                      <p>Items Per page</p>
                     </div>
 
                     <!-- Showing results text -->
@@ -1689,17 +1695,17 @@
         </div>
 
         <div class="bottomContent">
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Home Address</p>
             <p class="bold">
-              1,250
+              No.15 Adekunle Street,Yaba, Lagos State
             </p>
           </span>
      
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Billing  Address</p>
             <p class="bold">
-              5
+              No.15 Adekunle Street,Yaba, Lagos State
             </p>
           </span>
         </div>
@@ -1712,7 +1718,7 @@
         </div>
 
         <div class="bottomContent">
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Total Orders</p>
             <p class="bold">
               $1,250 
@@ -1747,16 +1753,16 @@
         </div>
 
         <div class="bottomContent">
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">All Orders</p>
             <p class="bold">10</p>
           </span>
 
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Pending</p>
             <p class="bold">2 </p>
           </span>
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Complete</p>
             <p class="bold">
               4
@@ -1786,14 +1792,14 @@
         </div>
 
         <div class="bottomContent">
-          <span>
+          <span class="bottomSpan">
             <p class="sales">Canceled</p>
             <p class="bold">
               0
             </p>
           </span>
          
-          <span>
+          <span  class="bottomSpan">
             <p class="sales">Returned</p>
             <p class="bold">
               0
@@ -1824,7 +1830,7 @@
     
   </div>
   <div
-  class="product2">
+  class="product2 mt-4">
     <div class="d-flex justify-content-between">
       <h6>Janet’s Orders</h6>
       <div class="d-flex gap-2">
@@ -1854,7 +1860,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-4">
+    <div class="">
       <div class="table-responsive">
         <table class="table mt-3">
           <thead>
@@ -1865,57 +1871,92 @@
                   <span class="checkmark"></span>
                 </label>
               </th>
-           
-              <th scope="col">Order Date</th>
-              <th scope="col">Order Type</th>
-              <th scope="col">Tracking ID</th>
-              <th scope="col">Order Total</th>
-              <th scope="col">Action</th>
-           
-              <th scope="col">Status</th>
+              
+              <th scope="col">Order Date <img src="./assests/svg/sort.svg" /></th>
+              <th scope="col">Order Type <img src="./assests/svg/sort.svg" /></th>
+              <th scope="col">Tracking ID <img src="./assests/svg/sort.svg" /></th>
+              <th scope="col">Order Total <img src="./assests/svg/sort.svg" /></th>
+              <th scope="col">Action <img src="./assests/svg/sort.svg" /></th>
+              <th scope="col">Status <img src="./assests/svg/sort.svg" /></th>
             </tr>
           </thead>
-          <tbody id="table-body1">
+          <tbody id="table-body">
+            <td>
+              <label class="custom-checkbox">
+                  <input type="checkbox" class="product-checkbox" data-id="${product.id}">
+                  <span class="checkmark"></span>
+              </label>
+          </td>
+          
+            <td>12 Aug 2022 -12:00 pm</td>
+        <td>Home Delivery</td>
+        <td>56j8p0d9</td>
+        <td>57654</td>
+        <td>
          
+            <select
+              id="itemsPerPage"
+              class="form-select productDropdown2 form-select-sm filter-dropdown"
+              style="width: auto"
+            >
+              <option value="3">bulk Action</option>
+              <option value="5">page</option>
+              <option value="10">per page</option>
+            </select>
+      
+        </td>
+        <td><p id="status" class="statusClass text-center">In-Progress</p></td>
           </tbody>
         </table>
 
         <!-- Pagination Controls -->
         <div
-          class="pagination-container d-flex justify-content-between align-items-center"
+        class="pagination-container d-flex justify-content-between align-items-center"
+      >
+        <!-- Items per page dropdown -->
+        <div class="PaginationDropdown d-flex justify-content-center align-items-center gap-2">
+          <select
+          id="itemsPerPage"
+          class="form-select productDropdown3 form-select-sm filter-dropdown"
+         
         >
-          <!-- Items per page dropdown -->
-          <div>
-            <select
-              id="itemsPerPage"
-              class="form-select form-select-sm"
-              style="width: auto"
-            >
-              <option value="3">3 Items per page</option>
-              <option value="5">5 Items per page</option>
-              <option value="10">10 Items per page</option>
-            </select>
-          </div>
-
-          <!-- Showing results text -->
-          <div id="showing-info" class="text-muted"></div>
-
-          <!-- Pagination -->
-          <nav aria-label="Page navigation">
-            <ul class="pagination mb-0">
-              <li class="page-item">
-                <a class="page-link" href="#" id="prev-page"
-                  >&laquo;</a
-                >
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#" id="next-page"
-                  >&raquo;</a
-                >
-              </li>
-            </ul>
-          </nav>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+          <p> Items per page</p>
+          <p class="TotalItems">1-10 of 100 items</p>
         </div>
+
+        <!-- Showing results text -->
+        <div id="showing-info" class="text-muted"></div>
+       
+        <!-- Pagination -->
+        <nav class="d-flex justify-content align-items-center gap-2" aria-label="Page navigation ">
+          <select
+          id="itemsPerPage"
+          class="form-select productDropdown3 form-select-sm filter-dropdown"
+         
+        >
+          <option value="3">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+        </select>
+        <p class="TotalItems">1-10 of 100 items</p>
+          <ul class="pagination mb-0">
+            <li class="page-item">
+              <a class="page-link" href="#" id="prev-page"
+                >&laquo;</a
+              >
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" id="next-page"
+                >&raquo;</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
       </div>
     </div>
   </div>
@@ -1936,14 +1977,12 @@ aria-labelledby="products-tab">
                 style="width: 100%"
               >
                 <span
-                  class="my-2 ml-2"
-                  style="font-size: 17px; font-weight: 700"
+                  class="my-2 ml-2 ProductHeading"
+                 
                   >Product Summary</span
                 >
                 <button class="order-btn d-flex align-items-center"  onclick="showNewProductPage()">
-                  +
-                  <pre></pre>
-                  Add a New Product
+                  +  Add a New Product
                 </button>
               </div>
 
@@ -1958,11 +1997,11 @@ aria-labelledby="products-tab">
                       class="d-flex align-items-start text-left justify-content-between"
                       style="color: white"
                     >
-                      <span>
+                      <span class="ProductSpan">
                         <p class="sales" style="color: white">All Products</p>
                         <p class="bold">800s</p>
                       </span>
-                      <span>
+                      <span class="ProductSpan">
                         <p class="sales" style="color: white">Active</p>
                         <p class="bold">
                           316
@@ -1995,16 +2034,16 @@ aria-labelledby="products-tab">
                     </div>
 
                     <div class="bottomContent">
-                      <span>
+                      <span class="bottomSpan">
                         <p class="sales" style="color: red">Low Stock Alert</p>
                         <p class="bold">23</p>
                       </span>
-                      <span>
+                      <span class="bottomSpan">
                         <p class="sales">Expired</p>
                         <p class="bold">3</p>
                       </span>
 
-                      <span>
+                      <span class="bottomSpan">
                         <p class="sales">1 Start Rating</p>
                         <p class="bold">2</p>
                       </span>
@@ -2014,7 +2053,7 @@ aria-labelledby="products-tab">
               </div>
 
               <div
-              class="product2">
+              class="product2 mt-4">
                 <div class="d-flex justify-content-between">
                   <h6>Products</h6>
                   <div class="d-flex gap-2">
@@ -2044,7 +2083,7 @@ aria-labelledby="products-tab">
                     </div>
                   </div>
                 </div>
-                <div class="container mt-4">
+                <div class="mt-4">
                   <div class="table-responsive">
                     <table class="table mt-3">
                       <thead>
@@ -2081,8 +2120,20 @@ aria-labelledby="products-tab">
                    <td>${product.discount}</td>
                   
                     <td>${product.value}</td>
-                    <td>${product.action}</td>
-                    <td><p class="${statusClass}">${product.status}</p></td>
+                    <td>
+                     
+                        <select
+                          id="itemsPerPage"
+                          class="form-select productDropdown2 form-select-sm filter-dropdown"
+                          style="width: auto"
+                        >
+                          <option value="3">bulk Action</option>
+                          <option value="5">page</option>
+                          <option value="10">per page</option>
+                        </select>
+                  
+                    </td>
+                    <td><p id="status" class="statusClass">UnPublished</p></td>
                       </tbody>
                     </table>
 
@@ -2091,23 +2142,35 @@ aria-labelledby="products-tab">
                       class="pagination-container d-flex justify-content-between align-items-center"
                     >
                       <!-- Items per page dropdown -->
-                      <div>
+                      <div class="PaginationDropdown d-flex justify-content-center align-items-center gap-2">
                         <select
-                          id="itemsPerPage"
-                          class="form-select form-select-sm"
-                          style="width: auto"
-                        >
-                          <option value="3">3 Items per page</option>
-                          <option value="5">5 Items per page</option>
-                          <option value="10">10 Items per page</option>
-                        </select>
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                       
+                      >
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                        <p> Items per page</p>
+                        <p class="TotalItems">1-10 of 100 items</p>
                       </div>
 
                       <!-- Showing results text -->
                       <div id="showing-info" class="text-muted"></div>
-
+                     
                       <!-- Pagination -->
-                      <nav aria-label="Page navigation">
+                      <nav class="d-flex justify-content align-items-center gap-2" aria-label="Page navigation ">
+                        <select
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                       
+                      >
+                        <option value="3">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                      <p class="TotalItems">1-10 of 100 items</p>
                         <ul class="pagination mb-0">
                           <li class="page-item">
                             <a class="page-link" href="#" id="prev-page"
@@ -2151,7 +2214,7 @@ aria-labelledby="products-tab">
                     <img src="./assests/svg/whiteDropdown.svg" />
                   </div>
                   <button class="order-btn2 d-flex align-items-center">
-                    save & Publish
+                    Save & Publish
                   </button>
                 </div>
               </div>
@@ -2958,8 +3021,46 @@ customerName.addEventListener('click', () => {
 });
 
 
+//color of status of table
 
+const statusElement = document.getElementById('status');
 
+  // Get the text content (status)
+  const status = statusElement.textContent;
+
+  // Dynamically assign the background color based on status
+  if (status === 'Published') {
+    statusElement.style.backgroundColor = '#e4e8fd';
+    statusElement.style.color = '#5570F1';
+    statusElement.style.padding = '3px 12px';
+    statusElement.style.borderRadius = ' 15px';
+      // Active status
+  }
+  else if (status === 'Active') {
+    statusElement.style.backgroundColor = '#e4e8fd';
+    statusElement.style.color = '#5570F1';
+    statusElement.style.padding = '3px 12px';
+    statusElement.style.borderRadius = ' 15px';
+      // Active status
+  }
+  else if (status === 'In-Progress') {
+    statusElement.style.backgroundColor = '#e4e8fd';
+    statusElement.style.color = '#5570F1';
+    statusElement.style.padding = '3px 12px';
+    statusElement.style.borderRadius = ' 15px';
+      // Active status
+  }
+  else if (status === 'UnActive') {
+    statusElement.style.backgroundColor = 'rgb(255, 242, 226)';
+    statusElement.style.padding = '3px 12px';
+    statusElement.style.borderRadius = ' 15px';   // UnActive status
+  }
+  
+  else if (status === 'UnPublished') {
+    statusElement.style.backgroundColor = 'rgb(255, 242, 226)';
+    statusElement.style.padding = '3px 12px';
+    statusElement.style.borderRadius = ' 15px';   // UnActive status
+  }
     </script>
   </body>
 </html>

@@ -149,7 +149,7 @@ color: #fff;
 }
 
 .card {
-
+height: 180px !important;
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
@@ -170,18 +170,23 @@ color: #fff;
     text-align: justify;
 }
 .sales{
+    font-family: InterLight;
     font-size: 13px;
-    color: #ad9f9f;
+    color: #8B8D97;
     margin: 0;
     padding: 0;
 }
 .bold{
+    text-align: left;
+    padding-right: 10px;
+    font-family: InterBold;
     margin: 0;
     padding-top: 8px;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 13px;
+   
 }
 .rates{
+    font-family: InterLight;
     font-size: 11px;
     color: #519C66;
 }
@@ -194,7 +199,14 @@ color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
+.ProductHeading{
+    font-size: 17px;
+    color: #45464E;
+    font-family: InterBold;
+}
+.bottomSpan{
+    width: 100%;
+}
 .avatar {
     border-radius: 50%;
     width: 15px;
@@ -246,7 +258,32 @@ color: #fff;
     display: flex;
     align-items: center;
 }
-
+.PaginationDropdown p{
+    font-family: InterMedium;
+    padding: 0;
+    margin: 0;
+    color: #A6A8B1;
+    font-size: 13px; 
+}
+.ProductSpan{
+    width: 50%;
+}
+.TotalItems{
+    font-family: InterMedium;
+    padding: 0;
+    margin: 0;
+    color: #666666;
+    font-size: 13px; 
+}
+.productDropdown3 {
+    width: 55px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0;
+    font-size: 14px !important;
+    border-radius: 16px !important;
+    background-color: #f2f3f3;
+}
 .legend-color {
     width: 10px;
     height: 10px;
@@ -379,6 +416,7 @@ color: #fff;
     padding: 10px 16px;
 }
 .order-btn{
+    font-family: InterMedium;
     color: white;
     background-color: black;
     padding: 9px 20px;
@@ -420,11 +458,21 @@ color: #fff;
     color: black;
     background-color: #ffd014;
     border: 1px solid #ffd014;
-    padding: 3px 20px;
+    padding: 3px 24px;
     border-radius: 12px;
     font-weight: 700;
     font-size: 13px;
+    font-family: InterMedium;
 
+
+}
+.productDropdown2{
+padding-top: 2px;
+padding-bottom: 2px;
+padding-right: 33px;
+    font-size: 12px !important;
+    border-radius: 16px !important;
+    background-color: #f2f3f3;
 }
 .calendarbtn{
     margin: 14px 0;
@@ -497,6 +545,8 @@ color: #fff;
     border-bottom: none !important;
 }
 .table tr{
+    color: #6E7079;
+    font-family: InterLight;
     font-size: 12px;
 }
 .table thead .th {
@@ -588,20 +638,26 @@ padding: 2px 6px
 }
 .ProductDropdown{
  
-    gap: 9px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 40px;
     background: black;
     color: white;
+    font-family: InterMedium;
+    font-size: 13px;
     border-radius: 12px;
-    padding: 8px 20px;
+   
 }
 .ProductDropdownLayout{
     position: relative;
     display: flex;
+   
   
 }
 .ProductDropdownLayout img{
     position: absolute;
-    right: 9px;
+    right: 16px;
     top: 18px;
     width: 9px;
 }
@@ -624,6 +680,10 @@ padding: 2px 6px
 }
 .table-responsive {
     overflow-x: auto;
+}
+.table thead th
+{
+    font-family: InterMedium;
 }
 /* Responsive behavior */
 @media (max-width: 768px) {
