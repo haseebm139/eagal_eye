@@ -308,3 +308,74 @@ document.querySelectorAll('.nav-link').forEach(link => {
     
 
 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const orders = [
+            { id: 1, customer: "John Doe", date: "2024-10-01", status: "Shipped", total: "$100.00" },
+            { id: 2, customer: "Jane Smith", date: "2024-10-02", status: "Pending", total: "$50.00" },
+            { id: 3, customer: "Robert Brown", date: "2024-10-03", status: "Delivered", total: "$75.00" },
+            { id: 4, customer: "Emily White", date: "2024-10-04", status: "Shipped", total: "$200.00" },
+            { id: 5, customer: "Michael Green", date: "2024-10-05", status: "Pending", total: "$120.00" },
+            { id: 6, customer: "Alice Black", date: "2024-10-06", status: "Delivered", total: "$30.00" },
+            { id: 7, customer: "Tom Davis", date: "2024-10-07", status: "Cancelled", total: "$400.00" },
+            { id: 8, customer: "Rachel Moore", date: "2024-10-08", status: "Delivered", total: "$90.00" },
+            // Add more orders here as needed
+        ];
+
+        const rowsPerPageOrders = 3;
+        let currentPageOrders = 1;
+
+        const ordersTableBody = document.getElementById("ordersTableBody");
+        const currentPageOrdersDisplay = document.getElementById("currentPageOrdersDisplay");
+        const totalPagesOrdersDisplay = document.getElementById("totalPagesOrdersDisplay");
+        const prevPageBtnOrders = document.getElementById("prevPageBtnOrders");
+        const nextPageBtnOrders = document.getElementById("nextPageBtnOrders");
+
+        // Function to render table rows
+        function renderOrderTableRows() {
+            const start = (currentPageOrders - 1) * rowsPerPageOrders;
+            const end = start + rowsPerPageOrders;
+            const paginatedOrders = orders.slice(start, end);
+
+            ordersTableBody.innerHTML = "";
+            paginatedOrders.forEach(order => {
+                const row = `
+                    <tr>
+                        <td>${order.id}</td>
+                        <td>${order.customer}</td>
+                        <td>${order.date}</td>
+                        <td>${order.status}</td>
+                        <td>${order.total}</td>
+                    </tr>
+                `;
+                ordersTableBody.innerHTML += row;
+            });
+
+            // Update page information
+            currentPageOrdersDisplay.textContent = currentPageOrders;
+            totalPagesOrdersDisplay.textContent = Math.ceil(orders.length / rowsPerPageOrders);
+        }
+
+        // Initial render
+        renderOrderTableRows();
+
+        // Event listener for Next button
+        nextPageBtnOrders.addEventListener("click", function (e) {
+            e.preventDefault();
+            const totalPages = Math.ceil(orders.length / rowsPerPageOrders);
+            if (currentPageOrders < totalPages) {
+                currentPageOrders++;
+                renderOrderTableRows();
+            }
+        });
+
+        // Event listener for Previous button
+        prevPageBtnOrders.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (currentPageOrders > 1) {
+                currentPageOrders--;
+                renderOrderTableRows();
+            }
+        });
+    });
+

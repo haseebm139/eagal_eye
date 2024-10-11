@@ -1,114 +1,330 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    /* For Webkit browsers (Chrome, Safari, Edge) */
+<div class="viewOrder px-3" id="viewOrder" style="display: none">
+  <div
+    class="Width d-flex justify-content-between align-items-center customer2"
+  >
+    <div
+      class="d-flex align-items-center justify-content-center gap-3"
+    >
+      <span class="d-flex gap-2">
+        <p class="mediumFont m-0">Order Number</p>
+        <p class="LightFont m-0">#88540</p>
+      </span>
 
+      <span class="d-flex gap-2">
+        <p class="mediumFont m-0">Order Date</p>
+        <p class="LightFont m-0">12Sept 2022 - 12:55pm</p>
+      </span>
 
-/* Custom styles */
-.product {
-    position: relative;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-size: 14px;
-    color: #999;
-}
+      <span class="d-flex gap-2">
+        <p class="mediumFont m-0">Tracking ID</p>
+        <p class="LightFont m-0">1534ft9</p>
+      </span>
+      <span>
+        <img src="./assests/svg/copyIcon.svg" />
+      </span>
+    </div>
+    <div class="d-flex gap-3">
+      <div class="dropdown-container dropdown2 position-relative">
+        <select
+          id="data-category"
+          class="form-control4 d-inline w-auto"
+        >
+          <option value="Revenue">Ready to Ship</option>
+          <option value="Expenses">This Week</option>
+          <option value="Profit Margin">This Week</option>
+        </select>
+        <span class="dropdown-icon"></span>
+        <!-- Down arrow icon -->
+      </div>
+      <button class="order-btn d-flex align-items-center">
+        Print Invoice
+      </button>
+      <button class="suspension-btn d-flex align-items-center">
+        Cancel Order
+      </button>
+    </div>
+  </div>
 
-/* Arrow buttons styling */
-.product-wrapper {
-    position: relative;
-}
-
-.product-wrapper input[type="number"] {
-    padding-right: 40px;
-}
-
-.product-wrapper .quantity-controls {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-}
-
-.product-wrapper .quantity-controls button {
-    background-color: #e0e0e0;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.product-wrapper .quantity-controls button:active {
-    background-color: #ccc;
-}
-
-.quantity-controls button svg {
-    width: 10px;
-    height: 10px;
-    fill: #666;
-}
-
-.quantity-controls button:disabled svg {
-    fill: #ccc;
-}
-
-</style>
-<body>
-    <!-- <div class="product-wrapper">
-        <input type="number" class="product" placeholder="Quantity in Stock" />
-        <div class="quantity-controls">
-          <button class="up-btn" aria-label="Increase quantity">
-          <img src="./assests/svg/Frame 5.svg" />
-          </button>
-          <button class="down-btn" aria-label="Decrease quantity">
-            <img src="./assests/svg/Frame 6.svg" />
-          </button>
+  <div class="d-flex gap-3 mt-3">
+    <div class="" style="width: 30%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <div class="d-flex gap-3">
+            <img src="./assests/svg/client2.svg" />
+            <div class="">
+              <p class="mediumFont2 m-0 p-0 text-left">
+                Janet Adebayo
+              </p>
+              <p class="mediumFont3 m-0 p-0 text-left">
+                Last Order <span>12 sept 2022</span>
+              </p>
+            </div>
+          </div>
+          <div class="leftAlignement">
+            <button class="CustomerStatusPending">Pending</button>
+            <!-- <p class="side-text">This Week</p> -->
+          </div>
         </div>
-      </div> -->
 
+        <div class="bottomContent">
+          <span>
+            <p class="sales">Phone</p>
+            <p class="bold">+236365746</p>
+          </span>
 
-      <div class="product-wrapper">
-        <input type="number" class="product" id="quantityInput" placeholder="Quantity in Stock" value="0" />
-        <div class="quantity-controls">
-          <button class="up-btn" aria-label="Increase quantity" id="increaseBtn">
-            <img src="./assests/svg/Frame 5.svg" />
-          </button>
-          <button class="down-btn" aria-label="Decrease quantity" id="decreaseBtn">
-            <img src="./assests/svg/Frame 6.svg" />
-          </button>
+          <span>
+            <p class="sales">Email</p>
+            <p class="bold">abc@yopmail.com</p>
+          </span>
         </div>
       </div>
-      
+    </div>
+    <div class=" " style="width: 40%">
+      <div class="card text-center">
+        <div class="alignemnt">
+          <img src="./assests/svg/address.svg" />
+        </div>
 
+        <div class="bottomContent">
+          <span class="bottomSpan">
+            <p class="sales">Home Address</p>
+            <p class="bold">
+              No.15 Adekunle Street,Yaba, Lagos State
+            </p>
+          </span>
 
-      <script>
-        const quantityInput = document.getElementById('quantityInput');
-const increaseBtn = document.getElementById('increaseBtn');
-const decreaseBtn = document.getElementById('decreaseBtn');
+          <span class="bottomSpan">
+            <p class="sales">Billing Address</p>
+            <p class="bold">
+              No.15 Adekunle Street,Yaba, Lagos State
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class=" " style="width: 30%">
+      <div class="card text-center">
+        <div class="d-flex justify-content-between CustomerOrders">
+          <img src="./assests/svg/orders.svg" />
 
-// Function to increase value
-increaseBtn.addEventListener('click', () => {
-  const currentValue = parseInt(quantityInput.value) || 0;
-  quantityInput.value = currentValue + 1;
-});
+          <div class="dropdown-container position-relative">
+            <select
+              id="data-category"
+              class="form-control2 d-inline w-auto"
+            >
+              <option value="Revenue">All time</option>
+              <option value="Expenses">This Week</option>
+              <option value="Profit Margin">This Week</option>
+            </select>
+            <span class="dropdown-icon"></span>
+            <!-- Down arrow icon -->
+          </div>
+        </div>
 
-// Function to decrease value
-decreaseBtn.addEventListener('click', () => {
-  const currentValue = parseInt(quantityInput.value) || 0;
-  if (currentValue > 0) {
-    quantityInput.value = currentValue - 1;
-  }
-});
+        <div class="bottomContent">
+          <span class="bottomSpan">
+            <p class="sales">Total Orders</p>
+            <p class="bold3">$1,250</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      </script>
-      
-</body>
-</html>
+  <div class="product2 my-4">
+    <div class="d-flex justify-content-between">
+      <h6>Customer Orders</h6>
+
+      <div class="d-flex gap-2 position-relative">
+        <div class="search-bar">
+          <img src="./assests/svg/Search.svg" />
+          <input type="text" placeholder="Search.." />
+        </div>
+
+        <button
+          type="button"
+          class="filter-btn"
+          id="openModalButton"
+        >
+          <img src="./assests/svg/filter1.svg" /> Filter
+        </button>
+
+     
+
+        <button
+          type="button"
+          class="filter-btn"
+          id="openModalButton2"
+        >
+          <img src="./assests/svg/Calendar.svg" /> Calendar
+        </button>
+       
+        <button class="filter-btn">
+          <img src="./assests/svg/Send.svg" /> Send
+        </button>
+        <div>
+          <select
+            id="itemsPerPage"
+            class="form-select form-select-sm filter-dropdown"
+            style="width: auto"
+          >
+            <option value="3">bulk Action</option>
+            <option value="5">page</option>
+            <option value="10">per page</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+
+          <div class="table-responsive">
+            <table class="table order mt-3">
+              <thead>
+                <tr class="orderTable">
+                  <th scope="col">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" id="select-all" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </th>
+
+                  <th scope="col">Customer Name</th>
+                  <th scope="col">Order Date</th>
+                  <th scope="col">Shipping</th>
+                  <th scope="col">location</th>
+                  <th scope="col">Tracking ID</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Order Total</th>
+                  <th scope="col">Assign Status</th>
+                </tr>
+              </thead>
+              <tbody id="table-body1">
+                <td>
+                  <label class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="product-checkbox"
+                      data-id="${product.id}"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+
+                <td id="customerName">${product.name}</td>
+                <td>${product.category}</td>
+                <td>${product.price}</td>
+                <td>${product.stock}</td>
+                <td>${product.discount}</td>
+
+                <td>${product.value}</td>
+                <td>${product.action}</td>
+                <td>
+                  <span class="Assigned" id="assignButton">
+                    Assign to
+                    <img src="./assests/svg/fi_chevron-down2.svg" />
+                  </span>
+                  <div class="dropdown-like" id="dropdown">
+                    <input
+                      type="text"
+                      id="searchInput"
+                      placeholder="Search"
+                    />
+                    <ul id="assignList">
+                      <li>
+                        <label>
+                          <img
+                            src="./assests/Image.png"
+                            alt="user-avatar"
+                            class="user-avatar"
+                          />
+                          Janet Adebayo
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <img
+                            src="./assests/image 726.png"
+                            alt="user-avatar"
+                            class="user-avatar"
+                          />
+                          Samuel Johnson
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <img
+                            src="./assests/image 715.png"
+                            alt="user-avatar"
+                            class="user-avatar"
+                          />
+                          Christian Dior
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <img
+                            src="./assests/image 726.png"
+                            alt="user-avatar"
+                            class="user-avatar"
+                          />
+                          Janet Adebayo
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+              </tbody>
+            </table>
+
+            <div
+              class="pagination-container d-flex justify-content-between align-items-center"
+            >
+              <!-- Items per page dropdown -->
+              <div
+                class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
+              >
+                <select
+                  id="itemsPerPage"
+                  class="form-select productDropdown3 form-select-sm filter-dropdown"
+                >
+                  <option value="3">3</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                </select>
+                <p>Items per page</p>
+                <p class="TotalItems">1-10 of 100 items</p>
+              </div>
+
+              <!-- Showing results text -->
+
+              <!-- Pagination -->
+              <nav
+                class="d-flex justify-content align-items-center gap-2"
+                aria-label="Page navigation "
+              >
+                <select
+                  id="itemsPerPage"
+                  class="form-select productDropdown3 form-select-sm filter-dropdown"
+                >
+                  <option value="3">1</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                </select>
+                <p class="TotalItems">1-10 of 100 items</p>
+                <ul class="pagination mb-0">
+                  <li class="page-item">
+                    <a class="page-link" href="#" id="prev-page">
+                      <img src="./assests/svg/Arrow-Down4.svg" />
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" id="next-page">
+                      <img src="./assests/svg/Arrow-Down3.svg" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+    </div>
+  </div>

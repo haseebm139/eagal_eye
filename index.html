@@ -109,6 +109,8 @@
         border-radius: 15px;
       }
       .product2 h6 {
+        color: #45464E;
+        font-size: 16px;
         font-family: InterMedium;
       }
       .dropdownbtn {
@@ -123,8 +125,9 @@
         width: 100%;
       }
       .Width span {
-        font-size: 17px;
-        font-weight: 700;
+        font-family: InterMedium;
+        font-size: 16px;
+        
       }
       .cancel {
         border-radius: 20px;
@@ -157,6 +160,12 @@
         padding: 1.5rem 1.2rem;
         z-index: 2;
       }
+      .Ordermodel{
+       
+        width:auto !important;
+
+      
+      }
 
       .model span {
         font-family: poppinsBold;
@@ -179,10 +188,10 @@
         margin: 5px 0;
         width: 100%;
         border: none;
-        color: #8b8d97;
+        color:#ABAFB1;
         font-size: 13px;
         font-family: InterMedium;
-        background-color: #eff1f9;
+        background-color: #f6f7fb;
         padding: 10px;
         border-radius: 12px;
       }
@@ -874,7 +883,7 @@
                 <span class="ml-2">Order Summary</span>
                 <button
                   class="order-btn d-flex align-items-center"
-                  id="addCompanyBtn"
+                  id="addOrderBtn"
                 >
                   +
                   <pre></pre>
@@ -1444,12 +1453,12 @@
               </div>
             </div>
             <div
-              class="viewOrder container"
+              class="viewOrder px-3"
               id="viewOrder"
               style="display: none"
             >
               <div
-                class="Width d-flex justify-content-between align-items-center customer2"
+                class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2"
               >
                 <div
                   class="d-flex align-items-center justify-content-center gap-3"
@@ -1482,8 +1491,7 @@
                       <option value="Expenses">This Week</option>
                       <option value="Profit Margin">This Week</option>
                     </select>
-                    <span class="dropdown-icon"></span>
-                    <!-- Down arrow icon -->
+                  
                   </div>
                   <button class="order-btn d-flex align-items-center">
                     Print Invoice
@@ -1492,6 +1500,421 @@
                     Cancel Order
                   </button>
                 </div>
+              </div>
+              <div class="d-flex  gap-3 mt-3">
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <div class="d-flex gap-3">
+                        <img src="./assests/svg/client2.svg" />
+                        <div class="">
+                          <p class="mediumFont2 m-0 p-0 text-left">
+                            Janet Adebayo
+                          </p>
+                          <p class="mediumFont3 m-0 p-0 text-left">
+                            Last Order <span>12 sept 2022</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="leftAlignement">
+                        <button class="CustomerStatusPending">Pending</button>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+            
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Phone</p>
+                        <p class="bold">+236365746</p>
+                      </span>
+            
+                      <span>
+                        <p class="sales">Email</p>
+                        <p class="bold">abc@yopmail.com</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 40%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/address.svg" />
+                    </div>
+            
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Home Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+            
+                      <span class="bottomSpan">
+                        <p class="sales">Billing Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 30%">
+                  <div class="card text-center">
+                    <div class="d-flex justify-content-between CustomerOrders">
+                      <img src="./assests/svg/orders.svg" />
+            
+                      <div class="dropdown-container position-relative">
+                        <select
+                          id="data-category"
+                          class="form-control2 d-inline w-auto"
+                        >
+                          <option value="Revenue">All time</option>
+                          <option value="Expenses">This Week</option>
+                          <option value="Profit Margin">This Week</option>
+                        </select>
+                        <span class="dropdown-icon"></span>
+                        <!-- Down arrow icon -->
+                      </div>
+                    </div>
+            
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Total Orders</p>
+                        <p class="bold3">$1,250</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="product2 my-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Items 3</h6>
+            
+                  <div class="d-flex gap-2 position-relative">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+            
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton"
+                    >
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+            
+                 
+            
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton2"
+                    >
+                      <img src="./assests/svg/Calendar.svg" /> Calendar
+                    </button>
+                   
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> Send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+            
+                      <div class="table-responsive">
+                        <table class="table order mt-3">
+                          <thead>
+                            <tr class="orderTable">
+                              <th scope="col">
+                                <label class="custom-checkbox">
+                                  <input type="checkbox" id="select-all" />
+                                  <span class="checkmark"></span>
+                                </label>
+                              </th>
+            <th>
+           
+            </th>
+                              <th scope="col">Product Name</th>
+                              <th scope="col">Shipping Service</th>
+                              <th scope="col">Unit Price</th>
+                              <th scope="col">Qty</th>
+                              <th scope="col">Discount</th>
+                              <th scope="col">Order Total</th>
+                              <th scope="col">Action</th>
+                              <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody id="table-body1">
+                            <td>
+                              <label class="custom-checkbox">
+                                <input
+                                  type="checkbox"
+                                  class="product-checkbox"
+                                  data-id="${product.id}"
+                                />
+                                <span class="checkmark"></span>
+                              </label>
+                            </td>
+                           <td>
+                            <div class="orderImage">
+                              <img src="./assests/image 715.png" />
+                            </div>
+                           </td>
+                            <td id="customerName">${product.name}</td>
+                            <td>${product.category}</td>
+                            <td>${product.price}</td>
+                            <td>${product.stock}</td>
+                            <td>${product.discount}</td>
+            
+                            <td>${product.value}</td>
+                            <td>${product.action}</td>
+                            <td>
+                              <span class="Assigned" id="assignButton">
+                                Assign to
+                                <img src="./assests/svg/fi_chevron-down2.svg" />
+                              </span>
+                              <div class="dropdown-like" id="dropdown">
+                                <input
+                                  type="text"
+                                  id="searchInput"
+                                  placeholder="Search"
+                                />
+                                <ul id="assignList">
+                                  <li>
+                                    <label>
+                                      <img
+                                        src="./assests/Image.png"
+                                        alt="user-avatar"
+                                        class="user-avatar"
+                                      />
+                                      Janet Adebayo
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <img
+                                        src="./assests/image 726.png"
+                                        alt="user-avatar"
+                                        class="user-avatar"
+                                      />
+                                      Samuel Johnson
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <img
+                                        src="./assests/image 715.png"
+                                        alt="user-avatar"
+                                        class="user-avatar"
+                                      />
+                                      Christian Dior
+                                    </label>
+                                  </li>
+                                  <li>
+                                    <label>
+                                      <img
+                                        src="./assests/image 726.png"
+                                        alt="user-avatar"
+                                        class="user-avatar"
+                                      />
+                                      Janet Adebayo
+                                    </label>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tbody>
+                        </table>
+            
+                        <div
+                          class="pagination-container d-flex justify-content-between align-items-center"
+                        >
+                          <!-- Items per page dropdown -->
+                          <div
+                            class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
+                          >
+                            <select
+                              id="itemsPerPage"
+                              class="form-select productDropdown3 form-select-sm filter-dropdown"
+                            >
+                              <option value="3">3</option>
+                              <option value="5">5</option>
+                              <option value="10">10</option>
+                            </select>
+                            <p>Items per page</p>
+                            <p class="TotalItems">1-10 of 100 items</p>
+                          </div>
+            
+                          <!-- Showing results text -->
+            
+                          <!-- Pagination -->
+                          <nav
+                            class="d-flex justify-content align-items-center gap-2"
+                            aria-label="Page navigation "
+                          >
+                            <select
+                              id="itemsPerPage"
+                              class="form-select productDropdown3 form-select-sm filter-dropdown"
+                            >
+                              <option value="3">1</option>
+                              <option value="5">5</option>
+                              <option value="10">10</option>
+                            </select>
+                            <p class="TotalItems">1-10 of 100 items</p>
+                            <ul class="pagination mb-0">
+                              <li class="page-item">
+                                <a class="page-link" href="#" id="prev-page">
+                                  <img src="./assests/svg/Arrow-Down4.svg" />
+                                </a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="#" id="next-page">
+                                  <img src="./assests/svg/Arrow-Down3.svg" />
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="NewCompany" id="newCompanyDiv1">
+              <div class="model Ordermodel d-flex flex-column ">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="my-2">Create New Order</span>
+                  <button class="cancel" id="cancelBtn1">
+                    <img src="./assests/svg/Frame 5800.svg" />
+                  </button>
+                </div>
+                <form>
+                  <div>
+                 <div class="d-flex gap-3">
+                  <div class="orderLeftConatiner">
+                    <div class="d-flex justify-content-between">
+                      <p class="CustomerPopup">Order Details</p>
+                      <div class="d-flex gap-3">
+                       <p class="CustomerPopup">New Customer</p>
+                       <div class="">
+                         <label class="switch switch2">
+                           <input type="checkbox" id="toggleSwitch" />
+                           <span class="slider"></span>
+                         </label>
+                       </div>
+                      </div>
+                     </div>
+                      <div class="d-flex flex-column">
+                        <select
+                        class="inputBox"
+                        
+                        id="customer"
+                        size="1"
+                      >
+                        <option value="" selected="selected">Select Customer</option>
+                        <option value="" selected="selected">Select Customer</option>
+                        <option value="" selected="selected">Select Customer</option>
+                      </select>
+                     <div class="d-flex gap-2">
+                      <select
+                      class="inputBox"
+                      
+                      id="customer"
+                      size="1"
+                    >
+                      <option value="" selected="selected">Payment Type</option>
+                      <option value="" selected="selected">Select Customer</option>
+                      <option value="" selected="selected">Select Customer</option>
+                    </select>
+                    <select
+                    class="inputBox"
+                    
+                    id="customer"
+                    size="1"
+                  >
+                    <option value="" selected="selected">Order Type</option>
+                    <option value="" selected="selected">Select Customer</option>
+                    <option value="" selected="selected">Select Customer</option>
+                  </select>
+  
+                     </div>
+                    <div class="mt-3">
+                      <p>Order Date & Time</p>
+                      <div class="d-flex gap-3">
+                       <input
+                         type="date"
+                         id="date"
+                         name="date"
+                         class="date"
+                         value="2024-01-01"
+                       />
+                       <input
+                         type="time"
+                         id="time"
+                         name="time"
+                         class="date"
+                         value="00:00"
+                       />
+                     </div>
+                    </div>
+  
+                    <div class="mt-3">
+                      <p>Order Status</p>
+                      <select
+                        class="inputBox"
+                        
+                        id="customerPending"
+                        size="1"
+                      >
+                        <option value="" selected="selected">Pending</option>
+                        <option value="" selected="selected">Pending</option>
+                        <option value="" selected="selected">Pending</option>
+                      </select>
+  
+                      <textarea
+                      class="NoteDescription"
+                      id="OrderNote"
+                      name="OrderNote"
+                      rows="4"
+                      cols="50"
+                      placeholder="Order Note"
+                    ></textarea>
+                    </div>
+                       
+                      </div>
+                  </div>
+                  <div  class="d-flex flex-column">
+                    <p class="CustomerPopup">Order Details</p>
+                    <div class="h-100 d-flex flex-column text-center justify-content-center align-items-center">
+                      <img src="./assests/iconContainer.png" class="lock" />
+                      <div>
+                        <h6>Add Products to Your Order</h6>
+                        <p>
+                          Search and add products to this order.
+                        </p>
+                      
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                      <button class="cancel-btn2 w-25">Cancel</button>
+                      <button class="add-btn w-25" id="btn00">Add</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -2963,10 +3386,11 @@
         const nextPageBtn = document.getElementById("next-page");
         const selectAllCheckbox = document.getElementById("select-all");
         const addCompanyBtn = document.getElementById("addCompanyBtn");
+        const addOrderBtn = document.getElementById("addOrderBtn")
         const newCompanyDiv = document.getElementById("newCompanyDiv");
-
+        const newCompanyDiv1 = document.getElementById("newCompanyDiv1");
         const cancelBtn = document.getElementById("cancelBtn");
-
+        const cancelBtn1 = document.getElementById("cancelBtn1");
         // Function to render table rows for the current page
         function renderTableRows() {
           tableBody.innerHTML = "";
@@ -3056,10 +3480,18 @@
           newCompanyDiv.style.display = "flex"; // Show the div
         });
 
+        addOrderBtn.addEventListener("click", () => {
+          newCompanyDiv1.style.display = "flex"; // Show the div
+        });
+
         // Hide the new company div when the cancel button is clicked
         cancelBtn.addEventListener("click", () => {
           newCompanyDiv.style.display = "none"; // Hide the div
         });
+        cancelBtn1.addEventListener("click", () => {
+          newCompanyDiv1.style.display = "none"; // Hide the div
+        });
+
         document
           .getElementById("toggleSwitch")
           .addEventListener("change", function () {
