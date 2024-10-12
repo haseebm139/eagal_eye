@@ -11,7 +11,7 @@ function renderProductTable() {
   const productsToDisplay = products.slice(start, end);
 
   productsToDisplay.forEach(product => {
-    const statusClass = product.status === 'Active' ? 'text-success' : 'text-danger';
+    const statusClass = product.status === 'Active' ? 'custom-active' : 'custom-inactive';
     const row = `
       <tr>
         <td>
@@ -27,7 +27,17 @@ function renderProductTable() {
         <td>${product.inStock}</td>
         <td>${product.discount}</td>
         <td>${product.totalValue}</td>
-        <td>---</td> <!-- Action column, no delete functionality -->
+         <td>
+            <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">Publish</option>
+                        <option value="5">UnPublish</option>
+                        <option value="10">per page</option>
+                      </select>
+          </td>
         <td><p class="${statusClass}">${product.status}</p></td>
       </tr>
     `;
