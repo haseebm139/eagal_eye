@@ -1,3 +1,44 @@
+document.getElementById("addAddressToggle").addEventListener("change", function () {
+    const addressSection = document.getElementById("addressSection");
+  
+    // Show or hide address section based on the checkbox state
+    if (this.checked) {
+      addressSection.style.display = "block";
+    } else {
+      addressSection.style.display = "none";
+    }
+  });
+  
+//models
+const addOrderBtn = document.getElementById("addOrderBtn")
+const addCompanyBtn = document.getElementById("addCompanyBtn");
+
+const newCompanyDiv = document.getElementById("newCompanyDiv");
+        const newCompanyDiv1 = document.getElementById("newCompanyDiv1");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const cancelBtn1 = document.getElementById("cancelBtn1");
+
+         // Show the new company div when the button is clicked
+         addCompanyBtn.addEventListener("click", () => {
+            newCompanyDiv.style.display = "flex"; // Show the div
+          });
+  
+          addOrderBtn.addEventListener("click", () => {
+            newCompanyDiv1.style.display = "flex"; // Show the div
+          });
+  
+          // Hide the new company div when the cancel button is clicked
+          cancelBtn.addEventListener("click", () => {
+            newCompanyDiv.style.display = "none"; // Hide the div
+          });
+          cancelBtn1.addEventListener("click", () => {
+            newCompanyDiv1.style.display = "none"; // Hide the div
+          });
+
+
+
+  
+
 const toggleBtn = document.getElementById('toggle-btn');
 const sidebar = document.getElementById('sidebar');
 const mainContent = document.getElementById('main-content');

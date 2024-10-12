@@ -109,7 +109,7 @@
         border-radius: 15px;
       }
       .product2 h6 {
-        color: #45464E;
+        color: #45464e;
         font-size: 16px;
         font-family: InterMedium;
       }
@@ -127,7 +127,6 @@
       .Width span {
         font-family: InterMedium;
         font-size: 16px;
-        
       }
       .cancel {
         border-radius: 20px;
@@ -160,11 +159,8 @@
         padding: 1.5rem 1.2rem;
         z-index: 2;
       }
-      .Ordermodel{
-       
-        width:auto !important;
-
-      
+      .Ordermodel {
+        width: auto !important;
       }
 
       .model span {
@@ -188,7 +184,7 @@
         margin: 5px 0;
         width: 100%;
         border: none;
-        color:#ABAFB1;
+        color: #abafb1;
         font-size: 13px;
         font-family: InterMedium;
         background-color: #f6f7fb;
@@ -499,6 +495,15 @@
       .Description {
         color: #8b8d97;
       }
+/* /'meri css' */
+
+ .item-bp{
+  width: 80px;
+ }
+.item-pp{
+  width: 120px !important;
+}
+
     </style>
   </head>
 
@@ -1276,148 +1281,56 @@
                             <tr class="orderTable">
                               <th scope="col">
                                 <label class="custom-checkbox">
-                                  <input type="checkbox" id="select-all" />
+                                  <input type="checkbox" id="select-all-cm-orders" />
                                   <span class="checkmark"></span>
                                 </label>
                               </th>
-
                               <th scope="col">Customer Name</th>
                               <th scope="col">Order Date</th>
                               <th scope="col">Shipping</th>
-                              <th scope="col">location</th>
+                              <th scope="col">Location</th>
                               <th scope="col">Tracking ID</th>
                               <th scope="col">Qty</th>
                               <th scope="col">Order Total</th>
                               <th scope="col">Assign Status</th>
                             </tr>
                           </thead>
-                          <tbody id="table-body1">
-                            <td>
-                              <label class="custom-checkbox">
-                                <input
-                                  type="checkbox"
-                                  class="product-checkbox"
-                                  data-id="${product.id}"
-                                />
-                                <span class="checkmark"></span>
-                              </label>
-                            </td>
-
-                            <td id="customerName">${product.name}</td>
-                            <td>${product.category}</td>
-                            <td>${product.price}</td>
-                            <td>${product.stock}</td>
-                            <td>${product.discount}</td>
-
-                            <td>${product.value}</td>
-                            <td>${product.action}</td>
-                            <td>
-                              <span class="Assigned" id="assignButton">
-                                Assign to
-                                <img src="./assests/svg/fi_chevron-down2.svg" />
-                              </span>
-                              <div class="dropdown-like" id="dropdown">
-                                <input
-                                  type="text"
-                                  id="searchInput"
-                                  placeholder="Search"
-                                />
-                                <ul id="assignList">
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/Image.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Janet Adebayo
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 726.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Samuel Johnson
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 715.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Christian Dior
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 726.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Janet Adebayo
-                                    </label>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
+                          <tbody id="table-body-cm-order">
+                            <!-- Rows will be generated dynamically here -->
                           </tbody>
                         </table>
-
-                        <div
-                          class="pagination-container d-flex justify-content-between align-items-center"
-                        >
-                          <!-- Items per page dropdown -->
-                          <div
-                            class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-                          >
-                            <select
-                              id="itemsPerPage"
-                              class="form-select productDropdown3 form-select-sm filter-dropdown"
-                            >
+                        
+                        <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                          <div class="d-flex align-items-center">
+                            <span id="pagination-info-customer-orders" class="item-pp"></span>
+                            <label for="items-per-page-customer-orders" class="item-pp ms-3">Items per page:</label>
+                            <select id="items-per-page-customer-orders" class="form-select ms-2 item-bp">
                               <option value="3">3</option>
-                              <option value="5">5</option>
-                              <option value="10">10</option>
+                              <option value="4">4</option>
+                              <option value="8">8</option>
                             </select>
-                            <p>Items per page</p>
-                            <p class="TotalItems">1-10 of 100 items</p>
                           </div>
-
-                          <!-- Showing results text -->
-
-                          <!-- Pagination -->
-                          <nav
-                            class="d-flex justify-content align-items-center gap-2"
-                            aria-label="Page navigation "
-                          >
-                            <select
-                              id="itemsPerPage"
-                              class="form-select productDropdown3 form-select-sm filter-dropdown"
-                            >
-                              <option value="3">1</option>
-                              <option value="5">5</option>
-                              <option value="10">10</option>
-                            </select>
-                            <p class="TotalItems">1-10 of 100 items</p>
+                        
+                          <div class="d-flex align-items-center">
+                            <span id="total-pages-text-customer-orders" class="me-3 item-pp"></span>
+                            <select id="page-select-customer-orders" class="form-select me-3 item-bp"></select>
                             <ul class="pagination mb-0">
                               <li class="page-item">
-                                <a class="page-link" href="#" id="prev-page">
+                                <a class="page-link" href="#" id="prev-page-customer-orders">
                                   <img src="./assests/svg/Arrow-Down4.svg" />
                                 </a>
                               </li>
                               <li class="page-item">
-                                <a class="page-link" href="#" id="next-page">
+                                <a class="page-link" href="#" id="next-page-customer-orders">
                                   <img src="./assests/svg/Arrow-Down3.svg" />
                                 </a>
                               </li>
                             </ul>
-                          </nav>
+                          </div>
                         </div>
+                        
+
+                       
                       </div>
                     </div>
                     <div
@@ -1452,11 +1365,7 @@
   </div> -->
               </div>
             </div>
-            <div
-              class="viewOrder px-3"
-              id="viewOrder"
-              style="display: none"
-            >
+            <div class="viewOrder px-3" id="viewOrder" style="display: none">
               <div
                 class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2"
               >
@@ -1491,7 +1400,6 @@
                       <option value="Expenses">This Week</option>
                       <option value="Profit Margin">This Week</option>
                     </select>
-                  
                   </div>
                   <button class="order-btn d-flex align-items-center">
                     Print Invoice
@@ -1501,7 +1409,7 @@
                   </button>
                 </div>
               </div>
-              <div class="d-flex  gap-3 mt-3">
+              <div class="d-flex gap-3 mt-3">
                 <div class="" style="width: 30%">
                   <div class="card text-center">
                     <div class="alignemnt">
@@ -1521,13 +1429,13 @@
                         <!-- <p class="side-text">This Week</p> -->
                       </div>
                     </div>
-            
+
                     <div class="bottomContent">
                       <span>
                         <p class="sales">Phone</p>
                         <p class="bold">+236365746</p>
                       </span>
-            
+
                       <span>
                         <p class="sales">Email</p>
                         <p class="bold">abc@yopmail.com</p>
@@ -1540,7 +1448,7 @@
                     <div class="alignemnt">
                       <img src="./assests/svg/address.svg" />
                     </div>
-            
+
                     <div class="bottomContent">
                       <span class="bottomSpan">
                         <p class="sales">Home Address</p>
@@ -1548,7 +1456,7 @@
                           No.15 Adekunle Street,Yaba, Lagos State
                         </p>
                       </span>
-            
+
                       <span class="bottomSpan">
                         <p class="sales">Billing Address</p>
                         <p class="bold">
@@ -1562,7 +1470,7 @@
                   <div class="card text-center">
                     <div class="d-flex justify-content-between CustomerOrders">
                       <img src="./assests/svg/orders.svg" />
-            
+
                       <div class="dropdown-container position-relative">
                         <select
                           id="data-category"
@@ -1576,7 +1484,7 @@
                         <!-- Down arrow icon -->
                       </div>
                     </div>
-            
+
                     <div class="bottomContent">
                       <span class="bottomSpan">
                         <p class="sales">Total Orders</p>
@@ -1587,17 +1495,16 @@
                 </div>
               </div>
 
-
               <div class="product2 my-4">
                 <div class="d-flex justify-content-between">
                   <h6>Items 3</h6>
-            
+
                   <div class="d-flex gap-2 position-relative">
                     <div class="search-bar">
                       <img src="./assests/svg/Search.svg" />
                       <input type="text" placeholder="Search.." />
                     </div>
-            
+
                     <button
                       type="button"
                       class="filter-btn"
@@ -1605,9 +1512,7 @@
                     >
                       <img src="./assests/svg/filter1.svg" /> Filter
                     </button>
-            
-                 
-            
+
                     <button
                       type="button"
                       class="filter-btn"
@@ -1615,7 +1520,7 @@
                     >
                       <img src="./assests/svg/Calendar.svg" /> Calendar
                     </button>
-                   
+
                     <button class="filter-btn">
                       <img src="./assests/svg/Send.svg" /> Send
                     </button>
@@ -1632,167 +1537,164 @@
                     </div>
                   </div>
                 </div>
-                
-            
-                      <div class="table-responsive">
-                        <table class="table order mt-3">
-                          <thead>
-                            <tr class="orderTable">
-                              <th scope="col">
-                                <label class="custom-checkbox">
-                                  <input type="checkbox" id="select-all" />
-                                  <span class="checkmark"></span>
-                                </label>
-                              </th>
-            <th>
-           
-            </th>
-                              <th scope="col">Product Name</th>
-                              <th scope="col">Shipping Service</th>
-                              <th scope="col">Unit Price</th>
-                              <th scope="col">Qty</th>
-                              <th scope="col">Discount</th>
-                              <th scope="col">Order Total</th>
-                              <th scope="col">Action</th>
-                              <th scope="col">Status</th>
-                            </tr>
-                          </thead>
-                          <tbody id="table-body1">
-                            <td>
-                              <label class="custom-checkbox">
-                                <input
-                                  type="checkbox"
-                                  class="product-checkbox"
-                                  data-id="${product.id}"
-                                />
-                                <span class="checkmark"></span>
-                              </label>
-                            </td>
-                           <td>
-                            <div class="orderImage">
-                              <img src="./assests/image 715.png" />
-                            </div>
-                           </td>
-                            <td id="customerName">${product.name}</td>
-                            <td>${product.category}</td>
-                            <td>${product.price}</td>
-                            <td>${product.stock}</td>
-                            <td>${product.discount}</td>
-            
-                            <td>${product.value}</td>
-                            <td>${product.action}</td>
-                            <td>
-                              <span class="Assigned" id="assignButton">
-                                Assign to
-                                <img src="./assests/svg/fi_chevron-down2.svg" />
-                              </span>
-                              <div class="dropdown-like" id="dropdown">
-                                <input
-                                  type="text"
-                                  id="searchInput"
-                                  placeholder="Search"
-                                />
-                                <ul id="assignList">
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/Image.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Janet Adebayo
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 726.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Samuel Johnson
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 715.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Christian Dior
-                                    </label>
-                                  </li>
-                                  <li>
-                                    <label>
-                                      <img
-                                        src="./assests/image 726.png"
-                                        alt="user-avatar"
-                                        class="user-avatar"
-                                      />
-                                      Janet Adebayo
-                                    </label>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tbody>
-                        </table>
-            
-                        <div
-                          class="pagination-container d-flex justify-content-between align-items-center"
-                        >
-                          <!-- Items per page dropdown -->
-                          <div
-                            class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-                          >
-                            <select
-                              id="itemsPerPage"
-                              class="form-select productDropdown3 form-select-sm filter-dropdown"
-                            >
-                              <option value="3">3</option>
-                              <option value="5">5</option>
-                              <option value="10">10</option>
-                            </select>
-                            <p>Items per page</p>
-                            <p class="TotalItems">1-10 of 100 items</p>
-                          </div>
-            
-                          <!-- Showing results text -->
-            
-                          <!-- Pagination -->
-                          <nav
-                            class="d-flex justify-content align-items-center gap-2"
-                            aria-label="Page navigation "
-                          >
-                            <select
-                              id="itemsPerPage"
-                              class="form-select productDropdown3 form-select-sm filter-dropdown"
-                            >
-                              <option value="3">1</option>
-                              <option value="5">5</option>
-                              <option value="10">10</option>
-                            </select>
-                            <p class="TotalItems">1-10 of 100 items</p>
-                            <ul class="pagination mb-0">
-                              <li class="page-item">
-                                <a class="page-link" href="#" id="prev-page">
-                                  <img src="./assests/svg/Arrow-Down4.svg" />
-                                </a>
-                              </li>
-                              <li class="page-item">
-                                <a class="page-link" href="#" id="next-page">
-                                  <img src="./assests/svg/Arrow-Down3.svg" />
-                                </a>
-                              </li>
-                            </ul>
-                          </nav>
+
+                <div class="table-responsive">
+                  <table class="table order mt-3">
+                    <thead>
+                      <tr class="orderTable">
+                        <th scope="col">
+                          <label class="custom-checkbox">
+                            <input type="checkbox" id="select-all" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </th>
+                        <th></th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Shipping Service</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Order Total</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body1">
+                      <td>
+                        <label class="custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="product-checkbox"
+                            data-id="${product.id}"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <div class="orderImage">
+                          <img src="./assests/image 715.png" />
                         </div>
-                      </div>
+                      </td>
+                      <td id="customerName">${product.name}</td>
+                      <td>${product.category}</td>
+                      <td>${product.price}</td>
+                      <td>${product.stock}</td>
+                      <td>${product.discount}</td>
+
+                      <td>${product.value}</td>
+                      <td>${product.action}</td>
+                      <td>
+                        <span class="Assigned" id="assignButton">
+                          Assign to
+                          <img src="./assests/svg/fi_chevron-down2.svg" />
+                        </span>
+                        <div class="dropdown-like" id="dropdown">
+                          <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search"
+                          />
+                          <ul id="assignList">
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/Image.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Janet Adebayo
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 726.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Samuel Johnson
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 715.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Christian Dior
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 726.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Janet Adebayo
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tbody>
+                  </table>
+
+                  <div
+                    class="pagination-container d-flex justify-content-between align-items-center"
+                  >
+                    <!-- Items per page dropdown -->
+                    <div
+                      class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
+                    >
+                      <select
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                      >
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                      <p>Items per page</p>
+                      <p class="TotalItems">1-10 of 100 items</p>
+                    </div>
+
+                    <!-- Showing results text -->
+
+                    <!-- Pagination -->
+                    <nav
+                      class="d-flex justify-content align-items-center gap-2"
+                      aria-label="Page navigation "
+                    >
+                      <select
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                      >
+                        <option value="3">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                      <p class="TotalItems">1-10 of 100 items</p>
+                      <ul class="pagination mb-0">
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="prev-page1">
+                            <img src="./assests/svg/Arrow-Down4.svg" />
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="next-page1">
+                            <img src="./assests/svg/Arrow-Down3.svg" />
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
+              </div>
             </div>
             <div class="NewCompany" id="newCompanyDiv1">
-              <div class="model Ordermodel d-flex flex-column ">
+              <div class="model Ordermodel d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="my-2">Create New Order</span>
                   <button class="cancel" id="cancelBtn1">
@@ -1801,113 +1703,118 @@
                 </div>
                 <form>
                   <div>
-                 <div class="d-flex gap-3">
-                  <div class="orderLeftConatiner">
-                    <div class="d-flex justify-content-between">
-                      <p class="CustomerPopup">Order Details</p>
-                      <div class="d-flex gap-3">
-                       <p class="CustomerPopup">New Customer</p>
-                       <div class="">
-                         <label class="switch switch2">
-                           <input type="checkbox" id="toggleSwitch" />
-                           <span class="slider"></span>
-                         </label>
-                       </div>
+                    <div class="d-flex gap-3">
+                      <div class="orderLeftConatiner">
+                        <div class="d-flex justify-content-between">
+                          <p class="CustomerPopup">Order Details</p>
+                          <div class="d-flex gap-3">
+                            <p class="CustomerPopup">New Customer</p>
+                            <div class="">
+                              <label class="switch switch2">
+                                <input type="checkbox" id="toggleSwitch" />
+                                <span class="slider"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <select class="inputBox" id="customer" size="1">
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                          </select>
+                          <div class="d-flex gap-2">
+                            <select class="inputBox" id="customer" size="1">
+                              <option value="" selected="selected">
+                                Payment Type
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                            </select>
+                            <select class="inputBox" id="customer" size="1">
+                              <option value="" selected="selected">
+                                Order Type
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                            </select>
+                          </div>
+                          <div class="mt-3">
+                            <p>Order Date & Time</p>
+                            <div class="d-flex gap-3">
+                              <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                class="date"
+                                value="2024-01-01"
+                              />
+                              <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                class="date"
+                                value="00:00"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="mt-3">
+                            <p>Order Status</p>
+                            <select
+                              class="inputBox"
+                              id="customerPending"
+                              size="1"
+                            >
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                            </select>
+
+                            <textarea
+                              class="NoteDescription"
+                              id="OrderNote"
+                              name="OrderNote"
+                              rows="4"
+                              cols="50"
+                              placeholder="Order Note"
+                            ></textarea>
+                          </div>
+                        </div>
                       </div>
-                     </div>
                       <div class="d-flex flex-column">
-                        <select
-                        class="inputBox"
-                        
-                        id="customer"
-                        size="1"
-                      >
-                        <option value="" selected="selected">Select Customer</option>
-                        <option value="" selected="selected">Select Customer</option>
-                        <option value="" selected="selected">Select Customer</option>
-                      </select>
-                     <div class="d-flex gap-2">
-                      <select
-                      class="inputBox"
-                      
-                      id="customer"
-                      size="1"
-                    >
-                      <option value="" selected="selected">Payment Type</option>
-                      <option value="" selected="selected">Select Customer</option>
-                      <option value="" selected="selected">Select Customer</option>
-                    </select>
-                    <select
-                    class="inputBox"
-                    
-                    id="customer"
-                    size="1"
-                  >
-                    <option value="" selected="selected">Order Type</option>
-                    <option value="" selected="selected">Select Customer</option>
-                    <option value="" selected="selected">Select Customer</option>
-                  </select>
-  
-                     </div>
-                    <div class="mt-3">
-                      <p>Order Date & Time</p>
-                      <div class="d-flex gap-3">
-                       <input
-                         type="date"
-                         id="date"
-                         name="date"
-                         class="date"
-                         value="2024-01-01"
-                       />
-                       <input
-                         type="time"
-                         id="time"
-                         name="time"
-                         class="date"
-                         value="00:00"
-                       />
-                     </div>
-                    </div>
-  
-                    <div class="mt-3">
-                      <p>Order Status</p>
-                      <select
-                        class="inputBox"
-                        
-                        id="customerPending"
-                        size="1"
-                      >
-                        <option value="" selected="selected">Pending</option>
-                        <option value="" selected="selected">Pending</option>
-                        <option value="" selected="selected">Pending</option>
-                      </select>
-  
-                      <textarea
-                      class="NoteDescription"
-                      id="OrderNote"
-                      name="OrderNote"
-                      rows="4"
-                      cols="50"
-                      placeholder="Order Note"
-                    ></textarea>
-                    </div>
-                       
-                      </div>
-                  </div>
-                  <div  class="d-flex flex-column">
-                    <p class="CustomerPopup">Order Details</p>
-                    <div class="h-100 d-flex flex-column text-center justify-content-center align-items-center">
-                      <img src="./assests/iconContainer.png" class="lock" />
-                      <div>
-                        <h6>Add Products to Your Order</h6>
-                        <p>
-                          Search and add products to this order.
-                        </p>
-                      
+                        <p class="CustomerPopup">Order Details</p>
+                        <div
+                          class="h-100 d-flex flex-column text-center justify-content-center align-items-center"
+                        >
+                          <img src="./assests/iconContainer.png" class="lock" />
+                          <div>
+                            <h6>Add Products to Your Order</h6>
+                            <p>Search and add products to this order.</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                 </div>
 
                     <div class="d-flex justify-content-center gap-3 mt-3">
                       <button class="cancel-btn2 w-25">Cancel</button>
@@ -2060,7 +1967,7 @@
                         <tr>
                           <th scope="col">
                             <label class="custom-checkbox">
-                              <input type="checkbox" id="select-all" />
+                              <input type="checkbox" id="select-all-customers" />
                               <span class="checkmark"></span>
                             </label>
                           </th>
@@ -2093,44 +2000,26 @@
                         <!-- Table rows will be dynamically generated here -->
                       </tbody>
                     </table>
-
-                    <!-- Pagination Controls -->
-                    <div
-                      class="pagination-container d-flex justify-content-between align-items-center"
-                    >
-                      <!-- Items per page dropdown -->
-                      <div
-                        class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
+                    <div class=" pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <!-- Dynamic text display and items per page dropdown -->
+                      <div class="d-flex align-items-center ">
+                        
+                        <select id="items-per-page" class="form-select ms-2 item-bp">
                           <option value="3">3</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
                         </select>
-                        <p>Items per page</p>
-                        <p class="TotalItems">1-10 of 100 items</p>
+                        <label for="items-per-page " class="item-pp ms-3">Items per page:</label>
+                        <span id="pagination-info" class="item-pp"></span> <!-- Dynamic text {1-5 of X items} -->
+
                       </div>
-
-                      <!-- Showing results text -->
-                      <div id="showing-info" class="text-muted"></div>
-
-                      <!-- Pagination -->
-                      <nav
-                        class="d-flex justify-content align-items-center gap-2"
-                        aria-label="Page navigation "
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
-                          <option value="3">1</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
+                    
+                      <!-- Pagination buttons and page selection dropdown -->
+                      <div class="d-flex align-items-center ">
+                        <span id="total-pages-text" class="me-3 item-pp"></span> <!-- Display total pages like (Page 1 of X) -->
+                        <select id="page-select" class="form-select me-3 item-bp">
+                          <!-- Page numbers will be dynamically added here -->
                         </select>
-                        <p class="TotalItems">1-10 of 100 items</p>
                         <ul class="pagination mb-0">
                           <li class="page-item">
                             <a class="page-link" href="#" id="prev-page">
@@ -2143,8 +2032,14 @@
                             </a>
                           </li>
                         </ul>
-                      </nav>
+                      </div>
                     </div>
+                    
+                    
+                  
+
+
+                    
                   </div>
                 </div>
               </div>
@@ -2176,7 +2071,7 @@
                       <p>Add Address</p>
                       <div class="">
                         <label class="switch switch2">
-                          <input type="checkbox" id="toggleSwitch" />
+                          <input type="checkbox"  id="addAddressToggle" />
                           <span class="slider"></span>
                         </label>
                       </div>
@@ -2484,125 +2379,60 @@
                 </div>
                 <div class="">
                   <div class="table-responsive">
+                    
+
                     <table class="table mt-3">
                       <thead>
                         <tr>
                           <th scope="col">
                             <label class="custom-checkbox">
-                              <input type="checkbox" id="select-all" />
+                              <input type="checkbox" id="select-all-orders" />
                               <span class="checkmark"></span>
                             </label>
                           </th>
-
-                          <th scope="col">
-                            Order Date <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Order Type <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Tracking ID <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Order Total <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Action <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Status <img src="./assests/svg/sort.svg" />
-                          </th>
+                          <th scope="col">Order Date <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Order Type <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Tracking ID <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Order Total <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Action <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Status <img src="./assests/svg/sort.svg" /></th>
                         </tr>
                       </thead>
-                      <tbody id="table-body">
-                        <td>
-                          <label class="custom-checkbox">
-                            <input
-                              type="checkbox"
-                              class="product-checkbox"
-                              data-id="${product.id}"
-                            />
-                            <span class="checkmark"></span>
-                          </label>
-                        </td>
-
-                        <td>12 Aug 2022 -12:00 pm</td>
-                        <td>Home Delivery</td>
-                        <td>
-                          56j8p0d9
-                          <img src="./assests/svg/copyIconGray.svg" />
-                        </td>
-                        <td>57654</td>
-                        <td>
-                          <select
-                            id="itemsPerPage"
-                            class="form-select productDropdown2 form-select-sm filter-dropdown"
-                            style="width: auto"
-                          >
-                            <option value="3">bulk Action</option>
-                            <option value="5">page</option>
-                            <option value="10">per page</option>
-                          </select>
-                        </td>
-                        <td>
-                          <p id="status" class="statusClass text-center">
-                            In-Progress
-                          </p>
-                        </td>
+                      <tbody id="table-body-order">
+                        <!-- Rows will be generated dynamically here -->
                       </tbody>
                     </table>
-
-                    <!-- Pagination Controls -->
-                    <div
-                      class="pagination-container d-flex justify-content-between align-items-center"
-                    >
-                      <!-- Items per page dropdown -->
-                      <div
-                        class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
+                    
+                    <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <div class="d-flex align-items-center">
+                        <span id="pagination-info-order" class="item-pp"></span>
+                        <label for="items-per-page-order" class="item-pp ms-3">Items per page:</label>
+                        <select id="items-per-page-order" class="form-select ms-2 item-bp">
                           <option value="3">3</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
                         </select>
-                        <p>Items per page</p>
-                        <p class="TotalItems">1-10 of 100 items</p>
                       </div>
-
-                      <!-- Showing results text -->
-                      <div id="showing-info" class="text-muted"></div>
-
-                      <!-- Pagination -->
-                      <nav
-                        class="d-flex justify-content align-items-center gap-2"
-                        aria-label="Page navigation "
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
-                          <option value="3">1</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
-                        </select>
-                        <p class="TotalItems">1-10 of 100 items</p>
+                      
+                      <div class="d-flex align-items-center">
+                        <span id="total-pages-text-order" class="me-3 item-pp"></span>
+                        <select id="page-select-order" class="form-select me-3 item-bp"></select>
                         <ul class="pagination mb-0">
                           <li class="page-item">
-                            <a class="page-link" href="#" id="prev-page">
+                            <a class="page-link" href="#" id="prev-page-order">
                               <img src="./assests/svg/Arrow-Down4.svg" />
                             </a>
                           </li>
                           <li class="page-item">
-                            <a class="page-link" href="#" id="next-page">
+                            <a class="page-link" href="#" id="next-page-order">
                               <img src="./assests/svg/Arrow-Down3.svg" />
                             </a>
                           </li>
                         </ul>
-                      </nav>
+                      </div>
                     </div>
+                    
+
                   </div>
                 </div>
               </div>
@@ -2732,124 +2562,59 @@
                         <tr>
                           <th scope="col">
                             <label class="custom-checkbox">
-                              <input type="checkbox" id="select-all" />
+                              <input type="checkbox" id="select-all-products"/>
                               <span class="checkmark"></span>
                             </label>
                           </th>
                           <th></th>
-                          <th scope="col">
-                            Product Name <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Category <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Unit Price <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            In-Stock <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Discount <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Total Value <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Action <img src="./assests/svg/sort.svg" />
-                          </th>
-                          <th scope="col">
-                            Status <img src="./assests/svg/sort.svg" />
-                          </th>
+                          <th scope="col">Product Name <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Category <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Unit Price <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">In-Stock <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Discount <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Total Value <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Action <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Status <img src="./assests/svg/sort.svg" /></th>
                         </tr>
                       </thead>
-                      <tbody id="table-body">
-                        <td>
-                          <label class="custom-checkbox">
-                            <input
-                              type="checkbox"
-                              class="product-checkbox"
-                              data-id="${product.id}"
-                            />
-                            <span class="checkmark"></span>
-                          </label>
-                        </td>
-                        <td><img src="./assests/Rectangle 3.png" /></td>
-                        <td>${product.name}</td>
-                        <td>${product.category}</td>
-                        <td>${product.price}</td>
-                        <td>${product.stock}</td>
-                        <td>${product.discount}</td>
-
-                        <td>${product.value}</td>
-                        <td>
-                          <select
-                            id="itemsPerPage"
-                            class="form-select productDropdown2 form-select-sm filter-dropdown"
-                            style="width: auto"
-                          >
-                            <option value="3">bulk Action</option>
-                            <option value="5">page</option>
-                            <option value="10">per page</option>
-                          </select>
-                        </td>
-                        <td>
-                          <p id="status" class="statusClass">UnPublished</p>
-                        </td>
+                      <tbody id="table-body-products">
+                        <!-- Rows will be dynamically generated here -->
                       </tbody>
                     </table>
-
-                    <!-- Pagination Controls -->
-                    <div
-                      class="pagination-container d-flex justify-content-between align-items-center"
-                    >
-                      <!-- Items per page dropdown -->
-                      <div
-                        class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
+                    
+                    <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <div class="d-flex align-items-center ">
+                        <span id="pagination-info-products" class="item-pp"></span>
+                        <select id="items-per-page-products" class="form-select ms-2 item-bp">
                           <option value="3">3</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
                         </select>
-                        <p>Items per page</p>
-                        <p class="TotalItems">1-10 of 100 items</p>
+                        <label for="items-per-page-products" class="item-pp ms-3">Items per page:</label>
                       </div>
-
-                      <!-- Showing results text -->
-                      <div id="showing-info" class="text-muted"></div>
-
-                      <!-- Pagination -->
-                      <nav
-                        class="d-flex justify-content align-items-center gap-2"
-                        aria-label="Page navigation "
-                      >
-                        <select
-                          id="itemsPerPage"
-                          class="form-select productDropdown3 form-select-sm filter-dropdown"
-                        >
-                          <option value="3">1</option>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
+                    
+                      <div class="d-flex align-items-center ">
+                        <span id="total-pages-text-products" class="me-3 item-pp"></span>
+                        <select id="page-select-products" class="form-select me-3 item-bp">
+                          <!-- Page numbers will be dynamically added here -->
                         </select>
-                        <p class="TotalItems">1-10 of 100 items</p>
                         <ul class="pagination mb-0">
                           <li class="page-item">
-                            <a class="page-link" href="#" id="prev-page">
+                            <a class="page-link" href="#" id="prev-page-products">
                               <img src="./assests/svg/Arrow-Down4.svg" />
                             </a>
                           </li>
                           <li class="page-item">
-                            <a class="page-link" href="#" id="next-page">
+                            <a class="page-link" href="#" id="next-page-products">
                               <img src="./assests/svg/Arrow-Down3.svg" />
                             </a>
                           </li>
                         </ul>
-                      </nav>
+                      </div>
                     </div>
+                    
+
+                 
                   </div>
                 </div>
               </div>
@@ -3267,7 +3032,15 @@
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="./script.js"></script>
+    <script src="./assests/jss/customer.js"></script>
+    <script src="./assests/jss/orders.js"></script>
+    <script src="./assests/jss/cmorders.js"></script>
+    <script src="./assests/jss/products.js"></script>
     <script>
+
+
+
+
       function getStatusClass(status) {
         return status === "Active" ? "custom-active" : "custom-inactive";
       }
@@ -3290,278 +3063,7 @@
         }
       }
       fetchData(); // Call the function to fetch an
-      document.addEventListener("DOMContentLoaded", function () {
-        //pagination of table
-
-        const products = [
-          {
-            id: 1,
-            name: 'CET 126" UV Printer',
-            category: "Printer",
-            price: "$1,500",
-            stock: 50,
-            discount: "5%",
-            value: "$75,000",
-            status: "Active",
-          },
-          {
-            id: 2,
-            name: "Graphtec FC8000 Cutter",
-            category: "Cutter",
-            price: "$2,000",
-            stock: 30,
-            discount: "10%",
-            value: "$60,000",
-            status: "Inactive",
-          },
-          {
-            id: 3,
-            name: "Graphtec FC9000",
-            category: "Cutter",
-            price: "$2,500",
-            stock: 25,
-            discount: "15%",
-            value: "$62,500",
-            status: "Active",
-          },
-          {
-            id: 4,
-            name: "High-Speed Sewing Machine",
-            category: "Machine",
-            price: "$1,200",
-            stock: 80,
-            discount: "8%",
-            value: "$96,000",
-            status: "Active",
-          },
-          {
-            id: 5,
-            name: "Wide-Format Laminator",
-            category: "Laminator",
-            price: "$900",
-            stock: 15,
-            discount: "12%",
-            value: "$13,500",
-            status: "Inactive",
-          },
-          {
-            id: 6,
-            name: "Graphic Cutter",
-            category: "Cutter",
-            price: "$1,700",
-            stock: 20,
-            discount: "20%",
-            value: "$34,000",
-            status: "Active",
-          },
-          {
-            id: 7,
-            name: "Industrial Printer",
-            category: "Printer",
-            price: "$5,500",
-            stock: 10,
-            discount: "7%",
-            value: "$55,000",
-            status: "Active",
-          },
-          {
-            id: 8,
-            name: "Laser Cutter",
-            category: "Cutter",
-            price: "$8,500",
-            stock: 5,
-            discount: "5%",
-            value: "$42,500",
-            status: "Inactive",
-          },
-        ];
-
-        let currentPage = 1;
-        let rowsPerPage = 3;
-
-        const tableBody = document.getElementById("table-body");
-        const itemsPerPageSelect = document.getElementById("itemsPerPage");
-        const showingInfo = document.getElementById("showing-info");
-        const prevPageBtn = document.getElementById("prev-page");
-        const nextPageBtn = document.getElementById("next-page");
-        const selectAllCheckbox = document.getElementById("select-all");
-        const addCompanyBtn = document.getElementById("addCompanyBtn");
-        const addOrderBtn = document.getElementById("addOrderBtn")
-        const newCompanyDiv = document.getElementById("newCompanyDiv");
-        const newCompanyDiv1 = document.getElementById("newCompanyDiv1");
-        const cancelBtn = document.getElementById("cancelBtn");
-        const cancelBtn1 = document.getElementById("cancelBtn1");
-        // Function to render table rows for the current page
-        function renderTableRows() {
-          tableBody.innerHTML = "";
-          const start = (currentPage - 1) * rowsPerPage;
-          const end = start + rowsPerPage;
-          const visibleProducts = products.slice(start, end);
-
-          visibleProducts.forEach((product) => {
-            const statusClass = getStatusClass(product.status);
-            const row = `
-                <tr>
-                    <td>
-                        <label class="custom-checkbox">
-                            <input type="checkbox" class="product-checkbox" data-id="${product.id}">
-                            <span class="checkmark"></span>
-                        </label>
-                    </td>
-               
-                    <td>${product.name}</td>
-                    <td>${product.category} <img src="./assests/svg/copyIconGray.svg" /></td>
-                    <td>${product.price}<img src="./assests/svg/copyIconGray.svg" /></td>
-                    <td>${product.stock}</td>
-                   <td>${product.discount}</td>
-                  
-                    <td>${product.value}</td>
-                    <td><p class="${statusClass}">${product.status}</p></td>
-                </tr>`;
-            tableBody.insertAdjacentHTML("beforeend", row);
-          });
-          updatePaginationInfo();
-        }
-
-        // Function to update the pagination info
-        function updatePaginationInfo() {
-          const totalItems = products.length;
-          const startItem = (currentPage - 1) * rowsPerPage + 1;
-          const endItem = Math.min(startItem + rowsPerPage - 1, totalItems);
-          const totalPages = Math.ceil(totalItems / rowsPerPage);
-
-          showingInfo.textContent = `${startItem}-${endItem} of ${totalItems} items`;
-          prevPageBtn.parentElement.classList.toggle(
-            "disabled",
-            currentPage === 1
-          );
-          nextPageBtn.parentElement.classList.toggle(
-            "disabled",
-            currentPage === totalPages
-          );
-        }
-
-        // Event listener for the select-all checkbox
-        selectAllCheckbox.addEventListener("change", function () {
-          const allCheckboxes = document.querySelectorAll(".product-checkbox");
-          allCheckboxes.forEach((checkbox) => {
-            checkbox.checked = selectAllCheckbox.checked;
-          });
-        });
-
-        // Event listener for items per page change
-        itemsPerPageSelect.addEventListener("change", function () {
-          rowsPerPage = parseInt(this.value);
-          currentPage = 1; // Reset to first page when changing rows per page
-          renderTableRows();
-        });
-
-        // Event listener for next page button
-        nextPageBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          const totalPages = Math.ceil(products.length / rowsPerPage);
-          if (currentPage < totalPages) {
-            currentPage++;
-            renderTableRows();
-          }
-        });
-
-        // Event listener for previous page button
-        prevPageBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          if (currentPage > 1) {
-            currentPage--;
-            renderTableRows();
-          }
-        });
-
-        // Show the new company div when the button is clicked
-        addCompanyBtn.addEventListener("click", () => {
-          newCompanyDiv.style.display = "flex"; // Show the div
-        });
-
-        addOrderBtn.addEventListener("click", () => {
-          newCompanyDiv1.style.display = "flex"; // Show the div
-        });
-
-        // Hide the new company div when the cancel button is clicked
-        cancelBtn.addEventListener("click", () => {
-          newCompanyDiv.style.display = "none"; // Hide the div
-        });
-        cancelBtn1.addEventListener("click", () => {
-          newCompanyDiv1.style.display = "none"; // Hide the div
-        });
-
-        document
-          .getElementById("toggleSwitch")
-          .addEventListener("change", function () {
-            const addressSection = document.getElementById("addressSection");
-
-            // Show or hide address section based on the checkbox state
-            if (this.checked) {
-              addressSection.style.display = "block";
-            } else {
-              addressSection.style.display = "none";
-            }
-          });
-
-        // Initial render
-        renderTableRows();
-
-        // Phone number validation
-        const inputs = document.querySelectorAll("input[type='tel']");
-        if (inputs.length > 0) {
-          // Iterate through the inputs and apply intlTelInput plugin
-          inputs.forEach((input, index) => {
-            const iti = window.intlTelInput(input, {
-              initialCountry: "us",
-            });
-          });
-        } else {
-          console.error("No 'tel' inputs found!");
-        }
-
-        window.iti = iti; // useful for testing
-
-        const button = document.querySelector("#btn");
-        const errorMsg = document.querySelector("#error-msg");
-        const validMsg = document.querySelector("#valid-msg");
-        const errorMap = [
-          "Invalid number",
-          "Invalid country code",
-          "Too short",
-          "Too long",
-          "Invalid number",
-        ];
-
-        const reset = () => {
-          input.classList.remove("error");
-          errorMsg.innerHTML = "";
-          validMsg.innerHTML = "";
-          errorMsg.classList.add("hide");
-          validMsg.classList.add("hide");
-        };
-
-        const showError = (msg) => {
-          input.classList.add("error");
-          errorMsg.innerHTML = msg;
-          errorMsg.classList.remove("hide");
-        };
-
-        // on click button: validate
-        button.addEventListener("click", () => {
-          reset();
-          if (!input.value.trim()) {
-            showError("Required");
-          } else if (iti.isValidNumber()) {
-            validMsg.innerHTML = "✓ Valid";
-            validMsg.classList.remove("hide");
-          } else {
-            const errorCode = iti.getValidationError();
-            showError(errorMap[errorCode]);
-          }
-        });
-      });
+ 
 
       const assignButton = document.getElementById("assignButton");
       const dropdown = document.getElementById("dropdown");

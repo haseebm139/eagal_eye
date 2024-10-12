@@ -1,0 +1,138 @@
+const customerOrders = [
+    { id: 1, customerName: 'John Doe', orderDate: '2024-10-10', shipping: 'Express', location: 'New York', trackingId: 'CUST12345', qty: 2, orderTotal: '$250', assignStatus: 'Pending' },
+    { id: 2, customerName: 'Jane Smith', orderDate: '2024-10-08', shipping: 'Standard', location: 'Los Angeles', trackingId: 'CUST67890', qty: 1, orderTotal: '$150', assignStatus: 'Shipped' },
+    { id: 3, customerName: 'Robert Johnson', orderDate: '2024-10-05', shipping: 'Express', location: 'Chicago', trackingId: 'CUST54321', qty: 3, orderTotal: '$500', assignStatus: 'Delivered' },
+    { id: 4, customerName: 'Emily Davis', orderDate: '2024-10-03', shipping: 'Standard', location: 'Houston', trackingId: 'CUST98765', qty: 4, orderTotal: '$600', assignStatus: 'Cancelled' },
+    { id: 5, customerName: 'Michael Lee', orderDate: '2024-09-30', shipping: 'Express', location: 'Miami', trackingId: 'CUST11122', qty: 5, orderTotal: '$700', assignStatus: 'Shipped' },
+  ];
+  
+  let rowsPerPageCustomerOrders = 3;  
+  let currentPageCustomerOrders = 1;
+  
+  // Render table
+  function renderCustomerOrdersTable() {
+    const tableBodyCmOrder = document.getElementById('table-body-cm-order');
+    tableBodyCmOrder.innerHTML = "";
+  
+    const start = (currentPageCustomerOrders - 1) * rowsPerPageCustomerOrders;
+    const end = Math.min(start + rowsPerPageCustomerOrders, customerOrders.length);
+    const customerOrdersToDisplay = customerOrders.slice(start, end);
+  
+    customerOrdersToDisplay.forEach(order => {
+      const statusClass = order.assignStatus === 'Delivered' ? 'text-success' : (order.assignStatus === 'Shipped' ? 'text-info' : 'text-warning');
+      const row = `
+        <tr>
+          <td>
+            <label class="custom-checkbox">
+              <input type="checkbox" class="cm-order-checkbox" data-id="${order.id}">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+          <td>${order.customerName}</td>
+          <td>${order.orderDate}</td>
+          <td>${order.shipping}</td>
+          <td>${order.location}</td>
+          <td>${order.trackingId}</td>
+          <td>${order.qty}</td>
+          <td>${order.orderTotal}</td>
+          <td><p class="${statusClass}">${order.assignStatus}</p></td>
+        </tr>
+      `;
+      tableBodyCmOrder.insertAdjacentHTML('beforeend', row);
+    });
+  
+    updateCustomerOrdersPaginationInfo(start + 1, end, customerOrders.length);
+    updateCustomerOrdersPageSelect();
+    updateCustomerOrdersTotalPagesText();
+  }
+  
+  // Update pagination info
+  function updateCustomerOrdersPaginationInfo(start, end, total) {
+    const paginationInfoCustomerOrders = document.getElementById('pagination-info-customer-orders');
+    paginationInfoCustomerOrders.textContent = `${start}-${end} of ${total} items`;
+  }
+  
+  // Update page select
+  function updateCustomerOrdersPageSelect() {
+    const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders);
+    const pageSelectCustomerOrders = document.getElementById('page-select-customer-orders');
+    pageSelectCustomerOrders.innerHTML = '';
+  
+    for (let i = 1; i <= totalPages; i++) {
+      const option = `<option value="${i}">${i}</option>`;
+      pageSelectCustomerOrders.insertAdjacentHTML('beforeend', option);
+    }
+  
+    pageSelectCustomerOrders.value = currentPageCustomerOrders;
+    pageSelectCustomerOrders.addEventListener('change', function() {
+      currentPageCustomerOrders = parseInt(this.value);
+      renderCustomerOrdersTable();
+    });
+  }
+  
+  // Update total pages text
+  function updateCustomerOrdersTotalPagesText() {
+    const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders);
+    const totalPagesTextCustomerOrders = document.getElementById('total-pages-text-customer-orders');
+    totalPagesTextCustomerOrders.textContent = `Page ${currentPageCustomerOrders} of ${totalPages}`;
+  }
+  
+  // Pagination controls
+  function handleCustomerOrdersPagination() {
+    document.getElementById('prev-page-customer-orders').addEventListener('click', function(event) {
+      event.preventDefault();
+      if (currentPageCustomerOrders > 1) {
+        currentPageCustomerOrders--;
+        renderCustomerOrdersTable();
+      }
+    });
+  
+    document.getElementById('next-page-customer-orders').addEventListener('click', function(event) {
+      event.preventDefault();
+      const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders);
+      if (currentPageCustomerOrders < totalPages) {
+        currentPageCustomerOrders++;
+        renderCustomerOrdersTable();
+      }
+    });
+  }
+  
+  // Change rows per page
+  document.getElementById('items-per-page-customer-orders').addEventListener('change', function() {
+    rowsPerPageCustomerOrders = parseInt(this.value); 
+    currentPageCustomerOrders = 1;
+    renderCustomerOrdersTable();
+  });
+  
+  // Initial render
+  renderCustomerOrdersTable();
+  handleCustomerOrdersPagination();
+  
+
+  // Function to handle 'Select All' functionality for CM Order table
+function handleCmOrderSelectAll() {
+    const selectAll = document.getElementById('select-all-cm-orders');
+    const checkboxes = document.querySelectorAll('.cm-order-checkbox');
+  
+    // Select or deselect all checkboxes
+    selectAll.addEventListener('change', function () {
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+      });
+    });
+  
+    // If any checkbox is deselected, uncheck the 'select all' checkbox
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        if (!this.checked) {
+          selectAll.checked = false;
+        } else if (document.querySelectorAll('.cm-order-checkbox:checked').length === checkboxes.length) {
+          selectAll.checked = true;
+        }
+      });
+    });
+  }
+  
+  // Call the function to initialize the select all functionality
+  handleCmOrderSelectAll();
+  
