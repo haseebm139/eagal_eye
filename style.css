@@ -4,6 +4,10 @@ body {
     
 }
 /* Custom styles */
+@font-face {
+    font-family: poppinsMedium;
+    src: url("./assests/Poppins/Poppins-Medium.ttf");
+  }
 @font-face{
     font-family: InterMedium;
     src: url("./website/assests/Inter/static/Inter_18pt-Medium.ttf");
@@ -18,6 +22,10 @@ body {
   font-family: InterBold;
   src: url("./website/assests/Inter/static/Inter_18pt-Bold.ttf");
 }
+@font-face{
+    font-family: InterRegular;
+    src : url('./website/assests/Inter/static/Inter_18pt-Regular.ttf')
+}
 
 @font-face {
     font-family: GilroyMedium;
@@ -27,27 +35,50 @@ body {
     font-family: GilroyBold;
     src: url('./assests/gilroy/Gilroy-Bold.ttf');
 }
+.settingsSubTabs{
+    border-radius: 12px;
+    background-color: white;
+}
 .mediumFont{
    
     font-family: InterMedium;
     font-size: 16px;
 }
+.SettingHeading{
+    font-size: 20px;
+    font-family: poppinsMedium;
 
+}
+.settingInput{
+    font-family: InterRegular;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.Label{
+    font-family: InterRegular;
+    color: #ABAFB1;
+    font-size: 12px;
+    margin: 0;
+}
 .mediumFontBorder{
+    border-top-left-radius: 12px;
     background-color: white;
     border: none;
+    color: #ABAFB1;
     text-align: center;
-    font-family: InterMedium;
-    font-size: 12px;
+    font-family: InterRegular;
+    font-size: 15px;
     padding: 15px 20px;
 margin-right: 25px;
 }
 .mediumFontBorder.active{
     background-color: white;
     text-align: center;
+    color: #000;
    border-bottom: 2px solid black;
-    font-family: InterMedium;
-    font-size: 12px;
+   font-family: InterRegular;
+    font-size: 15px;
     padding: 15px 20px;
 margin-right: 25px;
 }

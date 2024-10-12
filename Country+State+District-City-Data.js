@@ -145903,6 +145903,8 @@
 
 };
 window.onload = function () {
+    setupCountryStateCity("countySel1", "stateSel1", "districtSel1"); // First set
+    setupCountryStateCity("countySel", "stateSel", "districtSel"); // Second set
     var countySel = document.getElementById("countySel"),
     stateSel = document.getElementById("stateSel"),
     districtSel = document.getElementById("districtSel");

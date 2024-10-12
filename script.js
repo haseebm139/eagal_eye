@@ -8,7 +8,217 @@ document.getElementById("addAddressToggle").addEventListener("change", function 
       addressSection.style.display = "none";
     }
   });
-  
+  const openModalButton = document.getElementById("openModalButton");
+      const modal = document.getElementById("modal-content");
+
+      const openModalButton2 = document.getElementById("openModalButton2");
+      const modal2 = document.getElementById("modal-content2");
+      openModalButton.addEventListener("click", function (event) {
+        modal.style.display = "block";
+        event.stopPropagation(); // Prevent closing the modal when clicking on the button
+      });
+
+      // Open the second modal when its button is clicked
+      openModalButton2.addEventListener("click", function (event) {
+        modal2.style.display = "block";
+        event.stopPropagation(); // Prevent closing the modal when clicking on the button
+      });
+     // Close the modal when clicking outside of modal content
+     window.addEventListener("click", function (event) {
+        // Close modal 1 if it's open and clicked outside
+        if (
+          modal.style.display === "block" &&
+          !modal.contains(event.target) &&
+          event.target !== openModalButton
+        ) {
+          modal.style.display = "none";
+        }
+
+        // Close modal 2 if it's open and clicked outside
+        if (
+          modal2.style.display === "block" &&
+          !modal2.contains(event.target) &&
+          event.target !== openModalButton2
+        ) {
+          modal2.style.display = "none";
+        }
+      });
+
+      // Prevent modal close when clicking inside the modal content
+      modal.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent modal from closing when clicking inside modal content
+      });
+
+      modal2.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent modal2 from closing when clicking inside modal content
+      });
+      const navs = document.querySelectorAll("#prev, #next");
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      let date = new Date();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+
+      const dates = document.querySelector(".dates");
+      const yearSelect = document.getElementById("year-select");
+      const monthSelect = document.getElementById("month-select");
+
+      let fromDate = null;
+      let toDate = null;
+
+      function renderCalendar() {
+        const start = new Date(year, month, 1).getDay();
+        const endDate = new Date(year, month + 1, 0).getDate();
+        const end = new Date(year, month, endDate).getDay();
+        const endDatePrev = new Date(year, month, 0).getDate();
+
+        let datesHtml = "";
+
+        for (let i = start; i > 0; i--) {
+          datesHtml += `<li class="inactive">${endDatePrev - i + 1}</li>`;
+        }
+
+        for (let i = 1; i <= endDate; i++) {
+          let className = "";
+
+          // Highlight today
+          if (
+            i === date.getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear()
+          ) {
+            className = "today";
+          }
+
+          // Highlight selected range
+          if (i === fromDate) {
+            className = "start-date";
+          } else if (i === toDate) {
+            className = "end-date";
+          } else if (fromDate && toDate && i >= fromDate && i <= toDate) {
+            className = "selected-range";
+          }
+
+          datesHtml += `<li class="${className}" data-date="${i}">${i}</li>`;
+        }
+        for (let i = end; i < 6; i++) {
+          datesHtml += `<li class="inactive">${i - end + 1}</li>`;
+        }
+
+        dates.innerHTML = datesHtml;
+
+        yearSelect.value = year; // Set the current year in the dropdown
+        monthSelect.value = month; // Set the current month in the dropdown
+
+        // Add click event listener to each date
+        document.querySelectorAll(".dates li").forEach((li) => {
+          li.addEventListener("click", onDateClick);
+        });
+      }
+
+      // Handle clicking on dates
+      function onDateClick(e) {
+        const selectedDay = parseInt(e.target.getAttribute("data-date"));
+
+        if (!fromDate || (fromDate && toDate)) {
+          // If no "From" date is selected or both "From" and "To" dates are already selected, reset the selection
+          fromDate = selectedDay;
+          toDate = null;
+        } else if (fromDate && !toDate) {
+          // If "From" date is selected but "To" date is not selected yet
+          if (selectedDay > fromDate) {
+            toDate = selectedDay;
+          } else {
+            // Swap the dates if "To" is earlier than "From"
+            toDate = fromDate;
+            fromDate = selectedDay;
+          }
+        }
+
+        renderCalendar();
+      }
+
+      // Add event listeners for the year and month dropdowns
+      yearSelect.addEventListener("change", (e) => {
+        year = parseInt(e.target.value);
+        renderCalendar();
+      });
+
+      monthSelect.addEventListener("change", (e) => {
+        month = parseInt(e.target.value);
+        renderCalendar();
+      });
+
+      // Initialize year and month dropdowns
+      function initDropdowns() {
+        // Populate the year dropdown
+        for (let i = 2020; i <= 2030; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.textContent = i;
+          yearSelect.appendChild(option);
+        }
+
+        // Populate the month dropdown
+        for (let i = 0; i < 12; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.textContent = new Date(0, i).toLocaleString("en", {
+            month: "long",
+          });
+          monthSelect.appendChild(option);
+        }
+
+        yearSelect.value = year;
+        monthSelect.value = month;
+      }
+
+      initDropdowns();
+      renderCalendar();
+
+      function showNewOrdersContent() {
+        document.querySelector(".order-container").innerHTML = `
+     
+      
+    `;
+      }
+
+      const quantityInput = document.getElementById("quantityInput");
+      const increaseBtn = document.getElementById("increaseBtn");
+      const decreaseBtn = document.getElementById("decreaseBtn");
+
+      // Function to increase value
+      increaseBtn.addEventListener("click", () => {
+        const currentValue = parseInt(quantityInput.value) || 0;
+        quantityInput.value = currentValue + 1;
+      });
+
+      // Function to decrease value
+      decreaseBtn.addEventListener("click", () => {
+        const currentValue = parseInt(quantityInput.value) || 0;
+        if (currentValue > 0) {
+          quantityInput.value = currentValue - 1;
+        }
+      });
+
+
+
+
+
 //models
 const addOrderBtn = document.getElementById("addOrderBtn")
 const addCompanyBtn = document.getElementById("addCompanyBtn");

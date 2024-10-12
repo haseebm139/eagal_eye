@@ -1,3 +1,35 @@
+// Reusable function for populating country, state, and city selects
+function setupCountryStateCity(countrySelId, stateSelId, citySelId) {
+  const countySel = document.getElementById(countrySelId);
+  const stateSel = document.getElementById(stateSelId);
+  const districtSel = document.getElementById(citySelId);
+
+  // Populate country select options
+  for (const country in stateObject) {
+    countySel.options[countySel.options.length] = new Option(country, country);
+  }
+
+  // Handle country change
+  countySel.onchange = function () {
+    stateSel.length = 1; // Clear state options
+    districtSel.length = 1; // Clear city options
+    if (this.selectedIndex < 1) return; // Exit if no country selected
+    for (const state in stateObject[this.value]) {
+      stateSel.options[stateSel.options.length] = new Option(state, state);
+    }
+  };
+
+  // Handle state change
+  stateSel.onchange = function () {
+    districtSel.length = 1; // Clear city options
+    if (this.selectedIndex < 1) return; // Exit if no state selected
+    const district = stateObject[countySel.value][this.value];
+    for (let i = 0; i < district.length; i++) {
+      districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+    }
+  };
+}
+
 let productsPerPage = 3;  // Default number of products per page
 let currentProductPage = 1;
 

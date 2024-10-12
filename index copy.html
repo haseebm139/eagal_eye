@@ -1,330 +1,3434 @@
-<div class="viewOrder px-3" id="viewOrder" style="display: none">
-  <div
-    class="Width d-flex justify-content-between align-items-center customer2"
-  >
-    <div
-      class="d-flex align-items-center justify-content-center gap-3"
-    >
-      <span class="d-flex gap-2">
-        <p class="mediumFont m-0">Order Number</p>
-        <p class="LightFont m-0">#88540</p>
-      </span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./login/css/intlTelInput.css" />
 
-      <span class="d-flex gap-2">
-        <p class="mediumFont m-0">Order Date</p>
-        <p class="LightFont m-0">12Sept 2022 - 12:55pm</p>
-      </span>
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/intlTelInput.css" />
 
-      <span class="d-flex gap-2">
-        <p class="mediumFont m-0">Tracking ID</p>
-        <p class="LightFont m-0">1534ft9</p>
-      </span>
-      <span>
-        <img src="./assests/svg/copyIcon.svg" />
-      </span>
-    </div>
-    <div class="d-flex gap-3">
-      <div class="dropdown-container dropdown2 position-relative">
-        <select
-          id="data-category"
-          class="form-control4 d-inline w-auto"
+    <!-- //for phone -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- //for phone -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Dashboard</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      @font-face {
+        font-family: poppinsBold;
+        src: url("./assests/Poppins/Poppins-Bold.ttf");
+      }
+      @font-face {
+        font-family: InterMedium;
+        src: url("./website/assests/Inter/static/Inter_18pt-Medium.ttf");
+      }
+
+      @font-face {
+        font-family: InterLight;
+        src: url("./website/assests/Inter/static/Inter_18pt-ExtraLight.ttf");
+      }
+
+      @font-face {
+        font-family: poppinsMedium;
+        src: url("./assests/Poppins/Poppins-Medium.ttf");
+      }
+      .viewOrderDetails {
+        font-family: InterMedium;
+        font-size: 13px;
+      }
+      .viewOrderDetails span {
+        font-family: InterLight;
+      }
+      .custom-active {
+        background-color: #5570f129; /* Custom green */
+        color: rgb(0, 0, 0);
+
+        padding: 5px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .shipping-active {
+        background-color: #55f17c29; /* Custom green */
+        color: rgb(0, 0, 0);
+
+        padding: 5px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .custom-inactive {
+        background-color: #fff2e2; /* Custom red */
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .ql-container {
+        background-color: #f6f7fb;
+        height: 20vh;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+      }
+      .ql-toolbar.ql-snow {
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+        background-color: #f6f7fb;
+      }
+      .product {
+        font-family: InterLight;
+        color: #abafb1;
+        background: #f6f7fb;
+        margin: 5px 0;
+        padding: 1rem;
+        border-radius: 15px;
+      }
+
+      .product2 {
+        background: white;
+        margin: 5px 0;
+        padding: 1rem;
+        border-radius: 15px;
+      }
+      .product2 h6 {
+        color: #45464e;
+        font-size: 16px;
+        font-family: InterMedium;
+      }
+      .dropdownbtn {
+        padding: 5px 0.75rem;
+        font-size: 12px;
+        color: #000;
+        border-color: none;
+        border-radius: 21px;
+        background-color: #989ea3;
+      }
+      .Width {
+        width: 100%;
+      }
+      .Width span {
+        font-family: InterMedium;
+        font-size: 16px;
+      }
+      .cancel {
+        border-radius: 20px;
+        padding: 3px 2px;
+        border: none;
+      }
+      .NewCompany {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Dark semi-transparent background */
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999; /* Ensure it appears above other content */
+      }
+
+      .model {
+        border-radius: 20px;
+        background-color: white;
+        width: 400px;
+
+        padding: 1.5rem 1.2rem;
+        z-index: 2;
+      }
+      .Ordermodel {
+        width: auto !important;
+      }
+
+      .model span {
+        font-family: poppinsBold;
+      }
+
+      .model p {
+        margin-top: none;
+        margin-bottom: 0;
+        color: #8b8d97;
+        padding: 6px 0;
+        font-size: 13px;
+        font-family: InterMedium;
+      }
+
+      .iti {
+        margin: 5px 0;
+      }
+      .inputBox {
+        outline: none;
+        margin: 5px 0;
+        width: 100%;
+        border: none;
+        color: #abafb1;
+        font-size: 13px;
+        font-family: InterMedium;
+        background-color: #f6f7fb;
+        padding: 10px;
+        border-radius: 12px;
+      }
+      .companyAddress {
+        color: #8b8d97;
+        font-size: 11px;
+      }
+      .addressSection {
+        display: none;
+      }
+      .orderCard {
+        height: 100vh;
+      }
+
+      .Assigned {
+        background-color: #d9d9d9;
+        padding: 5px 10px;
+        border-radius: 15px;
+        color: #8b8d97;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .dropdown-like {
+        display: none; /* Initially hidden */
+        position: absolute;
+        right: 79px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+        width: 200px;
+        z-index: 100;
+      }
+
+      .dropdown-like input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .dropdown-like ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .dropdown-like ul li {
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+      .dropdown-like ul li:hover {
+        background-color: #d9d9d9;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .dropdown-like ul li label {
+        font-family: InterMedium;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #8b8d97;
+      }
+
+      .user-avatar {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      /* Visible state of dropdown */
+      .dropdown-like.show {
+        display: block;
+      }
+      .modal-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        margin: 10% auto;
+        padding: 4px;
+        border-radius: 8px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .modal-content2 {
+        display: none;
+        position: absolute;
+        background-color: white;
+        margin: 7% auto;
+        padding: 16px;
+        width: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .modal-header {
+        font-family: InterMedium;
+        align-items: center;
+        padding-bottom: 5px;
+      }
+
+      .filter-group {
+        margin-bottom: 15px;
+      }
+
+      .filter-group label {
+        font-size: 13px;
+        color: #53545c;
+        font-family: InterMedium;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .filter-group2 label {
+        font-size: 13px;
+        font-family: InterLight !important;
+      }
+
+      .amount-fields {
+        display: flex;
+        gap: 10px;
+      }
+      .select {
+        font-size: 13px;
+        outline: none;
+        border: 1px solid #d9d9d9;
+        width: 100%;
+        border-radius: 4px;
+        padding: 8px;
+      }
+      .amount-fields input {
+        width: 100px;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .filter-btn-submit {
+        background-color: #ffd014;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        border-radius: 12px;
+        cursor: pointer;
+      }
+      .year-select {
+        border: none;
+        color: gray;
+        font-size: 14px;
+      }
+      .calendar {
+        top: 1rem;
+        margin: 0 auto;
+        width: 300px;
+        background: #fff;
+      }
+      .mainCalendar {
+        background-color: #f4f5fa;
+        border-radius: 13px;
+      }
+      .calendar header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .calendar nav {
+        display: flex;
+        align-items: center;
+      }
+      .calendar ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      .calendar ul li {
+        width: calc(100% / 7);
+        position: relative;
+        z-index: 2;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #prev,
+      #next {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      #prev::before,
+      #next::before {
+        content: "";
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-style: solid;
+        border-width: 0.25em 0.25em 0 0;
+        border-color: #ccc;
+      }
+      #next::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      #prev::before {
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+      #prev:hover::before,
+      #next:hover::before {
+        border-color: #000;
+      }
+      .days {
+        font-weight: 600;
+      }
+      .dates li.today {
+        color: #000000;
+      }
+      .dates li.today::before {
+        content: "";
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ffffff;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .dates li.inactive {
+        color: #ccc;
+      }
+      .selected-range {
+        background-color: #b4ddff; /* Light blue to indicate selection */
+        color: black;
+      }
+      .start-date {
+        border-radius: 50%;
+        background-color: #000000; /* Green background for start date */
+        color: white;
+      }
+
+      .end-date {
+        border-radius: 50%;
+        background-color: #000000; /* Red background for end date */
+        color: white;
+      }
+      .nav-tabs {
+        background: white;
+      }
+
+      .product-wrapper {
+        position: relative;
+      }
+
+      .product-wrapper input[type="number"]::-webkit-outer-spin-button,
+      .product-wrapper input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* For Firefox */
+      .product-wrapper input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .product-wrapper .quantity-controls {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 4px;
+        flex-direction: column;
+      }
+
+      .product-wrapper .quantity-controls img {
+        width: 32px;
+
+        cursor: pointer;
+      }
+      .subFormleft h6 {
+        font-family: InterMedium;
+        color: #8b8d97;
+      }
+      .rightForm h6 {
+        font-family: InterMedium;
+        color: #8b8d97;
+      }
+      .discount {
+        font-family: InterLight;
+        color: #8b8d97;
+      }
+      .Description {
+        color: #8b8d97;
+      }
+/* /'meri css' */
+
+ .item-bp{
+  width: 80px;
+ }
+.item-pp{
+  width: 120px !important;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar d-flex flex-column" id="sidebar">
+      <div class="text-left p-3 border-bottom">
+        <img src="./assests/image 715.png" alt="Logo" class="img-fluid" />
+      </div>
+      <nav class="nav flex-column mt-3">
+        <div>
+          <a
+            id="dashboard-tab"
+            data-bs-toggle="tab"
+            href="hashtag#dashboard"
+            role="tab"
+            aria-controls="dashboard"
+            aria-selected="true"
+            class="nav-link active"
+          >
+            <img src="./assests/svg/Category.svg" /> <span>Dashboard</span>
+          </a>
+          <a
+            id="orders-tab"
+            data-bs-toggle="tab"
+            href="hashtag#orders"
+            role="tab"
+            aria-controls="orders"
+            aria-selected="true"
+            class="nav-link"
+          >
+            <img src="./assests/svg/Bag.svg" /> <span>Orders</span>
+          </a>
+          <a
+            id="customers-tab"
+            data-bs-toggle="tab"
+            href="hashtag#customers"
+            role="tab"
+            aria-controls="customers"
+            aria-selected="true"
+            class="nav-link"
+          >
+            <img src="./assests/svg/2 User.svg" /><span>Customers</span>
+          </a>
+          <a
+            id="products-tab"
+            data-bs-toggle="tab"
+            href="hashtag#products"
+            role="tab"
+            aria-controls="products"
+            aria-selected="true"
+            class="nav-link"
+          >
+            <img src="./assests/svg/Folder.svg" /><span>Products</span>
+          </a>
+          <a 
+          id="settings-tab"
+          data-bs-toggle="tab"
+          href="hashtag#settings"
+          role="tab"
+          aria-controls="settings"
+          aria-selected="true"
+          class="nav-link"
         >
-          <option value="Revenue">Ready to Ship</option>
-          <option value="Expenses">This Week</option>
-          <option value="Profit Margin">This Week</option>
-        </select>
-        <span class="dropdown-icon"></span>
-        <!-- Down arrow icon -->
-      </div>
-      <button class="order-btn d-flex align-items-center">
-        Print Invoice
-      </button>
-      <button class="suspension-btn d-flex align-items-center">
-        Cancel Order
-      </button>
+            <img src="./assests/svg/Setting.svg" /><span>Settings</span>
+          </a>
+        </div>
+
+        <div class="botton-center">
+          <a href="#" class="nav-link mt-auto mb-3">
+            <img src="./assests/svg/fi_headphones.svg" />
+            <span>Contact Support</span>
+          </a>
+        </div>
+        <a href="#" class="nav-link mt-auto mb-3">
+          <i class="bx bx-log-out"></i> <span>Logout</span>
+        </a>
+      </nav>
     </div>
-  </div>
 
-  <div class="d-flex gap-3 mt-3">
-    <div class="" style="width: 30%">
-      <div class="card text-center">
-        <div class="alignemnt">
-          <div class="d-flex gap-3">
-            <img src="./assests/svg/client2.svg" />
-            <div class="">
-              <p class="mediumFont2 m-0 p-0 text-left">
-                Janet Adebayo
-              </p>
-              <p class="mediumFont3 m-0 p-0 text-left">
-                Last Order <span>12 sept 2022</span>
-              </p>
-            </div>
-          </div>
-          <div class="leftAlignement">
-            <button class="CustomerStatusPending">Pending</button>
-            <!-- <p class="side-text">This Week</p> -->
-          </div>
-        </div>
-
-        <div class="bottomContent">
-          <span>
-            <p class="sales">Phone</p>
-            <p class="bold">+236365746</p>
-          </span>
-
-          <span>
-            <p class="sales">Email</p>
-            <p class="bold">abc@yopmail.com</p>
-          </span>
-        </div>
+    <div class="main-content" id="main-content">
+      <div class="toggle-btn" id="toggle-btn">
+        <img src="./assests/svg/Home.svg" />
+        <span id="tabName" class="ms-2"></span>
       </div>
-    </div>
-    <div class=" " style="width: 40%">
-      <div class="card text-center">
-        <div class="alignemnt">
-          <img src="./assests/svg/address.svg" />
-        </div>
-
-        <div class="bottomContent">
-          <span class="bottomSpan">
-            <p class="sales">Home Address</p>
-            <p class="bold">
-              No.15 Adekunle Street,Yaba, Lagos State
-            </p>
-          </span>
-
-          <span class="bottomSpan">
-            <p class="sales">Billing Address</p>
-            <p class="bold">
-              No.15 Adekunle Street,Yaba, Lagos State
-            </p>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class=" " style="width: 30%">
-      <div class="card text-center">
-        <div class="d-flex justify-content-between CustomerOrders">
-          <img src="./assests/svg/orders.svg" />
-
+      <div
+        class="dashboard-header d-flex align-items-center justify-content-between"
+      >
+        <h3 id="page-title">Dashboard</h3>
+        <div class="d-flex align-items-center gap-3">
           <div class="dropdown-container position-relative">
-            <select
-              id="data-category"
-              class="form-control2 d-inline w-auto"
-            >
-              <option value="Revenue">All time</option>
+            <select id="data-category" class="form-control3 d-inline w-auto">
+              <option value="Revenue">Eagle eye</option>
               <option value="Expenses">This Week</option>
               <option value="Profit Margin">This Week</option>
             </select>
             <span class="dropdown-icon"></span>
             <!-- Down arrow icon -->
           </div>
-        </div>
-
-        <div class="bottomContent">
-          <span class="bottomSpan">
-            <p class="sales">Total Orders</p>
-            <p class="bold3">$1,250</p>
-          </span>
+          <img
+            src="./assests/svg/Notification.svg"
+            class="avatar"
+            alt="Avatar"
+          />
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="product2 my-4">
-    <div class="d-flex justify-content-between">
-      <h6>Customer Orders</h6>
-
-      <div class="d-flex gap-2 position-relative">
-        <div class="search-bar">
-          <img src="./assests/svg/Search.svg" />
-          <input type="text" placeholder="Search.." />
-        </div>
-
-        <button
-          type="button"
-          class="filter-btn"
-          id="openModalButton"
-        >
-          <img src="./assests/svg/filter1.svg" /> Filter
-        </button>
-
-     
-
-        <button
-          type="button"
-          class="filter-btn"
-          id="openModalButton2"
-        >
-          <img src="./assests/svg/Calendar.svg" /> Calendar
-        </button>
-       
-        <button class="filter-btn">
-          <img src="./assests/svg/Send.svg" /> Send
-        </button>
-        <div>
-          <select
-            id="itemsPerPage"
-            class="form-select form-select-sm filter-dropdown"
-            style="width: auto"
+      <div id="dynamic-content">
+        <div class="tab-content" id="myTabContent">
+          <!-- //tab of dasboard -->
+          <div
+            class="blue tab-pane fade"
+            id="dashboard"
+            role="tabpanel"
+            aria-labelledby="dashboard-tab"
           >
-            <option value="3">bulk Action</option>
-            <option value="5">page</option>
-            <option value="10">per page</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    
+            <div class="container-fluid">
+              <div class="d-flex gap-3">
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon1.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
 
-          <div class="table-responsive">
-            <table class="table order mt-3">
-              <thead>
-                <tr class="orderTable">
-                  <th scope="col">
-                    <label class="custom-checkbox">
-                      <input type="checkbox" id="select-all" />
-                      <span class="checkmark"></span>
-                    </label>
-                  </th>
-
-                  <th scope="col">Customer Name</th>
-                  <th scope="col">Order Date</th>
-                  <th scope="col">Shipping</th>
-                  <th scope="col">location</th>
-                  <th scope="col">Tracking ID</th>
-                  <th scope="col">Qty</th>
-                  <th scope="col">Order Total</th>
-                  <th scope="col">Assign Status</th>
-                </tr>
-              </thead>
-              <tbody id="table-body1">
-                <td>
-                  <label class="custom-checkbox">
-                    <input
-                      type="checkbox"
-                      class="product-checkbox"
-                      data-id="${product.id}"
-                    />
-                    <span class="checkmark"></span>
-                  </label>
-                </td>
-
-                <td id="customerName">${product.name}</td>
-                <td>${product.category}</td>
-                <td>${product.price}</td>
-                <td>${product.stock}</td>
-                <td>${product.discount}</td>
-
-                <td>${product.value}</td>
-                <td>${product.action}</td>
-                <td>
-                  <span class="Assigned" id="assignButton">
-                    Assign to
-                    <img src="./assests/svg/fi_chevron-down2.svg" />
-                  </span>
-                  <div class="dropdown-like" id="dropdown">
-                    <input
-                      type="text"
-                      id="searchInput"
-                      placeholder="Search"
-                    />
-                    <ul id="assignList">
-                      <li>
-                        <label>
-                          <img
-                            src="./assests/Image.png"
-                            alt="user-avatar"
-                            class="user-avatar"
-                          />
-                          Janet Adebayo
-                        </label>
-                      </li>
-                      <li>
-                        <label>
-                          <img
-                            src="./assests/image 726.png"
-                            alt="user-avatar"
-                            class="user-avatar"
-                          />
-                          Samuel Johnson
-                        </label>
-                      </li>
-                      <li>
-                        <label>
-                          <img
-                            src="./assests/image 715.png"
-                            alt="user-avatar"
-                            class="user-avatar"
-                          />
-                          Christian Dior
-                        </label>
-                      </li>
-                      <li>
-                        <label>
-                          <img
-                            src="./assests/image 726.png"
-                            alt="user-avatar"
-                            class="user-avatar"
-                          />
-                          Janet Adebayo
-                        </label>
-                      </li>
-                    </ul>
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Total Sales</p>
+                        <p class="bold">$4,000,000.00</p>
+                      </span>
+                      <span>
+                        <p class="sales">Volume</p>
+                        <p class="bold">
+                          450 <span class="rates">+20.00%</span>
+                        </p>
+                      </span>
+                    </div>
                   </div>
-                </td>
-              </tbody>
-            </table>
+                </div>
+                <div class=" " style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon2.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
 
-            <div
-              class="pagination-container d-flex justify-content-between align-items-center"
-            >
-              <!-- Items per page dropdown -->
-              <div
-                class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
-              >
-                <select
-                  id="itemsPerPage"
-                  class="form-select productDropdown3 form-select-sm filter-dropdown"
-                >
-                  <option value="3">3</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                </select>
-                <p>Items per page</p>
-                <p class="TotalItems">1-10 of 100 items</p>
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Customers</p>
+                        <p class="bold">
+                          1,250 <span class="rates">+15.80%</span>
+                        </p>
+                      </span>
+                      <span>
+                        <p class="sales">Active</p>
+                        <p class="bold">
+                          1,180 <span class="rates"> 85%</span>
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="" style="width: 40%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon2.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">All Orders</p>
+                        <p class="bold">450</p>
+                      </span>
+                      <span>
+                        <p class="sales">Pending</p>
+                        <p class="bold">5</p>
+                      </span>
+
+                      <span>
+                        <p class="sales">Completed</p>
+                        <p class="bold">445</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <!-- Showing results text -->
+              <div class="d-flex gap-3 layout mt-3">
+                <div class="rightSideContent">
+                  <div class="d-flex gap-3">
+                    <div class="alignmentOfPIChart">
+                      <div
+                        class="card text-center"
+                        style="gap: 0; height: 100%"
+                      >
+                        <div class="alignemnt">
+                          <h6>Marketting</h6>
+                          <div class="leftAlignement">
+                            <div class="dropdown-container position-relative">
+                              <select
+                                id="data-category"
+                                class="form-control2 d-inline w-auto"
+                              >
+                                <option value="Revenue">This Week</option>
+                                <option value="Expenses">This Week</option>
+                                <option value="Profit Margin">This Week</option>
+                              </select>
+                              <span class="dropdown-icon"></span>
+                              <!-- Down arrow icon -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="container text-center">
+                          <div
+                            class="legend-container"
+                            id="legend-container"
+                          ></div>
+                          <div class="chart-container mt-4">
+                            <canvas id="myChart"></canvas>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sec-section d-flex flex-column gap-3">
+                      <div class="card text-center">
+                        <div class="alignemnt">
+                          <img src="./assests/svg/Folder.svg" />
+                          <div class="leftAlignement">
+                            <!-- <p class="side-text">This Week</p>
+                                 <img src="./assests/svg/Vector.svg" /> -->
+                          </div>
+                        </div>
 
-              <!-- Pagination -->
-              <nav
-                class="d-flex justify-content align-items-center gap-2"
-                aria-label="Page navigation "
-              >
-                <select
-                  id="itemsPerPage"
-                  class="form-select productDropdown3 form-select-sm filter-dropdown"
-                >
-                  <option value="3">1</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                </select>
-                <p class="TotalItems">1-10 of 100 items</p>
-                <ul class="pagination mb-0">
-                  <li class="page-item">
-                    <a class="page-link" href="#" id="prev-page">
-                      <img src="./assests/svg/Arrow-Down4.svg" />
-                    </a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" id="next-page">
-                      <img src="./assests/svg/Arrow-Down3.svg" />
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                        <div class="bottomContent">
+                          <span>
+                            <p class="sales">All Products</p>
+                            <p class="bold">45</p>
+                          </span>
+
+                          <span>
+                            <p class="sales">Active</p>
+                            <p class="bold">
+                              32 <span class="rates">+24%</span>
+                            </p>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="card text-center">
+                        <div class="alignemnt">
+                          <img src="./assests/svg/cart.svg" />
+                          <div class="leftAlignement">
+                            <p class="side-text">This Week</p>
+                            <img src="./assests/svg/Vector.svg" />
+                          </div>
+                        </div>
+
+                        <div class="bottomContent">
+                          <span>
+                            <p class="sales" style="color: red">
+                              Abandoned Cart
+                            </p>
+                            <p class="bold">
+                              20% <span class="rates">+0.00%</span>
+                            </p>
+                          </span>
+
+                          <span>
+                            <p class="sales">Customers</p>
+                            <p class="bold">30</p>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row section-three">
+                    <div class="container container-2 g-3 mt-3 text-center">
+                      <!-- Dropdowns for selecting data type and date range -->
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <div class="d-flex gap-3 align-items-center">
+                          <h6>Custom Summary</h6>
+                          <div class="dropdown-container position-relative">
+                            <select
+                              id="data-category"
+                              class="form-control d-inline w-auto"
+                            >
+                              <option value="Revenue">Sales</option>
+                              <option value="Expenses">Expenses</option>
+                              <option value="Profit Margin">
+                                Profit Margin
+                              </option>
+                            </select>
+                            <span class="dropdown-icon"
+                              ><img src="./assests/svg/fi_chevron-down.svg"
+                            /></span>
+                            <!-- Down arrow icon -->
+                          </div>
+                        </div>
+                        <div>
+                          <select
+                            id="time-range"
+                            class="form-control d-inline w-auto"
+                          >
+                            <option value="7">Past 7 Days</option>
+                            <option value="14">Past 14 Days</option>
+                            <option value="30">Past 30 Days</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Chart Container -->
+                      <div class="custom-chart-container">
+                        <div class="custom-chart-card">
+                          <canvas id="customBarChart"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="leftSideContent">
+                  <div class="side_card">
+                    <img src="./assests/iconContainer.png" class="lock" />
+                    <div>
+                      <h6>No Orders Yet?</h6>
+                      <p>
+                        Add products to your store and start <br />
+                        selling to see orders here.
+                      </p>
+                      <button class="productBtn">+ New Product</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <!-- //tab of orders -->
+          <div
+            class="red tab-pane fade"
+            id="orders"
+            role="tabpanel"
+            aria-labelledby="orders-tab"
+          >
+            <div class="container-fluid order-container" id="orderContainer">
+              <div
+                class="Width d-flex justify-content-between align-items-center my-3"
+              >
+                <span class="ml-2">Order Summary</span>
+                <button
+                  class="order-btn d-flex align-items-center"
+                  id="addOrderBtn"
+                >
+                  +
+                  <pre></pre>
+                  create a New Customer
+                </button>
+              </div>
+              <div class="d-flex gap-3">
+                <div class="" style="width: 35%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon3.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Total Sales</p>
+                        <p class="bold">$4,000,000.00</p>
+                      </span>
+                      <span>
+                        <p class="sales">Volume</p>
+                        <p class="bold">
+                          450 <span class="rates">+20.00%</span>
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 35%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon3.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Customers</p>
+                        <p class="bold">
+                          1,250 <span class="rates">+15.80%</span>
+                        </p>
+                      </span>
+                      <span>
+                        <p class="sales">Active</p>
+                        <p class="bold">
+                          1,180 <span class="rates"> 85%</span>
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/cart2.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">All Orders</p>
+                        <p class="bold">450</p>
+                      </span>
+                      <span>
+                        <p class="sales">Pending</p>
+                        <p class="bold">5</p>
+                      </span>
+
+                      <span>
+                        <p class="sales">Completed</p>
+                        <p class="bold">445</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product2 mt-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Customer Orders</h6>
+
+                  <div class="d-flex gap-2 position-relative">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton"
+                    >
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+
+                    <div class="modal-content" id="modal-content">
+                      <div class="modal-header">
+                        <h6>Filter</h6>
+                      </div>
+                      <div class="modal-body">
+                        <form id="filterForm">
+                          <div class="filter-group">
+                            <label>Order Type</label>
+                            <div
+                              class="d-flex justify-content-between align-items-center mt-1 filter-group2"
+                            >
+                              <label
+                                ><input class="" type="checkbox" /> Home
+                                Delivery</label
+                              >
+                              <label><input type="checkbox" /> Pick Up</label>
+                            </div>
+                          </div>
+
+                          <div class="filter-group">
+                            <label>Status</label>
+                            <select class="select">
+                              <option value="all">All</option>
+                              <option value="delivered">Delivered</option>
+                              <option value="pending">Pending</option>
+                            </select>
+                          </div>
+
+                          <div class="filter-group">
+                            <label>Customer</label>
+                            <select class="select">
+                              <option value="all">All</option>
+                              <option value="customer1">Customer 1</option>
+                              <option value="customer2">Customer 2</option>
+                            </select>
+                          </div>
+
+                          <div class="filter-group">
+                            <label>Amount</label>
+                            <div class="amount-fields">
+                              <div class="d-flex flex-column">
+                                <label>From</label>
+                                <input type="number" placeholder="0.00" />
+                              </div>
+                              <div class="d-flex flex-column">
+                                <label>To</label>
+                                <input type="number" placeholder="0.00" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <button type="submit" class="filter-btn-submit">
+                            Filter
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton2"
+                    >
+                      <img src="./assests/svg/Calendar.svg" /> Calendar
+                    </button>
+                    <div id="modal-content2" class="modal-content2">
+                      <h6>By Date</h6>
+
+                      <div class="d-flex justify-content-between">
+                        <div
+                          class="d-flex flex-column align-items-baseline mt-1 filter-group2"
+                        >
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            This Week
+                          </label>
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            This Month
+                          </label>
+
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            This Year
+                          </label>
+
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            Date range
+                          </label>
+                        </div>
+
+                        <div
+                          class="d-flex flex-column align-items-baseline mt-1 filter-group2"
+                        >
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            Last Week
+                          </label>
+
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            Last Month
+                          </label>
+                          <label class="custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="product-checkbox"
+                              data-id="${product.id}"
+                            />
+                            <span class="checkmark2"></span>
+                            Last Year
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="toggle-button">
+                        <button class="toggle-option active" id="from-btn">
+                          From
+                        </button>
+                        <button class="toggle-option" id="to-btn">To</button>
+                      </div>
+
+                      <div class="calendar">
+                        <header>
+                          <h6>
+                            <select
+                              class="year-select"
+                              id="year-select"
+                            ></select>
+                            <select
+                              class="year-select"
+                              id="month-select"
+                            ></select>
+                          </h6>
+                        </header>
+                        <section class="mainCalendar">
+                          <ul class="days">
+                            <li>S</li>
+                            <li>M</li>
+                            <li>T</li>
+                            <li>W</li>
+                            <li>T</li>
+                            <li>F</li>
+                            <li>S</li>
+                          </ul>
+                          <ul class="dates"></ul>
+                        </section>
+                      </div>
+                      <button class="calendarbtn">filter</button>
+                    </div>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> Send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <!-- Tab Navigation -->
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="mediumFontBorder active"
+                        id="new-orders-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#new-orders"
+                        type="button"
+                        role="tab"
+                        aria-controls="new-orders"
+                        aria-selected="true"
+                      >
+                        New Orders
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="mediumFontBorder"
+                        id="assigned-orders-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#assigned-orders"
+                        type="button"
+                        role="tab"
+                        aria-controls="assigned-orders"
+                        aria-selected="false"
+                      >
+                        Assigned Orders
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="mediumFontBorder"
+                        id="delivered-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#delivered"
+                        type="button"
+                        role="tab"
+                        aria-controls="delivered"
+                        aria-selected="false"
+                      >
+                        Delivered
+                      </button>
+                    </li>
+                  </ul>
+
+                  <!-- Tab Content -->
+                  <div class="tab-content mt-3" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="new-orders"
+                      role="tabpanel"
+                      aria-labelledby="new-orders-tab"
+                    >
+                      <div class="table-responsive">
+                        <table class="table order mt-3">
+                          <thead>
+                            <tr class="orderTable">
+                              <th scope="col">
+                                <label class="custom-checkbox">
+                                  <input type="checkbox" id="select-all-cm-orders" />
+                                  <span class="checkmark"></span>
+                                </label>
+                              </th>
+                              <th scope="col">Customer Name</th>
+                              <th scope="col">Order Date</th>
+                              <th scope="col">Shipping</th>
+                              <th scope="col">Location</th>
+                              <th scope="col">Tracking ID</th>
+                              <th scope="col">Qty</th>
+                              <th scope="col">Order Total</th>
+                              <th scope="col">Assign Status</th>
+                            </tr>
+                          </thead>
+                          <tbody id="table-body-cm-order">
+                            <!-- Rows will be generated dynamically here -->
+                          </tbody>
+                        </table>
+                        
+                        <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                          <div class="d-flex align-items-center">
+                            <span id="pagination-info-customer-orders" class="item-pp"></span>
+                            <label for="items-per-page-customer-orders" class="item-pp ms-3">Items per page:</label>
+                            <select id="items-per-page-customer-orders" class="form-select ms-2 item-bp">
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="8">8</option>
+                            </select>
+                          </div>
+                        
+                          <div class="d-flex align-items-center">
+                            <span id="total-pages-text-customer-orders" class="me-3 item-pp"></span>
+                            <select id="page-select-customer-orders" class="form-select me-3 item-bp"></select>
+                            <ul class="pagination mb-0">
+                              <li class="page-item">
+                                <a class="page-link" href="#" id="prev-page-customer-orders">
+                                  <img src="./assests/svg/Arrow-Down4.svg" />
+                                </a>
+                              </li>
+                              <li class="page-item">
+                                <a class="page-link" href="#" id="next-page-customer-orders">
+                                  <img src="./assests/svg/Arrow-Down3.svg" />
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        
+
+                       
+                      </div>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="assigned-orders"
+                      role="tabpanel"
+                      aria-labelledby="assigned-orders-tab"
+                    >
+                      <div>Content for Assigned Orders</div>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="delivered"
+                      role="tabpanel"
+                      aria-labelledby="delivered-tab"
+                    >
+                      <div>Content for Delivered</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="orderCard d-flex flex-column text-center justify-content-center align-items-center mb-5">
+    <img src="./assests/iconContainer.png" class="lock mb-5" />
+    <div>
+      <h6>No Orders Yet?</h6>
+      <p>
+        Add products to your store and start <br />
+        selling to see orders here.
+      </p>
+      <button class="productBtn">+ New Product</button>
     </div>
-  </div>
+  </div> -->
+              </div>
+            </div>
+            <div class="viewOrder px-3" id="viewOrder" style="display: none">
+              <div
+                class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center gap-3"
+                >
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Order Number</p>
+                    <p class="LightFont m-0">#88540</p>
+                  </span>
+
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Order Date</p>
+                    <p class="LightFont m-0">12Sept 2022 - 12:55pm</p>
+                  </span>
+
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Tracking ID</p>
+                    <p class="LightFont m-0">1534ft9</p>
+                  </span>
+                  <span>
+                    <img src="./assests/svg/copyIcon.svg" />
+                  </span>
+                </div>
+                <div class="d-flex gap-3">
+                  <div class="dropdown-container dropdown2 position-relative">
+                    <select
+                      id="data-category"
+                      class="form-control4 d-inline w-auto"
+                    >
+                      <option value="Revenue">Ready to Ship</option>
+                      <option value="Expenses">This Week</option>
+                      <option value="Profit Margin">This Week</option>
+                    </select>
+                  </div>
+                  <button class="order-btn d-flex align-items-center">
+                    Print Invoice
+                  </button>
+                  <button class="suspension-btn d-flex align-items-center">
+                    Cancel Order
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex gap-3 mt-3">
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <div class="d-flex gap-3">
+                        <img src="./assests/svg/client2.svg" />
+                        <div class="">
+                          <p class="mediumFont2 m-0 p-0 text-left">
+                            Janet Adebayo
+                          </p>
+                          <p class="mediumFont3 m-0 p-0 text-left">
+                            Last Order <span>12 sept 2022</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="leftAlignement">
+                        <button class="CustomerStatusPending">Pending</button>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Phone</p>
+                        <p class="bold">+236365746</p>
+                      </span>
+
+                      <span>
+                        <p class="sales">Email</p>
+                        <p class="bold">abc@yopmail.com</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 40%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/address.svg" />
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Home Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+
+                      <span class="bottomSpan">
+                        <p class="sales">Billing Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 30%">
+                  <div class="card text-center">
+                    <div class="d-flex justify-content-between CustomerOrders">
+                      <img src="./assests/svg/orders.svg" />
+
+                      <div class="dropdown-container position-relative">
+                        <select
+                          id="data-category"
+                          class="form-control2 d-inline w-auto"
+                        >
+                          <option value="Revenue">All time</option>
+                          <option value="Expenses">This Week</option>
+                          <option value="Profit Margin">This Week</option>
+                        </select>
+                        <span class="dropdown-icon"></span>
+                        <!-- Down arrow icon -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Total Orders</p>
+                        <p class="bold3">$1,250</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product2 my-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Items 3</h6>
+
+                  <div class="d-flex gap-2 position-relative">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton"
+                    >
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+
+                    <button
+                      type="button"
+                      class="filter-btn"
+                      id="openModalButton2"
+                    >
+                      <img src="./assests/svg/Calendar.svg" /> Calendar
+                    </button>
+
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> Send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table order mt-3">
+                    <thead>
+                      <tr class="orderTable">
+                        <th scope="col">
+                          <label class="custom-checkbox">
+                            <input type="checkbox" id="select-all" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </th>
+                        <th></th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Shipping Service</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Order Total</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body1">
+                      <td>
+                        <label class="custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="product-checkbox"
+                            data-id="${product.id}"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <div class="orderImage">
+                          <img src="./assests/image 715.png" />
+                        </div>
+                      </td>
+                      <td id="customerName">${product.name}</td>
+                      <td>${product.category}</td>
+                      <td>${product.price}</td>
+                      <td>${product.stock}</td>
+                      <td>${product.discount}</td>
+
+                      <td>${product.value}</td>
+                      <td>${product.action}</td>
+                      <td>
+                        <span class="Assigned" id="assignButton">
+                          Assign to
+                          <img src="./assests/svg/fi_chevron-down2.svg" />
+                        </span>
+                        <div class="dropdown-like" id="dropdown">
+                          <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search"
+                          />
+                          <ul id="assignList">
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/Image.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Janet Adebayo
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 726.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Samuel Johnson
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 715.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Christian Dior
+                              </label>
+                            </li>
+                            <li>
+                              <label>
+                                <img
+                                  src="./assests/image 726.png"
+                                  alt="user-avatar"
+                                  class="user-avatar"
+                                />
+                                Janet Adebayo
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tbody>
+                  </table>
+
+                  <div
+                    class="pagination-container d-flex justify-content-between align-items-center"
+                  >
+                    <!-- Items per page dropdown -->
+                    <div
+                      class="PaginationDropdown d-flex justify-content-center align-items-center gap-2"
+                    >
+                      <select
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                      >
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                      <p>Items per page</p>
+                      <p class="TotalItems">1-10 of 100 items</p>
+                    </div>
+
+                    <!-- Showing results text -->
+
+                    <!-- Pagination -->
+                    <nav
+                      class="d-flex justify-content align-items-center gap-2"
+                      aria-label="Page navigation "
+                    >
+                      <select
+                        id="itemsPerPage"
+                        class="form-select productDropdown3 form-select-sm filter-dropdown"
+                      >
+                        <option value="3">1</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                      </select>
+                      <p class="TotalItems">1-10 of 100 items</p>
+                      <ul class="pagination mb-0">
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="prev-page1">
+                            <img src="./assests/svg/Arrow-Down4.svg" />
+                          </a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" id="next-page1">
+                            <img src="./assests/svg/Arrow-Down3.svg" />
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NewCompany" id="newCompanyDiv1">
+              <div class="model Ordermodel d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="my-2">Create New Order</span>
+                  <button class="cancel" id="cancelBtn1">
+                    <img src="./assests/svg/Frame 5800.svg" />
+                  </button>
+                </div>
+                <form>
+                  <div>
+                    <div class="d-flex gap-3">
+                      <div class="orderLeftConatiner">
+                        <div class="d-flex justify-content-between">
+                          <p class="CustomerPopup">Order Details</p>
+                          <div class="d-flex gap-3">
+                            <p class="CustomerPopup">New Customer</p>
+                            <div class="">
+                              <label class="switch switch2">
+                                <input type="checkbox" id="toggleSwitch" />
+                                <span class="slider"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <select class="inputBox" id="customer" size="1">
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                            <option value="" selected="selected">
+                              Select Customer
+                            </option>
+                          </select>
+                          <div class="d-flex gap-2">
+                            <select class="inputBox" id="customer" size="1">
+                              <option value="" selected="selected">
+                                Payment Type
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                            </select>
+                            <select class="inputBox" id="customer" size="1">
+                              <option value="" selected="selected">
+                                Order Type
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                              <option value="" selected="selected">
+                                Select Customer
+                              </option>
+                            </select>
+                          </div>
+                          <div class="mt-3">
+                            <p>Order Date & Time</p>
+                            <div class="d-flex gap-3">
+                              <input
+                                type="date"
+                                id="date"
+                                name="date"
+                                class="date"
+                                value="2024-01-01"
+                              />
+                              <input
+                                type="time"
+                                id="time"
+                                name="time"
+                                class="date"
+                                value="00:00"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="mt-3">
+                            <p>Order Status</p>
+                            <select
+                              class="inputBox"
+                              id="customerPending"
+                              size="1"
+                            >
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                              <option value="" selected="selected">
+                                Pending
+                              </option>
+                            </select>
+
+                            <textarea
+                              class="NoteDescription"
+                              id="OrderNote"
+                              name="OrderNote"
+                              rows="4"
+                              cols="50"
+                              placeholder="Order Note"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <p class="CustomerPopup">Order Details</p>
+                        <div
+                          class="h-100 d-flex flex-column text-center justify-content-center align-items-center"
+                        >
+                          <img src="./assests/iconContainer.png" class="lock" />
+                          <div>
+                            <h6>Add Products to Your Order</h6>
+                            <p>Search and add products to this order.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                      <button class="cancel-btn2 w-25">Cancel</button>
+                      <button class="add-btn w-25" id="btn00">Add</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+           <!-- //tab of customers -->
+          <div
+            class="black tab-pane fade"
+            id="customers"
+            role="tabpanel"
+            aria-labelledby="customers-tab"
+          >
+            <div class="container-fluid">
+              <div
+                class="Width d-flex justify-content-between align-items-center"
+              >
+                <span class="my-2 ml-2"> Customer Summary</span>
+                <button
+                  class="order-btn d-flex align-items-center"
+                  id="addCompanyBtn"
+                >
+                  +
+                  <pre></pre>
+                  create a New Customer
+                </button>
+              </div>
+              <div class="d-flex gap-3 mt-3">
+                <div class="" style="width: 50%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon2.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">All Customers</p>
+                        <p class="bold">
+                          1,250 <span class="rates">+15.80%</span>
+                        </p>
+                      </span>
+
+                      <span>
+                        <p class="sales">Active</p>
+                        <p class="bold">
+                          1,180 <span class="rates">+85%</span>
+                        </p>
+                      </span>
+                      <span>
+                        <p class="sales">In-Active</p>
+                        <p class="bold">
+                          450 <span class="rates">+20.00%</span>
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 50%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon3.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">New Customers</p>
+                        <p class="bold">
+                          1,250 <span class="rates">+15.80%</span>
+                        </p>
+                      </span>
+                      <span>
+                        <p class="sales">Purchasing</p>
+                        <p class="bold">657</p>
+                      </span>
+                      <span>
+                        <p class="sales">Abandoned Carts</p>
+                        <p class="bold">5</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product2 mt-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Customers</h6>
+                  <div class="d-flex gap-2">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+                    <button class="filter-btn" id="addCompanyBtn2">
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Calendar.svg" /> Calendar
+                    </button>
+
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="container mt-4">
+                  <div class="table-responsive">
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" id="select-all-customers" />
+                              <span class="checkmark"></span>
+                            </label>
+                          </th>
+
+                          <th class="" scope="col">
+                            Customer Name <img src="./assests/svg/sort.svg" />
+                          </th>
+                          <th scope="col">
+                            Email <img src="./assests/svg/sort.svg" />
+                          </th>
+                          <th scope="col">
+                            Phone <img src="./assests/svg/sort.svg" />
+                          </th>
+                          <th scope="col">
+                            Orders <img src="./assests/svg/sort.svg" />
+                          </th>
+                          <th scope="col">
+                            Order Total <img src="./assests/svg/sort.svg" />
+                          </th>
+                          <th scope="col">
+                            Customer Since <img src="./assests/svg/sort.svg" />
+                          </th>
+
+                          <th scope="col">
+                            Status <img src="./assests/svg/sort.svg" />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody id="table-body">
+                        <!-- Table rows will be dynamically generated here -->
+                      </tbody>
+                    </table>
+                    <div class=" pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <!-- Dynamic text display and items per page dropdown -->
+                      <div class="d-flex align-items-center ">
+                        
+                        <select id="items-per-page" class="form-select ms-2 item-bp">
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                        </select>
+                        <label for="items-per-page " class="item-pp ms-3">Items per page:</label>
+                        <span id="pagination-info" class="item-pp"></span> <!-- Dynamic text {1-5 of X items} -->
+
+                      </div>
+                    
+                      <!-- Pagination buttons and page selection dropdown -->
+                      <div class="d-flex align-items-center ">
+                        <span id="total-pages-text" class="me-3 item-pp"></span> <!-- Display total pages like (Page 1 of X) -->
+                        <select id="page-select" class="form-select me-3 item-bp">
+                          <!-- Page numbers will be dynamically added here -->
+                        </select>
+                        <ul class="pagination mb-0">
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="prev-page">
+                              <img src="./assests/svg/Arrow-Down4.svg" />
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="next-page">
+                              <img src="./assests/svg/Arrow-Down3.svg" />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    
+                  
+
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="NewCompany" id="newCompanyDiv">
+              <div class="model d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="my-2">Add a New Company</span>
+                  <button class="cancel" id="cancelBtn">
+                    <img src="./assests/svg/Frame 5800.svg" />
+                  </button>
+                </div>
+                <form>
+                  <div>
+                    <p class="CustomerPopup">Company Information</p>
+                    <div class="d-flex flex-column">
+                      <input class="inputBox" placeholder="Company Name" />
+                      <input class="inputBox" placeholder="Company Email" />
+
+                      <input
+                        class="inputBox"
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value=""
+                      />
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                      <p>Add Address</p>
+                      <div class="">
+                        <label class="switch switch2">
+                          <input type="checkbox"  id="addAddressToggle" />
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div id="addressSection" class="addressSection">
+                      <!--Country -->
+                      <div class="select-something">
+                        <select
+                          class="inputBox"
+                          name="state"
+                          id="countySel"
+                          size="1"
+                        >
+                          <option value="" selected="selected">Country</option>
+                        </select>
+                      </div>
+                      <!--State -->
+
+                      <div class="d-flex gap-3">
+                        <select
+                          class="inputBox"
+                          name="countrya"
+                          id="stateSel"
+                          size="1"
+                        >
+                          <option value="" selected="selected">state</option>
+                        </select>
+
+                        <!--State -->
+
+                        <select
+                          class="inputBox"
+                          name="district"
+                          id="districtSel"
+                          size="1"
+                        >
+                          <option value="" selected="selected">city</option>
+                        </select>
+                      </div>
+
+                      <div class="d-flex gap-2 mt-3">
+                        <p>Billing Address</p>
+                        <div class="d-flex gap-2">
+                          <p class="companyAddress">Same as Company address</p>
+                          <label class="switch switch2">
+                            <input type="checkbox" id="toggleSwitch" />
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mt-3">
+                      <button class="cancel-btn2">Cancel</button>
+                      <button class="add-btn" id="btn00">Add</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="container-fluid">
+              <div
+                class="Width d-flex justify-content-between align-items-center customer2"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center gap-3"
+                >
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Order Number</p>
+                    <p class="LightFont m-0">#88540</p>
+                  </span>
+
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Customer Since</p>
+                    <p class="LightFont m-0">12Sept 2022 - 12:55pm</p>
+                  </span>
+
+                  <span class="d-flex gap-2">
+                    <p class="mediumFont m-0">Tracking ID</p>
+                    <p class="LightFont m-0">1534ft9</p>
+                  </span>
+                  <span>
+                    <img src="./assests/svg/copyIconBlue.svg" />
+                  </span>
+                </div>
+                <div class="d-flex gap-3">
+                  <div class="dropdown-container dropdown2 position-relative">
+                    <select
+                      id="data-category"
+                      class="form-control4 d-inline w-auto"
+                    >
+                      <option value="Revenue">Edit Customer</option>
+                      <option value="Expenses">This Week</option>
+                      <option value="Profit Margin">This Week</option>
+                    </select>
+                    <span class="dropdown-icon"></span>
+                    <!-- Down arrow icon -->
+                  </div>
+                  <button class="suspension-btn d-flex align-items-center">
+                    Suspended Customer
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex gap-3 mt-3">
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <div class="d-flex gap-3">
+                        <img src="./assests/svg/client2.svg" />
+                        <div class="">
+                          <p class="mediumFont2 m-0 p-0 text-left">
+                            Janet Adebayo
+                          </p>
+                          <p class="mediumFont3 m-0 p-0 text-left">
+                            Last Order <span>12 sept 2022</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="leftAlignement">
+                        <button class="CustomerStatus">Active</button>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales">Phone</p>
+                        <p class="bold">+236365746</p>
+                      </span>
+
+                      <span>
+                        <p class="sales">Email</p>
+                        <p class="bold">abc@yopmail.com</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 40%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/address.svg" />
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Home Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+
+                      <span class="bottomSpan">
+                        <p class="sales">Billing Address</p>
+                        <p class="bold">
+                          No.15 Adekunle Street,Yaba, Lagos State
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 30%">
+                  <div class="card text-center">
+                    <div class="d-flex justify-content-between CustomerOrders">
+                      <img src="./assests/svg/orders.svg" />
+
+                      <div class="dropdown-container position-relative">
+                        <select
+                          id="data-category"
+                          class="form-control2 d-inline w-auto"
+                        >
+                          <option value="Revenue">All time</option>
+                          <option value="Expenses">This Week</option>
+                          <option value="Profit Margin">This Week</option>
+                        </select>
+                        <span class="dropdown-icon"></span>
+                        <!-- Down arrow icon -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Total Orders</p>
+                        <p class="bold3">$1,250</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex gap-3 mt-3">
+                <div class="" style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon3.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">All time</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                        <!-- <p class="side-text">This Week</p> -->
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">All Orders</p>
+                        <p class="bold">10</p>
+                      </span>
+
+                      <span class="bottomSpan">
+                        <p class="sales">Pending</p>
+                        <p class="bold">2</p>
+                      </span>
+                      <span class="bottomSpan">
+                        <p class="sales">Complete</p>
+                        <p class="bold">4</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 40%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/icon3.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">All time</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales">Canceled</p>
+                        <p class="bold">0</p>
+                      </span>
+
+                      <span class="bottomSpan">
+                        <p class="sales">Returned</p>
+                        <p class="bold">0</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 30%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/cart2.svg" />
+                    </div>
+
+                    <div class="bottomContent">
+                      <span>
+                        <p class="sales text-danger">Abandoned Carts</p>
+                        <p class="bold">5</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product2 mt-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Janet’s Orders</h6>
+                  <div class="d-flex gap-2">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Calendar.svg" /> Filter
+                    </button>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="table-responsive">
+                    
+
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" id="select-all-orders" />
+                              <span class="checkmark"></span>
+                            </label>
+                          </th>
+                          <th scope="col">Order Date <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Order Type <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Tracking ID <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Order Total <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Action <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Status <img src="./assests/svg/sort.svg" /></th>
+                        </tr>
+                      </thead>
+                      <tbody id="table-body-order">
+                        <!-- Rows will be generated dynamically here -->
+                      </tbody>
+                    </table>
+                    
+                    <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <div class="d-flex align-items-center">
+                        <span id="pagination-info-order" class="item-pp"></span>
+                        <label for="items-per-page-order" class="item-pp ms-3">Items per page:</label>
+                        <select id="items-per-page-order" class="form-select ms-2 item-bp">
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                        </select>
+                      </div>
+                      
+                      <div class="d-flex align-items-center">
+                        <span id="total-pages-text-order" class="me-3 item-pp"></span>
+                        <select id="page-select-order" class="form-select me-3 item-bp"></select>
+                        <ul class="pagination mb-0">
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="prev-page-order">
+                              <img src="./assests/svg/Arrow-Down4.svg" />
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="next-page-order">
+                              <img src="./assests/svg/Arrow-Down3.svg" />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- //tab of  -->
+          <div
+            class="green tab-pane fade"
+            id="products"
+            role="tabpanel"
+            aria-labelledby="products-tab"
+          >
+            <!-- page 1 -->
+            <div class="container-fluid">
+              <div
+                class="d-flex justify-content-between align-items-center my-3"
+                style="width: 100%"
+              >
+                <span class="my-2 ml-2 ProductHeading">Product Summary</span>
+                <button
+                  class="order-btn d-flex align-items-center"
+                  onclick="showNewProductPage()"
+                >
+                  + Add a New Product
+                </button>
+              </div>
+
+              <div class="d-flex gap-3">
+                <div class="" style="width: 50%">
+                  <div class="card text-center" style="background-color: black">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/Stroke 1.svg" />
+                    </div>
+
+                    <div
+                      class="d-flex align-items-start text-left justify-content-between"
+                      style="color: white"
+                    >
+                      <span class="ProductSpan">
+                        <p class="sales" style="color: white">All Products</p>
+                        <p class="bold">800s</p>
+                      </span>
+                      <span class="ProductSpan">
+                        <p class="sales" style="color: white">Active</p>
+                        <p class="bold">
+                          316
+                          <span class="rates" style="color: white"
+                            >+20.00%</span
+                          >
+                        </p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class=" " style="width: 50%">
+                  <div class="card text-center">
+                    <div class="alignemnt">
+                      <img src="./assests/svg/stroke 2.svg" />
+                      <div class="leftAlignement">
+                        <div class="dropdown-container position-relative">
+                          <select
+                            id="data-category"
+                            class="form-control2 d-inline w-auto"
+                          >
+                            <option value="Revenue">This Week</option>
+                            <option value="Expenses">This Week</option>
+                            <option value="Profit Margin">This Week</option>
+                          </select>
+                          <span class="dropdown-icon"></span>
+                          <!-- Down arrow icon -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="bottomContent">
+                      <span class="bottomSpan">
+                        <p class="sales" style="color: red">Low Stock Alert</p>
+                        <p class="bold">23</p>
+                      </span>
+                      <span class="bottomSpan">
+                        <p class="sales">Expired</p>
+                        <p class="bold">3</p>
+                      </span>
+
+                      <span class="bottomSpan">
+                        <p class="sales">1 Start Rating</p>
+                        <p class="bold">2</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product2 mt-4">
+                <div class="d-flex justify-content-between">
+                  <h6>Products</h6>
+                  <div class="d-flex gap-2">
+                    <div class="search-bar">
+                      <img src="./assests/svg/Search.svg" />
+                      <input type="text" placeholder="Search.." />
+                    </div>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/filter1.svg" /> Filter
+                    </button>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Calendar.svg" /> Filter
+                    </button>
+                    <button class="filter-btn">
+                      <img src="./assests/svg/Send.svg" /> send
+                    </button>
+                    <div>
+                      <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="table-responsive">
+                    <table class="table mt-3">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <label class="custom-checkbox">
+                              <input type="checkbox" id="select-all-products"/>
+                              <span class="checkmark"></span>
+                            </label>
+                          </th>
+                          <th></th>
+                          <th scope="col">Product Name <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Category <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Unit Price <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">In-Stock <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Discount <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Total Value <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Action <img src="./assests/svg/sort.svg" /></th>
+                          <th scope="col">Status <img src="./assests/svg/sort.svg" /></th>
+                        </tr>
+                      </thead>
+                      <tbody id="table-body-products">
+                        <!-- Rows will be dynamically generated here -->
+                      </tbody>
+                    </table>
+                    
+                    <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                      <div class="d-flex align-items-center ">
+                        <span id="pagination-info-products" class="item-pp"></span>
+                        <select id="items-per-page-products" class="form-select ms-2 item-bp">
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                        </select>
+                        <label for="items-per-page-products" class="item-pp ms-3">Items per page:</label>
+                      </div>
+                    
+                      <div class="d-flex align-items-center ">
+                        <span id="total-pages-text-products" class="me-3 item-pp"></span>
+                        <select id="page-select-products" class="form-select me-3 item-bp">
+                          <!-- Page numbers will be dynamically added here -->
+                        </select>
+                        <ul class="pagination mb-0">
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="prev-page-products">
+                              <img src="./assests/svg/Arrow-Down4.svg" />
+                            </a>
+                          </li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" id="next-page-products">
+                              <img src="./assests/svg/Arrow-Down3.svg" />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- new page -->
+            <div class="container-fluid">
+              <div
+                class="d-flex justify-content-between align-items-center my-3"
+                style="width: 100%"
+              >
+                <span
+                  class="my-2 ml-2"
+                  style="font-size: 17px; font-weight: 700"
+                  >New Product</span
+                >
+                <div class="d-flex gap-3">
+                  <div class="ProductDropdownLayout">
+                    <select
+                      id="itemsPerPage"
+                      class="form-select form-select-sm ProductDropdown"
+                      style="width: auto"
+                    >
+                      <option value="3">Save as Draft</option>
+                      <option value="5">Save as Draft</option>
+                      <option value="10">Save as Draft</option>
+                    </select>
+                    <img src="./assests/svg/whiteDropdown.svg" />
+                  </div>
+                  <button class="order-btn2 d-flex align-items-center">
+                    Save & Publish
+                  </button>
+                </div>
+              </div>
+
+              <div class="container-fluid d-flex gap-3 mb-5">
+                <div class="mainBar">
+                  <form class="d-flex gap-5">
+                    <div class="d-flex flex-column gap-3 rightForm">
+                      <!-- Product Name -->
+                      <div class="inpuBox">
+                        <input
+                          type="text"
+                          id="productName"
+                          name="productName"
+                          class="product"
+                          placeholder="Product Name"
+                        />
+                      </div>
+
+                      <!-- Product Category -->
+                      <div class="">
+                        <select
+                          id="productCategory"
+                          name="productCategory"
+                          class="form-select form-select-sm ProductList"
+                        >
+                          <option value="">Select Product Category</option>
+                          <option value="category1">Category 1</option>
+                          <option value="category2">Category 2</option>
+                          <option value="category3">Category 3</option>
+                        </select>
+                      </div>
+
+                      <!-- Selling Price and Another Product Name (if needed) -->
+                      <div class="inpuBox d-flex gap-2">
+                        <input
+                          type="number"
+                          id="sellingPrice"
+                          name="sellingPrice"
+                          class="product"
+                          placeholder="Selling Price"
+                        />
+                        <input
+                          type="text"
+                          id="anotherProductName"
+                          name="anotherProductName"
+                          class="product"
+                          placeholder="Another Product Name"
+                        />
+                      </div>
+
+                      <!-- Quantity in Stock -->
+                      <div class="inpuBox product-wrapper">
+                        <input
+                          type="number"
+                          id="quantityInStock"
+                          name="quantityInStock"
+                          class="product quantityInput"
+                          placeholder="Quantity in Stock"
+                        />
+
+                        <!-- Quantity Controls -->
+                        <div class="quantity-controls">
+                          <img
+                            class="up-btn"
+                            id="increaseBtn"
+                            aria-label="Increase quantity"
+                            src="./assests/svg/Frame 5.svg"
+                          />
+                          <img
+                            class="down-btn"
+                            id="decreaseBtn"
+                            aria-label="Decrease quantity"
+                            src="./assests/svg/Frame 6.svg"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Order Type -->
+                      <div class="">
+                        <select
+                          id="orderType"
+                          name="orderType"
+                          class="form-select form-select-sm ProductList"
+                        >
+                          <option value="">Order Type</option>
+                          <option value="online">Online Order</option>
+                          <option value="pickup">Pickup</option>
+                        </select>
+                      </div>
+
+                      <!-- Discount Toggle -->
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <h6>Discount</h6>
+                        <div class="d-flex align-items-center gap-3">
+                          <p class="discount">Add Discount</p>
+                          <div class="">
+                            <label class="switch">
+                              <input
+                                type="checkbox"
+                                id="discountToggle"
+                                name="discountToggle"
+                              />
+                              <span class="slider"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Expiry Date Toggle -->
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <h6>Expiry Date</h6>
+                        <div class="d-flex align-items-center gap-3">
+                          <p class="discount">Add Expiry Date</p>
+                          <div class="">
+                            <label class="switch">
+                              <input
+                                type="checkbox"
+                                id="expiryDateToggle"
+                                name="expiryDateToggle"
+                              />
+                              <span class="slider"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Left Side (Text Descriptions and Others) -->
+                    <div class="subFormleft">
+                      <!-- Short Description -->
+                      <textarea
+                        class="ShotDescription"
+                        id="shortDescription"
+                        name="shortDescription"
+                        rows="4"
+                        cols="50"
+                        placeholder="Short Description"
+                      ></textarea>
+
+                        <!-- Long Description -->
+                        <div class="mb-3 mt-3" style="width: 100%">
+                          <label
+                            for="productDescription"
+                            class="form-label Description"
+                            >Product Long Description</label
+                          >
+  
+                          <!-- Toolbar (Optional) -->
+                          <div id="toolbar">
+                            <!-- Font options -->
+                            <select class="ql-font"></select>
+                            <!-- Paragraph format -->
+                            <select class="ql-header">
+                              <option selected></option>
+                              <option value="1"></option>
+                              <option value="2"></option>
+                            </select>
+                            <!-- Text formatting options -->
+                            <button class="ql-bold"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-italic"></button>
+                            <!-- Alignment options -->
+                            <button class="ql-align" value=""></button>
+                            <button class="ql-align" value="center"></button>
+                            <button class="ql-align" value="right"></button>
+                          </div>
+  
+                          <!-- Text Editor for Long Description -->
+                          <div id="editor">
+                            <p>Your text goes here</p>
+                          </div>
+  
+                          <div class="form-text mt-2" style="color: #8f8787">
+                            Add a long description for your product
+                          </div>
+                        </div>
+  
+
+                      <!-- Return Policy -->
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                      >
+                        <h6>Return Policy</h6>
+                        <div class="d-flex align-items-center gap-3">
+                          <p class="discount">Add Discount</p>
+                          <div class="">
+                            <label class="switch">
+                              <input
+                                type="checkbox"
+                                id="returnPolicyToggle"
+                                name="returnPolicyToggle"
+                              />
+                              <span class="slider"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Date & Time -->
+                      <div class="d-flex flex-column dateTime">
+                        <p>Date & Time</p>
+                        <div class="d-flex gap-3">
+                          <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            class="date"
+                            value="2024-01-01"
+                          />
+                          <input
+                            type="time"
+                            id="time"
+                            name="time"
+                            class="date"
+                            value="00:00"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="leftBar">
+                  <div
+                    class="d-flex flex-column justify-content-center align-items-center image-uploader gap-3"
+                    id="imageUploader"
+                    onclick="document.getElementById('imageInput').click()"
+                  >
+                    <!-- Preview Image Container -->
+                    <img
+                      id="previewImage"
+                      class="previewImage"
+                      src="./assests/Image.png"
+                      alt="Product Cover Image Preview"
+                      style="width: 30px; transition: all 0.5s ease"
+                    />
+
+                    <div
+                      class="d-flex justify-content-center align-items-center gap-2"
+                      id="uploadPlaceholder"
+                    >
+                      <img
+                        src="./assests/svg/fi_upload-cloud.svg"
+                        alt="Upload Icon"
+                      />
+                      <h6>Upload Image</h6>
+                    </div>
+
+                    <p class="text-center imageContent">
+                      Upload a cover image for your product. <br />
+                      File Format
+                      <span class="bold2">jpeg, png</span> Recommended Size
+                      <span class="bold2">600x600 (1:1)</span>
+                    </p>
+
+                    <!-- Hidden Input for Image Upload -->
+                    <input
+                      type="file"
+                      id="imageInput"
+                      name="productCoverImage"
+                      style="display: none"
+                      accept="image/jpeg, image/png"
+                      onchange="previewUploadedFile(event)"
+                    />
+                  </div>
+
+                  <div class="mt-3">
+                    <h6>Additional Images</h6>
+                    <div class="d-flex flex-wrap gap-3">
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader2 gap-3"
+                        id="imageUploader2"
+                        onclick="document.getElementById('imageInput2').click()"
+                      >
+                        <!-- Preview Image Container -->
+                        <img
+                          id="previewImage2"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 1"
+                          style="width: 30px; transition: all 0.5s ease"
+                        />
+
+                        <div
+                          class="d-flex justify-content-center align-items-center gap-2 flex-wrap"
+                          id="uploadPlaceholder2"
+                        >
+                          <img
+                            src="./assests/svg/fi_upload-cloud.svg"
+                            alt="Upload Icon"
+                            style="width: 16px"
+                          />
+                          <p class="bold2 p-0 m-0">Upload Image</p>
+                        </div>
+
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput2"
+                          name="additionalImage1"
+                          style="display: none"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile2(event)"
+                        />
+                      </div>
+
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader3 gap-3"
+                        id="imageUploader3"
+                        onclick="document.getElementById('imageInput3').click()"
+                      >
+                        <!-- Preview Image Container -->
+                        <img
+                          id="previewImage3"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 2"
+                          style="width: 0px; transition: all 0.5s ease"
+                        />
+
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput3"
+                          name="additionalImage2"
+                          style="display: none"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile3(event)"
+                        />
+                      </div>
+
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center image-uploader4 gap-3"
+                        id="imageUploader4"
+                        onclick="document.getElementById('imageInput4').click()"
+                      >
+                        <!-- Preview Image Container -->
+                        <img
+                          id="previewImage4"
+                          class="previewImage"
+                          src="./assests/Image.png"
+                          alt="Additional Image Preview 3"
+                          style="width: 0px; transition: all 0.5s ease"
+                        />
+
+                        <!-- Hidden Input for Image Upload -->
+                        <input
+                          type="file"
+                          id="imageInput4"
+                          name="additionalImage3"
+                          style="display: none"
+                          accept="image/jpeg, image/png"
+                          onchange="previewUploadedFile4(event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade purple  show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+         
+        </div>
+        
+        </div>
+      </div>
+      <!-- //call every page here dynamically -->
+    </div>
+    <script src="./Country+State+District-City-Data.js"></script>
+    <script src="./login/js/intlTelInputWithUtils.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/intlTelInputWithUtils.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="./script.js"></script>
+    <script src="./assests/jss/customer.js"></script>
+    <script src="./assests/jss/orders.js"></script>
+    <script src="./assests/jss/cmorders.js"></script>
+    <script src="./assests/jss/products.js"></script>
+ 
+    
+    <script>
+
+var quill = new Quill("#editor", {
+        theme: "snow",
+        modules: {
+          toolbar: "#toolbar",
+        },
+      });
+  const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+      // allowDropdown: false,
+    
+      // dropdownContainer: document.querySelector('#custom-container'),
+      // excludeCountries: ["us"],
+      // fixDropdownWidth: false,
+      // formatAsYouType: false,
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   fetch("https://ipapi.co/json")
+      //     .then(function(res) { return res.json(); })
+      //     .then(function(data) { callback(data.country_code); })
+      //     .catch(function() { callback(); });
+      // },
+      // hiddenInput: () => "phone_full",
+      // i18n: { 'de': 'Deutschland' },
+      initialCountry: "us",
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // showFlags: false,
+      // separateDialCode: true,
+      // strictMode: true,
+      // useFullscreenPopup: true,
+      // utilsScript: "/build/js/utils.js", // leading slash (and http-server) required for this to work in chrome
+      // validationNumberType: null,
+    });
+    window.iti = iti; // useful for testing
+
+    const button = document.querySelector("#btn");
+    const errorMsg = document.querySelector("#error-msg");
+    const validMsg = document.querySelector("#valid-msg");
+    const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+    const reset = () => {
+      input.classList.remove("error");
+      errorMsg.innerHTML = "";
+      validMsg.innerHTML = "";
+      errorMsg.classList.add("hide");
+      validMsg.classList.add("hide");
+    };
+
+    const showError = (msg) => {
+      input.classList.add("error");
+      errorMsg.innerHTML = msg;
+      errorMsg.classList.remove("hide");
+    };
+
+    // on click button: validate
+    button.addEventListener('click', () => {
+      reset();
+      if (!input.value.trim()) {
+        showError("Required");
+      } else if (iti.isValidNumber()) {
+        validMsg.innerHTML = "Valid number: " + iti.getNumber();
+        validMsg.classList.remove("hide");
+      } else {
+        const errorCode = iti.getValidationError();
+        const msg = errorMap[errorCode] || "Invalid number";
+        showError(msg);
+      }
+    });
+
+    // on keyup / change flag: reset
+    input.addEventListener('change', reset);
+    input.addEventListener('keyup', reset);
+
+
+
+      function getStatusClass(status) {
+        return status === "Active" ? "custom-active" : "custom-inactive";
+      }
+ 
+
+      // Inject the fetched page content into the specific area
+      async function fetchData() {
+        try {
+          const response = await fetch("your-api-endpoint-here"); // Replace with your API endpoint
+          const data = await response.text(); // Assuming you want to inject HTML
+          const dynamicContentArea = document.getElementById("dynamic-content");
+          dynamicContentArea.innerHTML = data;
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      }
+      fetchData(); // Call the function to fetch an
+ 
+
+      const assignButton = document.getElementById("assignButton");
+      const dropdown = document.getElementById("dropdown");
+
+      // Toggle the dropdown visibility when the span is clicked
+      assignButton.addEventListener("click", function () {
+        dropdown.classList.toggle("show");
+      });
+
+      // Optional: Close the dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+        if (
+          !assignButton.contains(event.target) &&
+          !dropdown.contains(event.target)
+        ) {
+          dropdown.classList.remove("show");
+        }
+      });
+
+      const openModalButton = document.getElementById("openModalButton");
+      const modal = document.getElementById("modal-content");
+
+      const openModalButton2 = document.getElementById("openModalButton2");
+      const modal2 = document.getElementById("modal-content2");
+
+      // Open the first modal when its button is clicked
+      openModalButton.addEventListener("click", function (event) {
+        modal.style.display = "block";
+        event.stopPropagation(); // Prevent closing the modal when clicking on the button
+      });
+
+      // Open the second modal when its button is clicked
+      openModalButton2.addEventListener("click", function (event) {
+        modal2.style.display = "block";
+        event.stopPropagation(); // Prevent closing the modal when clicking on the button
+      });
+
+      // Close the modal when clicking outside of modal content
+      window.addEventListener("click", function (event) {
+        // Close modal 1 if it's open and clicked outside
+        if (
+          modal.style.display === "block" &&
+          !modal.contains(event.target) &&
+          event.target !== openModalButton
+        ) {
+          modal.style.display = "none";
+        }
+
+        // Close modal 2 if it's open and clicked outside
+        if (
+          modal2.style.display === "block" &&
+          !modal2.contains(event.target) &&
+          event.target !== openModalButton2
+        ) {
+          modal2.style.display = "none";
+        }
+      });
+
+      // Prevent modal close when clicking inside the modal content
+      modal.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent modal from closing when clicking inside modal content
+      });
+
+      modal2.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent modal2 from closing when clicking inside modal content
+      });
+
+      const navs = document.querySelectorAll("#prev, #next");
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      let date = new Date();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+
+      const dates = document.querySelector(".dates");
+      const yearSelect = document.getElementById("year-select");
+      const monthSelect = document.getElementById("month-select");
+
+      let fromDate = null;
+      let toDate = null;
+
+      function renderCalendar() {
+        const start = new Date(year, month, 1).getDay();
+        const endDate = new Date(year, month + 1, 0).getDate();
+        const end = new Date(year, month, endDate).getDay();
+        const endDatePrev = new Date(year, month, 0).getDate();
+
+        let datesHtml = "";
+
+        for (let i = start; i > 0; i--) {
+          datesHtml += `<li class="inactive">${endDatePrev - i + 1}</li>`;
+        }
+
+        for (let i = 1; i <= endDate; i++) {
+          let className = "";
+
+          // Highlight today
+          if (
+            i === date.getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear()
+          ) {
+            className = "today";
+          }
+
+          // Highlight selected range
+          if (i === fromDate) {
+            className = "start-date";
+          } else if (i === toDate) {
+            className = "end-date";
+          } else if (fromDate && toDate && i >= fromDate && i <= toDate) {
+            className = "selected-range";
+          }
+
+          datesHtml += `<li class="${className}" data-date="${i}">${i}</li>`;
+        }
+        for (let i = end; i < 6; i++) {
+          datesHtml += `<li class="inactive">${i - end + 1}</li>`;
+        }
+
+        dates.innerHTML = datesHtml;
+
+        yearSelect.value = year; // Set the current year in the dropdown
+        monthSelect.value = month; // Set the current month in the dropdown
+
+        // Add click event listener to each date
+        document.querySelectorAll(".dates li").forEach((li) => {
+          li.addEventListener("click", onDateClick);
+        });
+      }
+
+      // Handle clicking on dates
+      function onDateClick(e) {
+        const selectedDay = parseInt(e.target.getAttribute("data-date"));
+
+        if (!fromDate || (fromDate && toDate)) {
+          // If no "From" date is selected or both "From" and "To" dates are already selected, reset the selection
+          fromDate = selectedDay;
+          toDate = null;
+        } else if (fromDate && !toDate) {
+          // If "From" date is selected but "To" date is not selected yet
+          if (selectedDay > fromDate) {
+            toDate = selectedDay;
+          } else {
+            // Swap the dates if "To" is earlier than "From"
+            toDate = fromDate;
+            fromDate = selectedDay;
+          }
+        }
+
+        renderCalendar();
+      }
+
+      // Add event listeners for the year and month dropdowns
+      yearSelect.addEventListener("change", (e) => {
+        year = parseInt(e.target.value);
+        renderCalendar();
+      });
+
+      monthSelect.addEventListener("change", (e) => {
+        month = parseInt(e.target.value);
+        renderCalendar();
+      });
+
+      // Initialize year and month dropdowns
+      function initDropdowns() {
+        // Populate the year dropdown
+        for (let i = 2020; i <= 2030; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.textContent = i;
+          yearSelect.appendChild(option);
+        }
+
+        // Populate the month dropdown
+        for (let i = 0; i < 12; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.textContent = new Date(0, i).toLocaleString("en", {
+            month: "long",
+          });
+          monthSelect.appendChild(option);
+        }
+
+        yearSelect.value = year;
+        monthSelect.value = month;
+      }
+
+      initDropdowns();
+      renderCalendar();
+
+      function showNewOrdersContent() {
+        document.querySelector(".order-container").innerHTML = `
+     
+      
+    `;
+      }
+
+      const quantityInput = document.getElementById("quantityInput");
+      const increaseBtn = document.getElementById("increaseBtn");
+      const decreaseBtn = document.getElementById("decreaseBtn");
+
+      // Function to increase value
+      increaseBtn.addEventListener("click", () => {
+        const currentValue = parseInt(quantityInput.value) || 0;
+        quantityInput.value = currentValue + 1;
+      });
+
+      // Function to decrease value
+      decreaseBtn.addEventListener("click", () => {
+        const currentValue = parseInt(quantityInput.value) || 0;
+        if (currentValue > 0) {
+          quantityInput.value = currentValue - 1;
+        }
+      });
+      // Get references to the elements
+      const customerName = document.getElementById("customerName");
+      const orderContainer = document.getElementById("orderContainer");
+      const viewOrder = document.getElementById("viewOrder");
+
+      // Add click event listener to the Customer Name td
+      customerName.addEventListener("click", () => {
+        // Hide the order-container div and show the ppp div
+        orderContainer.style.display = "none";
+        viewOrder.style.display = "block";
+      });
+
+      //color of status of table
+
+      const statusElement = document.getElementById("status");
+
+      // Get the text content (status)
+      const status = statusElement.textContent;
+
+      // Dynamically assign the background color based on status
+      if (status === "Published") {
+        statusElement.style.backgroundColor = "#e4e8fd";
+        statusElement.style.color = "#5570F1";
+        statusElement.style.padding = "3px 12px";
+        statusElement.style.borderRadius = " 15px";
+        // Active status
+      } else if (status === "Active") {
+        statusElement.style.backgroundColor = "#e4e8fd";
+        statusElement.style.color = "#5570F1";
+        statusElement.style.padding = "3px 12px";
+        statusElement.style.borderRadius = " 15px";
+        // Active status
+      } else if (status === "In-Progress") {
+        statusElement.style.backgroundColor = "#e4e8fd";
+        statusElement.style.color = "#5570F1";
+        statusElement.style.padding = "3px 12px";
+        statusElement.style.borderRadius = " 15px";
+        // Active status
+      } else if (status === "UnActive") {
+        statusElement.style.backgroundColor = "rgb(255, 242, 226)";
+        statusElement.style.padding = "3px 12px";
+        statusElement.style.borderRadius = " 15px"; // UnActive status
+      } else if (status === "UnPublished") {
+        statusElement.style.backgroundColor = "rgb(255, 242, 226)";
+        statusElement.style.padding = "3px 12px";
+        statusElement.style.borderRadius = " 15px"; // UnActive status
+      }
+    </script>
+  </body>
+</html>
