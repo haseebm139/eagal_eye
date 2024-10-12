@@ -35,12 +35,52 @@ const customerOrders = [
           <td>${order.trackingId}</td>
           <td>${order.qty}</td>
           <td>${order.orderTotal}</td>
-          <td><p class="${statusClass}">${order.assignStatus}</p></td>
+          <td>
+            <span class="Assigned" id="assignButton-${order.id}">
+              Assign to
+              <img src="./assests/svg/fi_chevron-down2.svg" />
+            </span>
+            <div class="dropdown-like" id="dropdown-${order.id}" style="display:none;">
+              <input type="text" id="searchInput-${order.id}" placeholder="Search" />
+              <ul id="assignList-${order.id}">
+                <li>
+                  <label>
+                    <img src="./assests/Image.png" alt="user-avatar" class="user-avatar" />
+                    Janet Adebayo
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <img src="./assests/image 726.png" alt="user-avatar" class="user-avatar" />
+                    Samuel Johnson
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <img src="./assests/image 715.png" alt="user-avatar" class="user-avatar" />
+                    Christian Dior
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <img src="./assests/image 726.png" alt="user-avatar" class="user-avatar" />
+                    Janet Adebayo
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </td>
         </tr>
       `;
       tableBodyCmOrder.insertAdjacentHTML('beforeend', row);
+    
+      // Add event listener for each dropdown toggle
+      document.getElementById(`assignButton-${order.id}`).addEventListener('click', function() {
+        const dropdown = document.getElementById(`dropdown-${order.id}`);
+        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+      });
     });
-  
+    
     updateCustomerOrdersPaginationInfo(start + 1, end, customerOrders.length);
     updateCustomerOrdersPageSelect();
     updateCustomerOrdersTotalPagesText();

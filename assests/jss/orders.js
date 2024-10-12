@@ -19,7 +19,7 @@ const orders = [
     const ordersToDisplay = orders.slice(start, end);
   
     ordersToDisplay.forEach(order => {
-      const statusClass = order.status === 'Delivered' ? 'text-success' : (order.status === 'Pending' ? 'text-warning' : 'text-danger');
+      const statusClass = order.status === 'Delivered' ? 'custom-active' : (order.status === 'Pending' ? 'custom-inactive' : 'shipping-active');
       const row = `
         <tr>
           <td>
@@ -32,7 +32,17 @@ const orders = [
           <td>${order.orderType}</td>
           <td>${order.trackingId}</td>
           <td>${order.orderTotal}</td>
-          <td>Action Placeholder</td>
+          <td>
+            <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
+          </td>
           <td><p class="${statusClass}">${order.status}</p></td>
         </tr>
       `;

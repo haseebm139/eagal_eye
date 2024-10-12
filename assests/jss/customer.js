@@ -96,7 +96,7 @@ const end = Math.min(start + rowsPerPage, products.length);
 const productsToDisplay = products.slice(start, end);
 
 productsToDisplay.forEach(product => {
-const statusClass = product.status === 'Active' ? 'text-success' : 'text-danger';
+const statusClass = product.status === 'Active' ? "custom-active" : "custom-inactive";
 const row = `
 <tr>
   <td>
