@@ -3079,107 +3079,160 @@
                     role="tabpanel"
                     aria-labelledby="new-orders-tab"
                   >
+                 <div class="d-flex justify-content-between ">
                   <h6 class="SettingHeading">
                     Account Settings
                   </h6>
+                  <button class="order-btn2">
+                  Update
+                  </button>
+                 </div>
                  <form class="p-4">
+               <div class="d-flex gap-5">
                 <div>
-                  <label class="Label">First Name</label>
-                  <div class="inputBox">
-                    <img src="./assests/svg/Profile.svg" />
-                    <input class="settingInput" placeholder="Osborn" />
+                  <div>
+                    <label class="Label">First Name</label>
+                    <div class="inputBox">
+                      <img src="./assests/svg/Profile.svg" />
+                      <input class="settingInput" placeholder="Osborn" />
+                    </div>
                   </div>
-                </div>
-  
-  
-                <div>
-                  <label class="Label">Last Name</label>
-                  <div class="inputBox">
-                    <img src="./assests/svg/Profile.svg" />
-                    <input class="settingInput" placeholder="Osborn" />
+                  <div>
+                    <label class="Label">Last Name</label>
+                    <div class="inputBox">
+                      <img src="./assests/svg/Profile.svg" />
+                      <input class="settingInput" placeholder="Osborn" />
+                    </div>
                   </div>
-                </div>
-  
-            
-  
-                <div>
-                  <label class="Label">Email</label>
-                  <div class="inputBox">
-                    <img src="./assests/svg/Message.svg" />
-                    <input class="settingInput" placeholder="Davisbuchanan@gmail.com" />
+                  <div>
+                    <label class="Label">Email</label>
+                    <div class="inputBox">
+                      <img src="./assests/svg/Message.svg" />
+                      <input class="settingInput" placeholder="Davisbuchanan@gmail.com" />
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <label class="Label">Phone Number</label>
-                  <div  class="inputBox">
-                    <input
-                    class="settingInput"
-                    id="phone2"
-                    name="phone"
-                    type="tel"
-                    value=""
-                  />
+                  <div>
+                    <label class="Label">Phone Number</label>
+                    <div  class="inputBox">
+                      <input
+                      class="settingInput"
+                      id="phone2"
+                      name="phone"
+                      type="tel"
+                      value=""
+                    />
+                    </div>
+                 
                   </div>
-               
-                </div>
-
-                <div>
-                  <label class="Label">Address</label>
-                  <div class="inputBox">
-                    <img src="./assests/svg/Location.svg" />
-                    <input class="settingInput" placeholder="No. 93 Skyfield Apartments" />
+                  <div>
+                    <label class="Label">Address</label>
+                    <div class="inputBox">
+                      <img src="./assests/svg/Location.svg" />
+                      <input class="settingInput" placeholder="No. 93 Skyfield Apartments" />
+                    </div>
                   </div>
-                </div>
-
-
-                <div>
-                      <!--Country -->
-                      <div class="select-something">
-                        <label class="Label">Country</label>
-                        <select
-                          class="inputBox"
-                          name="state"
-                          id="countySel"
-                          size="1"
-                        >
-                          <option value="" selected="selected">Country</option>
-                        </select>
-                      </div>
-                      <!--State -->
-
-                      <div class="d-flex gap-3">
-                        <div class="w-100">
-                          <label class="Label">State</label>
-                        <div  class="inputBox">
-                         
-                        <select
-                        class="settingInput"
-                          name="country"
-                          id="stateSel"
-                          size="1"
-                        >
-                          <option value="" selected="selected">state</option>
-                        </select>
+                  <div>
+                        <!--Country -->
+                        <div class="select-something">
+                          <label class="Label">Country</label>
+                          <select
+                            class="inputBox"
+                            name="state"
+                            id="countySel"
+                            size="1"
+                          >
+                            <option value="" selected="selected">Country</option>
+                          </select>
                         </div>
-                        </div>
-
                         <!--State -->
-                     <div class="w-100">
-                      <label class="Label">City</label>
-                      <div class="inputBox">
-                      
-                       <select
-                       class="settingInput"
-                         name="district"
-                         id="districtSel"
-                         size="1"
-                       >
-                         <option value="" selected="selected">city</option>
-                       </select>
-                      </div>
-                     </div>
-                      </div>
+  
+                        <div class="d-flex gap-3">
+                          <div class="w-100">
+                            <label class="Label">State</label>
+                          <div  class="inputBox">
+                           
+                          <select
+                          class="settingInput"
+                            name="country"
+                            id="stateSel"
+                            size="1"
+                          >
+                            <option value="" selected="selected">state</option>
+                          </select>
+                          </div>
+                          </div>
+  
+                          <!--State -->
+                       <div class="w-100">
+                        <label class="Label">City</label>
+                        <div class="inputBox">
+                        
+                         <select
+                         class="settingInput"
+                           name="district"
+                           id="districtSel"
+                           size="1"
+                         >
+                           <option value="" selected="selected">city</option>
+                         </select>
+                        </div>
+                       </div>
+                        </div>
+                  </div>
                 </div>
+                <div>
+                  <div
+                  class="d-flex flex-column justify-content-center align-items-center image-uploader5 gap-3"
+                  id="imageUploader5"
+                  onclick="document.getElementById('imageInput5').click()"
+                >
+                  <!-- Preview Image Container -->
+                  <img
+                    id="previewImage5"
+                    class="previewImage"
+                    src="./assests/Image.png"
+                    alt="Additional Image Preview 1"
+                    style="width: 0px; transition: all 0.5s ease"
+                  />
+
+                <div class="layer">
+                  <div
+                  class=" "
+                  id="uploadPlaceholder5"
+                >
+                  <img
+                    src="./assests/svg/uplload.svg"
+                    alt="Upload Icon"
+                    style="width: 25px"
+                  />
+                  
+                </div>
+
+                <div
+                class=""
+                id="deleteImage"
+              >
+                <img
+                  src="./assests/svg/delete.svg"
+                  alt="Upload Icon"
+                  style="width: 25px"
+                />
+                
+              </div>
+                </div>
+
+                  <!-- Hidden Input for Image Upload -->
+                  <input
+                    type="file"
+                    id="imageInput5"
+                    name="additionalImage5"
+                    style="display: none"
+                    accept="image/jpeg, image/png"
+                    onchange="previewUploadedFile5(event)"
+                  />
+                </div>
+                </div>
+               </div>
                  </form>
                   </div>
                   <div

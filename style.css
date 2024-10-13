@@ -36,6 +36,7 @@ body {
     src: url('./assests/gilroy/Gilroy-Bold.ttf');
 }
 .settingsSubTabs{
+    padding: 4px 23px;
     border-radius: 12px;
     background-color: white;
 }
@@ -54,6 +55,17 @@ body {
     outline: none;
     border: none;
     background: transparent;
+}
+.image-uploader5 {
+    position: relative;
+    overflow: hidden;
+    height: 130px;
+    width: 130px;
+    color: #8f8787;
+    border: none;
+    font-size: 13px;
+    border-radius: 11px;
+    background-color: #fbfbfb;
 }
 .Label{
     font-family: InterRegular;
@@ -540,15 +552,14 @@ width: 30px;
 }
 
 .order-btn2{
-    font-family: InterMedium;
+    font-family: InterRegular;
     color: black;
     background-color: #ffd014;
     border: 1px solid #ffd014;
-    padding: 3px 24px;
+    padding: 8px 28px;
     border-radius: 12px;
     font-weight: 700;
-    font-size: 13px;
-    font-family: InterMedium;
+    font-size: 14px;
 
 
 }
@@ -870,7 +881,35 @@ font-size: 13px;
 border-radius: 11px;
     background-color: #f6f7fb;  
 }
+
+
+.image-uploader5{
+    position: relative;
+    overflow: hidden;
+ height: 130px;
+    width: 130px;
+    color: #8f8787;
+    border: none;
+font-size: 13px;
+border-radius: 11px;
+    background-color: #f6f7fb;  
+}
 .image-uploader2 .previewImage{
+   
+    width: 30px; /* Initial small size */
+    height: 30px; /* Initial small size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: all 0.5s ease; /* Smooth transition */
+}
+.layer{
+    top: 10px;
+    position: absolute;
+    display: flex;
+    gap: 6px;
+    
+    right: 11px;
+}
+.image-uploader5 .previewImage{
    
     width: 30px; /* Initial small size */
     height: 30px; /* Initial small size */
