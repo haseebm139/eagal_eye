@@ -186,3 +186,115 @@ function handleCmOrderSelectAll() {
       orderContainer.style.display = "none";
       viewOrder.style.display = "block";
     });
+
+
+
+
+
+    let rowsPerPageCustomerOrders2 = 3;
+let currentPageCustomerOrders2 = 1;
+
+// Function to render the second table
+function renderCustomerOrdersTable2() {
+  const tableBodyCmOrder2 = document.getElementById('table-body-cm-order2');
+  tableBodyCmOrder2.innerHTML = '';
+
+  const start = (currentPageCustomerOrders2 - 1) * rowsPerPageCustomerOrders2;
+  const end = Math.min(start + rowsPerPageCustomerOrders2, customerOrders.length);
+  const customerOrdersToDisplay = customerOrders.slice(start, end);
+
+  customerOrdersToDisplay.forEach(order => {
+    const statusClass = order.assignStatus === 'Delivered' ? 'text-success' : (order.assignStatus === 'Shipped' ? 'text-info' : 'text-warning');
+    const row = `
+      <tr>
+        <td>
+          <label class="custom-checkbox">
+            <input type="checkbox" class="cm-order-checkbox2" data-id="${order.id}">
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>${order.customerName}</td>
+        <td>${order.orderDate}</td>
+        <td>${order.shipping}</td>
+        <td>${order.location}</td>
+        <td>${order.trackingId}</td>
+        <td>${order.qty}</td>
+        <td>${order.orderTotal}</td>
+        <td>
+          <button class="btn btn-primary">Assign Work</button>
+        </td>
+        <td>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+        <td><span class="${statusClass}">${order.assignStatus}</span></td>
+      </tr>
+    `;
+    tableBodyCmOrder2.insertAdjacentHTML('beforeend', row);
+  });
+
+  updateCustomerOrdersPaginationInfo2(start + 1, end, customerOrders.length);
+  updateCustomerOrdersPageSelect2();
+  updateCustomerOrdersTotalPagesText2();
+}
+
+// Update pagination info for second table
+function updateCustomerOrdersPaginationInfo2(start, end, total) {
+  const paginationInfoCustomerOrders2 = document.getElementById('pagination-info-customer-orders2');
+  paginationInfoCustomerOrders2.textContent = `${start}-${end} of ${total} items`;
+}
+
+// Update page select for second table
+function updateCustomerOrdersPageSelect2() {
+  const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders2);
+  const pageSelectCustomerOrders2 = document.getElementById('page-select-customer-orders2');
+  pageSelectCustomerOrders2.innerHTML = '';
+
+  for (let i = 1; i <= totalPages; i++) {
+    const option = `<option value="${i}">${i}</option>`;
+    pageSelectCustomerOrders2.insertAdjacentHTML('beforeend', option);
+  }
+
+  pageSelectCustomerOrders2.value = currentPageCustomerOrders2;
+  pageSelectCustomerOrders2.addEventListener('change', function () {
+    currentPageCustomerOrders2 = parseInt(this.value);
+    renderCustomerOrdersTable2();
+  });
+}
+
+// Update total pages text for second table
+function updateCustomerOrdersTotalPagesText2() {
+  const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders2);
+  const totalPagesTextCustomerOrders2 = document.getElementById('total-pages-text-customer-orders2');
+  totalPagesTextCustomerOrders2.textContent = `Page ${currentPageCustomerOrders2} of ${totalPages}`;
+}
+
+// Pagination controls for second table
+function handleCustomerOrdersPagination2() {
+  document.getElementById('prev-page-customer-orders2').addEventListener('click', function (event) {
+    event.preventDefault();
+    if (currentPageCustomerOrders2 > 1) {
+      currentPageCustomerOrders2--;
+      renderCustomerOrdersTable2();
+    }
+  });
+
+  document.getElementById('next-page-customer-orders2').addEventListener('click', function (event) {
+    event.preventDefault();
+    const totalPages = Math.ceil(customerOrders.length / rowsPerPageCustomerOrders2);
+    if (currentPageCustomerOrders2 < totalPages) {
+      currentPageCustomerOrders2++;
+      renderCustomerOrdersTable2();
+    }
+  });
+}
+
+// Change rows per page for second table
+document.getElementById('items-per-page-customer-orders2').addEventListener('change', function () {
+  rowsPerPageCustomerOrders2 = parseInt(this.value);
+  currentPageCustomerOrders2 = 1;
+  renderCustomerOrdersTable2();
+});
+
+// Initial render for the second table
+renderCustomerOrdersTable2();
+handleCustomerOrdersPagination2();

@@ -1315,7 +1315,62 @@
                     </div>
                   </div>
                   <div class="tab-pane fade" id="assigned-orders" role="tabpanel" aria-labelledby="assigned-orders-tab">
-                    <div>Content for Assigned Orders</div>
+                    <div class="table-responsive">
+                      <table class="table order mt-3">
+                        <thead>
+                          <tr class="orderTable">
+                            <th scope="col">
+                              <label class="custom-checkbox">
+                                <input type="checkbox" id="select-all-cm-orders2" />
+                                <span class="checkmark"></span>
+                              </label>
+                            </th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Shipping</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Tracking ID</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Order Total</th>
+                            <th scope="col">Assign Work</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody id="table-body-cm-order2">
+                          <!-- Rows will be generated dynamically here -->
+                        </tbody>
+                      </table>
+                    
+                      <div class="pagination-container d-flex justify-content-between align-items-center mt-3">
+                        <div class="d-flex align-items-center">
+                          <span id="pagination-info-customer-orders2" class="item-pp"></span>
+                          <label for="items-per-page-customer-orders2" class="item-pp ms-3">Items per page:</label>
+                          <select id="items-per-page-customer-orders2" class="form-select ms-2 item-bp">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="8">8</option>
+                          </select>
+                        </div>
+                    
+                        <div class="d-flex align-items-center">
+                          <span id="total-pages-text-customer-orders2" class="me-3 item-pp"></span>
+                          <select id="page-select-customer-orders2" class="form-select me-3 item-bp"></select>
+                          <ul class="pagination mb-0">
+                            <li class="page-item">
+                              <a class="page-link" href="#" id="prev-page-customer-orders2">
+                                <img src="./assests/svg/Arrow-Down4.svg" />
+                              </a>
+                            </li>
+                            <li class="page-item">
+                              <a class="page-link" href="#" id="next-page-customer-orders2">
+                                <img src="./assests/svg/Arrow-Down3.svg" />
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="tab-pane fade" id="delivered" role="tabpanel" aria-labelledby="delivered-tab">
                     <div>Content for Delivered</div>
@@ -1336,6 +1391,7 @@
   </div> -->
             </div>
           </div>
+          <!-- new inner page -->
           <div class="viewOrder px-3" id="viewOrder" style="display: none">
             <div class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2">
               <div class="d-flex align-items-center justify-content-center gap-3">
