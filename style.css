@@ -717,6 +717,7 @@ padding: 2px 6px
 
 }
 .filter-btn{
+    font-family: InterRegular;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -728,7 +729,7 @@ padding: 2px 6px
 
 }
 .filter-btn img{
-    width: 13px;
+    width: 22px;
 }
 .filter-dropdown{
     outline: none;
