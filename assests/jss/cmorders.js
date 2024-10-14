@@ -28,7 +28,7 @@ const customerOrders = [
               <span class="checkmark"></span>
             </label>
           </td>
-          <td>${order.customerName}</td>
+          <td id="customerName">${order.customerName}</td>
           <td>${order.orderDate}</td>
           <td>${order.shipping}</td>
           <td>${order.location}</td>
@@ -175,4 +175,14 @@ function handleCmOrderSelectAll() {
   
   // Call the function to initialize the select all functionality
   handleCmOrderSelectAll();
-  
+    // Get references to the elements
+    const customerName = document.getElementById("customerName");
+    const orderContainer = document.getElementById("orderContainer");
+    const viewOrder = document.getElementById("viewOrder");
+
+    // Add click event listener to the Customer Name td
+    customerName.addEventListener("click", () => {
+      // Hide the order-container div and show the ppp div
+      orderContainer.style.display = "none";
+      viewOrder.style.display = "block";
+    });
