@@ -1,11 +1,11 @@
 const employeeRoles = [
-    { id: 1, name: 'John Doe', email:'john@gmail.com',  empId: 'E12394332', role: 'Manager', status: 'Active' },
-    { id: 2, name: 'Jane Smith', email:'jane@gmail.com', empId: 'E12434344', role: 'Engineer', status: 'Inactive' },
-    { id: 3, name: 'Sam Green', email:'sam@gmail.com', empId: 'E12544343', role: 'HR', status: 'Active' },
-    { id: 4, name: 'Sara Blue', email:'sara@gmail.com', empId: 'E12643433', role: 'Designer', status: 'Active' },
-    { id: 5, name: 'Tom Brown', email:'tom@gmail.com', empId: 'E12743443', role: 'Sales', status: 'Inactive' },
-    { id: 6, name: 'Alex White', email:'alex@gmail.com', empId: 'E12843343', role: 'Technician', status: 'Active' }
-    // Add more as needed...
+    { id: 1, name: 'John Doe', email:'john@gmail.com',  empId: 'E12394332', role: 'Manager', timing:"Full", status: 'Active', dots :"./assests/svg/TableIcon.svg" },
+    { id: 2, name: 'Jane Smith', email:'jane@gmail.com', empId: 'E12434344', role: 'Engineer',  timing:"contract", status: 'Inactive', dots :"./assests/svg/TableIcon.svg"   },
+    { id: 3, name: 'Sam Green', email:'sam@gmail.com', empId: 'E12544343', role: 'HR', timing:"contract",  status: 'Active', dots :"./assests/svg/TableIcon.svg"  },
+    { id: 4, name: 'Sara Blue', email:'sara@gmail.com', empId: 'E12643433', role: 'Designer', timing:"contract",  status: 'Active', dots :"./assests/svg/TableIcon.svg"  },
+    { id: 5, name: 'Tom Brown', email:'tom@gmail.com', empId: 'E12743443', role: 'Sales', timing:"contract",  status: 'Inactive', dots :"./assests/svg/TableIcon.svg"  },
+    { id: 6, name: 'Alex White', email:'alex@gmail.com', empId: 'E12843343', role: 'Technician', timing:"contract",  status: 'Active', dots :"./assests/svg/TableIcon.svg"  }
+
   ];
   let currentPageEmpRole = 1;
   const rowsPerPageEmpRole = 2;  // Fixed number of rows per page
@@ -36,10 +36,17 @@ const employeeRoles = [
           <small class="mb-0">${role.email}</small>
           </div>
           </td>
-          <td><p class="custom-blue">${role.empId}</p></td>
-          <td>${role.role}</td>
+          <td><span class="custom-blue">${role.empId}</span></td>
+          <td>
+           <p class="semi-bold-name mb-0 pb-1 ">${role.role}</p>
+          <small class="mb-0">${role.timing}</small>
+      </td>
           <td><p class="${statusClass}">${role.status}</p></td>
+          <td>
+          <img src=${role.dots} />
+        </td>
         </tr>
+        
       `;
       tableBody.insertAdjacentHTML('beforeend', row);
     });

@@ -64,6 +64,7 @@
     }
 
     .custom-blue {
+      width: fit-content;
       background-color: #5570f129;
       /* Custom green */
       color: rgb(0, 0, 0);
@@ -572,8 +573,8 @@
     }
 
     .w-o-search {
-      width: 780px;
-      height: 62px;
+      width: 100%;
+     padding: 7px;
     }
 
     .w-buttoon {
@@ -2661,9 +2662,10 @@
 
         <div class="green tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
 
-          <div class="container-fluid settingsSubTabs">
-            <!-- Tab Navigation -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <div class="container-fluid ">
+         <div class="settingsSubTabs">
+             <!-- Tab Navigation -->
+             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="mediumFontBorder active" id="new-settings-tab" data-bs-toggle="tab"
                   data-bs-target="#new-settings" type="button" role="tab" aria-controls="new-settings"
@@ -2682,7 +2684,7 @@
             </ul>
 
             <!-- Tab Content -->
-            <div class="tab-content mt-3" id="myTabContent">
+            <div class="tab-content mt-3  " id="myTabContent">
               <div class="tab-pane fade show active" id="new-settings" role="tabpanel"
                 aria-labelledby="new-settings-tab">
 
@@ -2797,7 +2799,7 @@
 
               </div>
               <div class="tab-pane fade" id="role-management" role="tabpanel" aria-labelledby="role-management-tab">
-                <div>
+                <div class="">
                   <div>
                     <!-- <div class="inputBox w-100">
                     <img src="./assests/svg/Search.svg" />
@@ -2852,7 +2854,7 @@
                           <th scope="col">Employee Id</th>
                           <th scope="col">Role</th>
                           <th scope="col">Status</th>
-
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody id="table-body-emp-role">
@@ -2871,17 +2873,12 @@
                       <a class="page-link" href="#" id="next-page-emp-role" style="text-align: right;">Next</a>
                       <!-- Right aligned -->
                     </div>
-
-
-
-
-
-
                   </div>
                 </div>
 
               </div>
             </div>
+         </div>
 
           </div>
         </div>
