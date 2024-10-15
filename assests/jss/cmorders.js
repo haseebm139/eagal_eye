@@ -35,51 +35,62 @@ const customerOrders = [
           <td>${order.trackingId}</td>
           <td>${order.qty}</td>
           <td>${order.orderTotal}</td>
-          <td>
-            <span class="Assigned" id="assignButton-${order.id}">
-              Assign to
-              <img src="./assests/svg/fi_chevron-down2.svg" />
-            </span>
-            <div class="dropdown-like" id="dropdown-${order.id}" style="display:none;">
-              <input type="text" id="searchInput-${order.id}" placeholder="Search" />
-              <ul id="assignList-${order.id}">
-                <li>
-                  <label>
-                    <img src="./assests/Image.png" alt="user-avatar" class="user-avatar" />
-                    Janet Adebayo
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <img src="./assests/image 726.png" alt="user-avatar" class="user-avatar" />
-                    Samuel Johnson
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <img src="./assests/image 715.png" alt="user-avatar" class="user-avatar" />
-                    Christian Dior
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <img src="./assests/image 726.png" alt="user-avatar" class="user-avatar" />
-                    Janet Adebayo
-                  </label>
-                </li>
-              </ul>
-            </div>
-          </td>
+      <td>
+        <span class="Assigned" id="assignButton-${order.id}">
+         Assign too
+          <img src="./assests/svg/fi_chevron-down2.svg" />
+        </span>
+        <div class="dropdown-like" id="dropdown-${order.id}" style="display:none;">
+          <input type="text" id="searchInput-${order.id}" placeholder="Search" />
+          <ul id="assignList-${order.id}">
+            <li>
+              <label>
+                 <img src="./assests/Image.png" alt="user-avatar" class="user-avatar" />
+                Janet Adebayo
+              </label>
+            </li>
+            <li>
+              <label>
+                <img src="./assests/image_715.png" alt="user-avatar" class="user-avatar" />
+                Samuel Johnson
+              </label>
+            </li>
+            <li>
+              <label>
+                <img src="./assests/image_54321.png" alt="user-avatar" class="user-avatar" />
+                Christian Dior
+              </label>
+            </li>
+          </ul>
+        </div>
+      </td>
         </tr>
       `;
       tableBodyCmOrder.insertAdjacentHTML('beforeend', row);
     
-      // Add event listener for each dropdown toggle
-      document.getElementById(`assignButton-${order.id}`).addEventListener('click', function() {
-        const dropdown = document.getElementById(`dropdown-${order.id}`);
-        dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-      });
-    });
+
+  // Add event listener for each dropdown toggle
+  document.getElementById(`assignButton-${order.id}`).addEventListener('click', function() {
+    const dropdown = document.getElementById(`dropdown-${order.id}`);
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Add event listener for selecting an assign option and close dropdown
+  document.getElementById(`assignList-${order.id}`).addEventListener('click', function(e) {
+    if (e.target.tagName === 'LABEL' || e.target.tagName === 'IMG') {
+      const labelElement = e.target.closest('label');
+      const selectedName = labelElement.textContent.trim();
+      const assignButton = document.getElementById(`assignButton-${order.id}`);
+
+      // Update the "Assign to" text but keep the chevron icon
+      assignButton.innerHTML = `${selectedName}   <img src="./assests/svg/fi_chevron-down2.svg" />`;
+
+      // Hide the dropdown after selection
+      const dropdown = document.getElementById(`dropdown-${order.id}`);
+      dropdown.style.display = 'none';
+    }
+  });
+});
     
     updateCustomerOrdersPaginationInfo(start + 1, end, customerOrders.length);
     updateCustomerOrdersPageSelect();
@@ -204,7 +215,7 @@ function renderCustomerOrdersTable2() {
   const customerOrdersToDisplay = customerOrders.slice(start, end);
 
   customerOrdersToDisplay.forEach(order => {
-    const statusClass = order.assignStatus === 'Delivered' ? 'text-success' : (order.assignStatus === 'Shipped' ? 'text-info' : 'text-warning');
+    const statusClass = order.assignStatus === 'Delivered' ? 'custom-active' : (order.assignStatus === 'Shipped' ? 'custom-inactive' : 'custom-inactive');
     const row = `
       <tr>
         <td>
@@ -220,16 +231,72 @@ function renderCustomerOrdersTable2() {
         <td>${order.trackingId}</td>
         <td>${order.qty}</td>
         <td>${order.orderTotal}</td>
+         <td>
+        <span class="Assigned" id="assignButton2-${order.id}">
+         Assign too
+          <img src="./assests/svg/fi_chevron-down2.svg" />
+        </span>
+        <div class="dropdown-like" id="dropdown2-${order.id}" style="display:none;">
+          <input type="text" id="searchInput2-${order.id}" placeholder="Search" />
+          <ul id="assignList2-${order.id}">
+            <li>
+              <label>
+                 <img src="./assests/Image.png" alt="user-avatar" class="user-avatar" />
+                Janet Adebayo
+              </label>
+            </li>
+            <li>
+              <label>
+                <img src="./assests/image_715.png" alt="user-avatar" class="user-avatar" />
+                Samuel Johnson
+              </label>
+            </li>
+            <li>
+              <label>
+                <img src="./assests/image_54321.png" alt="user-avatar" class="user-avatar" />
+                Christian Dior
+              </label>
+            </li>
+          </ul>
+        </div>
+      </td>
         <td>
-          <button class="btn btn-primary">Assign Work</button>
-        </td>
-        <td>
-          <button class="btn btn-danger">Delete</button>
+           <select
+                        id="itemsPerPage"
+                        class="form-select form-select-sm filter-dropdown"
+                        style="width: auto"
+                      >
+                        <option value="3">bulk Action</option>
+                        <option value="5">page</option>
+                        <option value="10">per page</option>
+                      </select>
         </td>
         <td><span class="${statusClass}">${order.assignStatus}</span></td>
       </tr>
     `;
     tableBodyCmOrder2.insertAdjacentHTML('beforeend', row);
+    // Add event listener for each dropdown toggle
+    document.getElementById(`assignButton2-${order.id}`).addEventListener('click', function() {
+      const dropdown = document.getElementById(`dropdown2-${order.id}`);
+      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Add event listener for selecting an assign option and close dropdown
+    document.getElementById(`assignList2-${order.id}`).addEventListener('click', function(e) {
+      if (e.target.tagName === 'LABEL' || e.target.tagName === 'IMG') {
+        const labelElement = e.target.closest('label');
+        const selectedName = labelElement.textContent.trim();
+        const assignButton = document.getElementById(`assignButton2-${order.id}`);
+
+        // Update the "Assign too" text but keep the chevron icon
+        assignButton.innerHTML = `${selectedName} <img src="./assests/svg/fi_chevron-down2.svg" />`;
+
+        // Hide the dropdown after selection
+        const dropdown = document.getElementById(`dropdown2-${order.id}`);
+        dropdown.style.display = 'none';
+      }
+    });
+    
   });
 
   updateCustomerOrdersPaginationInfo2(start + 1, end, customerOrders.length);
