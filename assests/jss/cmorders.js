@@ -188,19 +188,32 @@ function handleCmOrderSelectAll() {
   
   // Call the function to initialize the select all functionality
   handleCmOrderSelectAll();
-    // Get references to the elements
-    const customerName = document.getElementById("customerName");
-    const orderContainer = document.getElementById("orderContainer");
-    const viewOrder = document.getElementById("viewOrder");
+ 
 
-    // Add click event listener to the Customer Name td
+  const customerName = document.getElementById("customerName");
+  const orderContainer = document.getElementById("orderContainer");
+  const viewOrder = document.getElementById("viewOrder");
+  const customerOrder = document.getElementById("customerOrders");
+  const orderSummary = document.getElementById("viewSummary");
+
+  // Check if the elements exist before adding event listeners
+  if (customerName && orderContainer && viewOrder) {
     customerName.addEventListener("click", () => {
-      // Hide the order-container div and show the ppp div
       orderContainer.style.display = "none";
       viewOrder.style.display = "block";
     });
+  }
 
-
+  if (customerOrder && orderContainer && orderSummary) {
+    console.log(
+      'ppp'
+    );
+    
+    customerOrder.addEventListener("click", () => {
+      orderContainer.style.display = "none";
+      orderSummary.style.display = "block";
+    });
+  }
 
 
 

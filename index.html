@@ -1068,7 +1068,7 @@
             </div>
             <div class="product2 mt-4">
               <div class="d-flex justify-content-between">
-                <h6 id="customer-Orders cursor">Customer Orders</h6>
+                <h6 id="customerOrders">Customer Orders</h6>
                 
 
                 <div class="d-flex gap-2 position-relative">
@@ -1227,6 +1227,8 @@
                     </select>
                   </div>
                 </div>
+
+
               </div>
               <div class="">
                 <!-- Tab Navigation -->
@@ -1392,7 +1394,180 @@
   </div> -->
             </div>
           </div>
-          <div id="summary-content" style="display: none;">new page</div>
+          <div class="container-fluid" id="viewSummary" style="display: none;">
+          <h6>Order Summary</h6>
+            <div class="d-flex gap-3 mt-3">
+              <div class="" style="width: 30%">
+                <div class="card text-center">
+                  <div class="alignemnt">
+                    <div class="d-flex gap-3">
+                      <img src="./assests/svg/client2.svg" />
+                      <div class="">
+                        <p class="mediumFont2 m-0 p-0 text-left">
+                          Janet Adebayo
+                        </p>
+                        <p class="mediumFont3 m-0 p-0 text-left">
+                          Last Order <span>12 sept 2022</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="leftAlignement">
+                      <button class="CustomerStatusPending">Pending</button>
+                      <!-- <p class="side-text">This Week</p> -->
+                    </div>
+                  </div>
+
+                  <div class="bottomContent">
+                    <span>
+                      <p class="sales">Phone</p>
+                      <p class="bold">+236365746</p>
+                    </span>
+
+                    <span>
+                      <p class="sales">Email</p>
+                      <p class="bold">abc@yopmail.com</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class=" " style="width: 40%">
+                <div class="card text-center">
+                  <div class="alignemnt">
+                    <img src="./assests/svg/address.svg" />
+                  </div>
+
+                  <div class="bottomContent">
+                    <span class="bottomSpan">
+                      <p class="sales">Home Address</p>
+                      <p class="bold">
+                        No.15 Adekunle Street,Yaba, Lagos State
+                      </p>
+                    </span>
+
+                    <span class="bottomSpan">
+                      <p class="sales">Billing Address</p>
+                      <p class="bold">
+                        No.15 Adekunle Street,Yaba, Lagos State
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class=" " style="width: 30%">
+                <div class="card text-center">
+                  <div class="d-flex justify-content-between CustomerOrders">
+                    <img src="./assests/svg/orders.svg" />
+
+                    <div class="dropdown-container position-relative">
+                      <select id="data-category" class="form-control2 d-inline w-auto">
+                        <option value="Revenue">All time</option>
+                        <option value="Expenses">This Week</option>
+                        <option value="Profit Margin">This Week</option>
+                      </select>
+                      <span class="dropdown-icon"></span>
+                      <!-- Down arrow icon -->
+                    </div>
+                  </div>
+
+                  <div class="bottomContent">
+                    <span class="bottomSpan">
+                      <p class="sales">Total Orders</p>
+                      <p class="bold3">$1,250</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="settingsSubTabs my-4 pb-5">
+              <p  class="LightFont2 py-3">Order <span  class="mediumFont2 m-0">#166559</span> was place on <span  class="mediumFont2 m-0">August 14,2018</span>and is currently <span  class="mediumFont2 m-0">Completed</span> </p>
+              <h1 class="SettingHeading my-2">Order Details</h1>
+
+
+              <div>
+
+                <table class="table table-bordered invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="LightFont2">Adhesive Prints <span class="mediumFont2"> × 2</span><br><small class="mediumFont2">SKU: PR.AP</small></td>
+                            <td>$150.14</td>
+                        </tr>
+                        <tr>
+                            <td class="LightFont2">Adhesive Prints <span class="mediumFont2">× 1</span><br><small class="mediumFont2">SKU: PR.AP</small></td>
+                            <td>$61.49</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><strong>Subtotal:</strong></td>
+                            <td>$211.63</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><strong>Shipping:</strong></td>
+                            <td>Shipping</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><strong>Discount:</strong></td>
+                            <td>-$105.82</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><strong>Payment method:</strong></td>
+                            <td>Purchase Order</td>
+                        </tr>
+                        <tr>
+                            <td colspan="1"><strong>Total:</strong></td>
+                            <td><strong>$105.81</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="invoice-footer d-flex flex-column justify-content-center align-items-start gap-3 text-center">
+                    <button type="button" class="btn btn-outline-primary">Print Invoice</button>
+                    <button type="button" class="btn btn-outline-primary">Download Invoice</button>
+                </div>
+            </div>
+            </div>
+
+
+            <div class="container settingsSubTabs mt-5 py-3">
+              <div class="row">
+                  <div class="col-md-6">
+                    <h5>Billing address</h5>
+                      <div class="address-box my-3">
+                        
+                          <p>
+                              Craig Davidson<br>
+                              Eagle Eye Partners<br>
+                              13375 Stemmons Freeway<br>
+                              Dallas<br>
+                              Dallas, TX 75243<br>
+                              <i class="icon fas fa-phone-alt"></i> 9724662100<br>
+                              <i class="icon-envelope fas fa-envelope"></i> miles@eagleeyesigns.net
+                          </p>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Shipping address</h5>
+                      <div class="address-box my-3">
+                         
+                          <p>
+                              Craig Davidson<br>
+                              Eagle Eye Partners<br>
+                              13375 Stemmons Freeway<br>
+                              Dallas<br>
+                              Dallas, TX 75243<br>
+                              <i class="icon fas fa-phone-alt"></i> 9724662100<br>
+                              <i class="icon-envelope fas fa-envelope"></i> miles@eagleeyesigns.net
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
           <!-- new inner page -->
           <div class="viewOrder px-3" id="viewOrder" style="display: none">
             <div class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2">
@@ -3053,13 +3228,7 @@
         statusElement.style.borderRadius = " 15px"; // UnActive status
       }
 
-      // const customerOrder = document.getElementById("customer-Orders")
-      // const orderContainer = document.getElementById("orderContainer");
-      // const orderSummary = document.getElementById("summary-content")
-      // customerOrder.addEventListener("click",()=>{
-      //   orderContainer.style.display="none";
-      //   orderSummary.style.display="block";
-      // })
+     
     </script>
 </body>
 
