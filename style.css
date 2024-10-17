@@ -225,7 +225,7 @@ color: #fff;
 }
 
 .card {
-height: 200px !important;
+height: 160px !important;
     display: flex;
     justify-content: space-between;
     gap: 2.5rem;
@@ -490,6 +490,8 @@ width: 30px;
     top: 5px;
 }
 .layout{
+    display: flex;
+    gap: 10px;
     width: 100%;
 }
 .rightSideContent{
@@ -503,7 +505,7 @@ width: 30px;
     width: 49%;
 }
 .alignmentOfPIChart .card{
-    height: 70% !important;
+    height: 100% !important;
 }
 
 .leftSideContent{
@@ -531,6 +533,7 @@ width: 30px;
     width: 30%;
 }
 .productBtn{
+    font-size: 15px;
     background-color: #ffd014;
     color: black;
     border: none;
@@ -1148,4 +1151,116 @@ padding: 4px 10px;
   .toggle-option:focus {
     outline: none;
   }
-  
+  .layer1{
+    display: flex;
+    gap: 10px;
+  }
+.dasboardCard{
+    width: 30%;
+}
+.dasboardCard2{
+    width: 40%;
+}
+.chartCard{
+    display: flex;
+    gap: 10px;
+}
+.customDropdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  @media screen and (max-width: 1024px){
+    .leftSideContent{
+        width: 100%;
+    }
+    .legend-container{
+        flex-wrap: wrap;
+    }
+    .chart-container{
+        width: 100%;
+        height: 68%;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .rightSideContent{
+        width: 100%;
+    }
+    .layout{
+        flex-direction: column;
+    }
+    .layer1{
+        flex-direction: column;
+    }
+    .dasboardCard{
+        width: 100%;
+    }
+    .dasboardCard2{
+        width: 100%;
+    }
+  }
+  @media screen and (max-width: 425px){
+    .form-control3 {
+        padding: 5px 6px;
+    }
+    .toggle-btn {
+        top: 42px;
+    }
+    h3 {
+        font-size: 1rem !important;
+    }
+    .customDropdown{
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .chartCard{
+        flex-direction: column;
+    }
+    .main-content{
+        margin-left: 77px !important;
+    }
+    .alignmentOfPIChart{
+        width: 100%;
+    }
+    .sec-section {
+        width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 375px){
+    .productBtn{
+        font-size: 12px;
+    }
+    .sales {
+        font-size: 12px;
+    }
+    .bold {
+        font-size: 12px;
+    }
+    .rates {
+        font-size: 9px;
+    }
+    .customDropdown h6{
+        font-size: 12px;
+    }
+    .alignmentOfPIChart h6{
+        font-size: 12px;
+    }
+    .legend-item span{
+        font-size: 12px;
+    }
+    .form-control {
+        font-size: 12px !important;
+    }
+    .container-2 {
+        padding: 20px 13px !important;
+    }
+    .custom-chart-card {
+         padding: 0px;
+    }
+    .custom-chart-card {
+        font-size: 12px !important;
+    }
+  }
