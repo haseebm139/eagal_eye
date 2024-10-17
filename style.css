@@ -661,6 +661,7 @@ padding-right: 33px;
     font-weight: 500;
 }
 .table .orderTable th{
+    font-size: 13px;
     background-color: #d9d9d9 !important;
 }
 .table thead .th {
@@ -1170,6 +1171,20 @@ padding: 4px 10px;
     justify-content: space-between;
     align-items: center;
 }
+.orderLayer{
+    display: flex;
+    gap: 10px;
+    
+}
+.item-pp {
+    font-size: 16px;
+    width: 120px !important;
+  }
+  .item-bp {
+    font-size: 16px;
+    width: 80px;
+  }
+
   @media screen and (max-width: 1024px){
     .leftSideContent{
         width: 100%;
@@ -1181,8 +1196,66 @@ padding: 4px 10px;
         width: 100%;
         height: 68%;
     }
+
+    .sales{
+        font-size: 12px; 
+    }
+    .rates {
+        font-size: 9px;
+    }
+    .bold{
+        font-size: 12px;
+    }
+    .product2 h6 {
+        font-size: 14px;
+    }
+    .filter-btn{
+        font-size: 11px;  
+    }
+    .filter-btn img {
+        width: 10px;
+    }
+    .mediumFontBorder.active {
+        font-size: 13px;
+    }
+    .mediumFontBorder {
+        font-size: 13px;   
+    }
+    .table .orderTable th {
+        font-size: 11px;
+    }
   }
   @media screen and (max-width: 768px){
+    .order-btn{
+        font-size: 12px ; 
+    }
+    .item-bp {
+        font-size: 12px;
+        width: 55px;
+        margin: 0 10px;
+      }
+    
+    .item-pp {
+        font-size: 12px;
+    }
+    .table {
+        width: max-content !important;
+    }
+    .table td{
+        font-size: 12px !important;
+    }
+    .product2 h6 {
+        font-size: 14px;
+    }
+    .orderLayer{
+        flex-direction: column;
+    }
+    .orderCard1{
+        width: 100% !important;
+    }
+    .orderCard2{
+        width: 100% !important;
+    }
     .rightSideContent{
         width: 100%;
     }
@@ -1262,5 +1335,25 @@ padding: 4px 10px;
     }
     .custom-chart-card {
         font-size: 12px !important;
+    }
+  }
+  @media screen and (max-width: 320px){
+    .search-bar{
+        width: 100%;
+    }
+    .search-bar img {
+        width: 11px;
+    }
+    .filter-btn{
+        width: 100%;
+    }
+    .OrderDropdown{
+        width: 100%;
+    }
+    .filter-dropdown {
+        width: 100% !important;
+    }
+    .search-bar input {
+        font-size: 11px;
     }
   }
