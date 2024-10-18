@@ -14,6 +14,7 @@ const customerOrders = [
   // Render table
   function renderCustomerOrdersTable() {
     const tableBodyCmOrder = document.getElementById('table-body-cm-order');
+    
     tableBodyCmOrder.innerHTML = "";
   
     const start = (currentPageCustomerOrders - 1) * rowsPerPageCustomerOrders;
@@ -71,27 +72,35 @@ const customerOrders = [
       tableBodyCmOrder.insertAdjacentHTML('beforeend', row);
     
 
-  // Add event listener for each dropdown toggle
-  document.getElementById(`assignButton-${order.id}`).addEventListener('click', function() {
-    const dropdown = document.getElementById(`dropdown-${order.id}`);
-    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-  });
-
-  // Add event listener for selecting an assign option and close dropdown
-  document.getElementById(`assignList-${order.id}`).addEventListener('click', function(e) {
-    if (e.target.tagName === 'LABEL' || e.target.tagName === 'IMG') {
-      const labelElement = e.target.closest('label');
-      const selectedName = labelElement.textContent.trim();
-      const assignButton = document.getElementById(`assignButton-${order.id}`);
-
-      // Update the "Assign to" text but keep the chevron icon
-      assignButton.innerHTML = `${selectedName}   <img src="./assests/svg/fi_chevron-down2.svg" />`;
-
-      // Hide the dropdown after selection
-      const dropdown = document.getElementById(`dropdown-${order.id}`);
-      dropdown.style.display = 'none';
-    }
-  });
+      document.getElementById(`assignButton-${order.id}`)?.addEventListener('click', function() {
+      
+        
+        const dropdown = document.getElementById(`dropdown-${order.id}`);
+       
+        if (dropdown) {
+          dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+          console.log(dropdown,'dropdown');
+        }
+      });
+      
+      document.getElementById(`assignList-${order.id}`)?.addEventListener('click', function(e) {
+        if (e.target.tagName === 'LABEL' || e.target.tagName === 'IMG') {
+          const labelElement = e.target.closest('label');
+          if (labelElement) {
+            const selectedName = labelElement.textContent.trim();
+            const assignButton = document.getElementById(`assignButton-${order.id}`);
+            if (assignButton) {
+              assignButton.innerHTML = `${selectedName}   <img src="./assests/svg/fi_chevron-down2.svg" />`;
+              const dropdown = document.getElementById(`dropdown-${order.id}`);
+              if (dropdown) {
+                dropdown.style.display = 'none';
+              }
+            }
+          }
+        }
+      });
+      
+      
 });
     
     updateCustomerOrdersPaginationInfo(start + 1, end, customerOrders.length);
@@ -205,10 +214,6 @@ function handleCmOrderSelectAll() {
   }
 
   if (customerOrder && orderContainer && orderSummary) {
-    console.log(
-      'ppp'
-    );
-    
     customerOrder.addEventListener("click", () => {
       orderContainer.style.display = "none";
       orderSummary.style.display = "block";
@@ -292,23 +297,23 @@ function renderCustomerOrdersTable2() {
     tableBodyCmOrder2.insertAdjacentHTML('beforeend', row);
     // Add event listener for each dropdown toggle
     document.getElementById(`assignButton2-${order.id}`).addEventListener('click', function() {
-      const dropdown = document.getElementById(`dropdown2-${order.id}`);
-      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+      const dropdown2 = document.getElementById(`dropdown2-${order.id}`);
+      dropdown2.style.display = dropdown2.style.display === 'none' ? 'block' : 'none';
     });
 
     // Add event listener for selecting an assign option and close dropdown
     document.getElementById(`assignList2-${order.id}`).addEventListener('click', function(e) {
       if (e.target.tagName === 'LABEL' || e.target.tagName === 'IMG') {
-        const labelElement = e.target.closest('label');
-        const selectedName = labelElement.textContent.trim();
-        const assignButton = document.getElementById(`assignButton2-${order.id}`);
+        const labelElement2 = e.target.closest('label');
+        const selectedName2 = labelElement2.textContent.trim();
+        const assignButton2 = document.getElementById(`assignButton2-${order.id}`);
 
         // Update the "Assign too" text but keep the chevron icon
-        assignButton.innerHTML = `${selectedName} <img src="./assests/svg/fi_chevron-down2.svg" />`;
+        assignButton2.innerHTML = `${selectedName2} <img src="./assests/svg/fi_chevron-down2.svg" />`;
 
         // Hide the dropdown after selection
-        const dropdown = document.getElementById(`dropdown2-${order.id}`);
-        dropdown.style.display = 'none';
+        const dropdown2 = document.getElementById(`dropdown2-${order.id}`);
+        dropdown2.style.display = 'none';
       }
     });
     
