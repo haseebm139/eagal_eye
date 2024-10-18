@@ -384,6 +384,10 @@ width: 30px;
     color: #A6A8B1;
     font-size: 14px; 
 }
+.order11{
+    display: flex;
+    gap: 10px;
+}
 .ProductSpan{
     width: 50%;
 }
@@ -568,7 +572,7 @@ width: 30px;
 .add-btn{
     font-family: InterMedium;
     text-align: center;
-    width: 100%;
+    width: 25%;
     color: rgb(0, 0, 0);
     border: none;
     background-color:  #ffd014;
@@ -617,6 +621,7 @@ padding-right: 33px;
 }
 
 .cancel-btn2{
+    width: 25% !important;
     font-family: InterMedium;
     text-align: center;
     width: 100%;
@@ -1077,7 +1082,10 @@ background-color: #f6f7fb;
   .switch input:checked + .slider:before {
     transform: translateX(24px);
   }
-  
+  .oder1{
+    display: flex;
+    gap: 10px;
+  }
   .discount{
     padding: 0;
     margin: 0;
@@ -1184,8 +1192,26 @@ padding: 4px 10px;
     font-size: 16px;
     width: 80px;
   }
-
+  .Ordermodel {
+   
+    width: auto !important;
+  }
+  .OrderModalInner{
+    display: flex;
+    gap: 10px;
+  }
+  .Modalheading{
+    font-size: 16px;
+  }
+  .innerConatiner img{
+    width: 150px;
+  }
   @media screen and (max-width: 1024px){
+    .Ordermodel {
+        position: relative;
+        left: 5rem;
+        width: auto !important;
+      }
     .leftSideContent{
         width: 100%;
     }
@@ -1226,6 +1252,69 @@ padding: 4px 10px;
     }
   }
   @media screen and (max-width: 768px){
+    .innerConatiner img{
+        width: 70px;
+      }
+      .innerConatiner h6{
+        font-size: 15px;
+      } 
+      .model p{
+        font-size: 11px !important;
+      }
+      .cancel-btn2{
+        font-size: 11px !important;
+
+      }
+      .add-btn{
+        font-size: 11px !important;
+      }
+      .img-fluid {
+        max-width: 100px;
+      }
+    .inputBox{ 
+        font-size: 10px;
+        padding: 8px;
+    }
+    .NoteDescription {
+        font-size: 12px;
+    }
+    .switch input:checked + .slider:before {
+        transform: translateX(14px);
+      }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        bottom: 0;
+        width: 14px;
+        left: 1px;
+    }
+    .switch2 {
+        width: 30px !important;
+        height: 17px !important;
+    }
+    .CustomerPopup{
+        font-size: 11px !important;
+    }
+    .cancel {
+        padding: 1px 3px 3px;
+    }
+    .cancel img{
+        width: 20px;
+    }
+    .Modalheading{
+        font-size: 12px;
+      }
+    .NewCompany {
+        height: auto;
+        overflow: scroll;
+    }
+    .Ordermodel {
+        top: 5rem;
+    }
+    .OrderModalInner{
+        flex-direction: column;
+    }
     .order-btn{
         font-size: 12px ; 
     }
@@ -1273,6 +1362,16 @@ padding: 4px 10px;
     }
   }
   @media screen and (max-width: 425px){
+    .Ordermodel {
+       
+        left: 2rem;
+    }
+    .oder1{
+        flex-direction: column;
+    }
+    .Ordermodel {
+        top: 7rem;
+    }
     .form-control3 {
         padding: 5px 6px;
     }
@@ -1303,6 +1402,36 @@ padding: 4px 10px;
   }
 
   @media screen and (max-width: 375px){
+    .date {
+        width: 86%;
+    }
+    .NoteDescription {
+        width: 86%;
+    }
+    .order11{
+    flex-direction: column;
+    }
+    .Ordermodel {
+        width: 290px !important;
+    }
+    .Ordermodel {
+        left: 2.5rem;
+    }
+    .orderLeft{
+        width: 257px;
+    }
+    .inputBox{
+        width: 86% !important;
+    }
+    .cancel-btn2{
+        width: 30% !important;
+    }
+    .add-btn{
+        width: 30% !important;
+    }
+    .Ordermodel {
+        top: 10rem;
+    }
     .productBtn{
         font-size: 12px;
     }
@@ -1338,6 +1467,34 @@ padding: 4px 10px;
     }
   }
   @media screen and (max-width: 320px){
+    .cancel-btn2{
+        width: 39% !important;
+    }
+    .add-btn{
+        width: 39% !important;
+    }
+    .model {
+        padding: 1rem 10px;
+    }
+    .Ordermodel {
+        width: 228px !important;
+    }
+    .orderLeftConatiner {
+        width: 200px;
+    }
+    .orderLeft {
+        width: 200px;
+    }
+    .inputBox {
+        width: 100% !important;
+    }
+    .date {
+        width: 100% !important;
+    }
+    .NoteDescription{
+        width: 100% !important;
+
+    }
     .search-bar{
         width: 100%;
     }
