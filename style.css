@@ -35,6 +35,34 @@ body {
     font-family: GilroyBold;
     src: url('./assests/gilroy/Gilroy-Bold.ttf');
 }
+.subOrderLayer{
+    display: flex;
+    gap: 10px;
+}
+.subOrders{
+    width: 30%;
+}
+.subOrders2{
+    width: 40%;
+}
+.card2{
+    height: 185px;
+    position: relative;
+    justify-content: space-between;
+    gap: 2.5rem;
+    border: none !important;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px ;
+    padding: 20px;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+}
 .invoice-header {
     margin-bottom: 20px;
 }
@@ -620,6 +648,7 @@ padding-right: 33px;
 
 }
 
+
 .cancel-btn2{
     width: 25% !important;
     font-family: InterMedium;
@@ -816,8 +845,23 @@ padding: 2px 6px
 {
     font-family: InterMedium;
 }
+
 /* Responsive behavior */
 @media (max-width: 768px) {
+    .orderSubTable{
+        width: 100% !important;
+    }
+    .subOrderLayer{
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .subOrders{
+        width: 100% !important;
+    }
+    .subOrders2{
+        width: 100% !important;
+    }
     .table-responsive {
         overflow-x: auto;
     }
