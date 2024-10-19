@@ -280,24 +280,25 @@
       </div>
 </div>
 
-
-<div class="container  d-flex  gap-3 justify-content-center align-items-center">
-    <div class="d-flex flex-column justify-content-center align-items-center box ">
-        <h1 class="price">3K</h1>
-        <p class="indentity">Customer</p>
+<div class="container d-flex gap-3 justify-content-center align-items-center" id="msectiond">
+    <div class="d-flex flex-column justify-content-center align-items-center box">
+        <h1 class="price" data-target="3000">0</h1> <!-- Target is 3000 -->
+        <p class="identity">Customer</p>
     </div>
 
-
-    <div class="d-flex flex-column justify-content-center align-items-center box ">
-        <h1 class="price">56K</h1>
-        <p class="indentity">Prints & Signs in last 12 Months </p>
+    <div class="d-flex flex-column justify-content-center align-items-center box">
+        <h1 class="price" data-target="56000">0</h1> <!-- Target is 56000 -->
+        <p class="identity">Prints & Signs in last 12 Months</p>
     </div>
 
-    <div class="d-flex flex-column justify-content-center align-items-center box ">
-        <h1 class="price">22</h1>
-        <p class="indentity">States</p>
+    <div class="d-flex flex-column justify-content-center align-items-center box">
+        <h1 class="price" data-target="22">0</h1> <!-- Target is 22 -->
+        <p class="identity">States</p>
     </div>
 </div>
+
+
+
 
 <div class="footer">
 <div class="container d-flex">
@@ -417,5 +418,51 @@ var swiper2 = new Swiper(".mySwiper2", {
 });
 
     </script>
+
+   <script>
+// Function to animate the counter
+function animateCounter(counterElement) {
+    const target = +counterElement.getAttribute('data-target');
+    const speed = 200; // You can adjust the speed for the animation
+    const increment = target / speed;
+
+    let count = 0;
+
+    const updateCounter = () => {
+        count += increment;
+        if (count < target) {
+            counterElement.innerText = Math.ceil(count);
+            requestAnimationFrame(updateCounter);
+        } else {
+            counterElement.innerText = target;
+        }
+    };
+
+    updateCounter();
+}
+
+// Function to start the animation when section is in view
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Animate each counter within the visible section
+            const counters = entry.target.querySelectorAll('.price');
+            counters.forEach(counter => animateCounter(counter));
+            // Optional: unobserve after animation starts to avoid restarting on scroll
+            observer.unobserve(entry.target);
+        }
+    });
+}
+
+// Create an intersection observer
+const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.5 // Adjust this threshold based on when you want the animation to start (50% visible)
+});
+
+// Observe the section with the ID 'msectiond'
+const section = document.getElementById('msectiond');
+observer.observe(section);
+
+   </script>
 </body>
 </html>
