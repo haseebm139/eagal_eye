@@ -77,6 +77,10 @@ body {
     padding: 15px;
     border-radius: 5px;
 }
+.address-box p{
+    font-family: InterMedium;
+    font-size: 14px;
+}
 .icon {
     margin-right: 5px;
 }
@@ -1511,6 +1515,13 @@ padding: 4px 10px;
     }
   }
   @media screen and (max-width: 320px){
+    .address-box p{
+       
+        font-size: 10px;
+    }
+    .card2 {
+        padding: 20px 7px;
+    }
     .cancel-btn2{
         width: 39% !important;
     }
