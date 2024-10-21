@@ -292,51 +292,10 @@
       display: block;
     }
 
-    .modal-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      margin: 10% auto;
-      padding: 4px;
-      border-radius: 8px;
-      width: 250px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+  
 
-    .modal-content2 {
-      display: none;
-      position: absolute;
-      background-color: white;
-      margin: 7% auto;
-      padding: 16px;
-      width: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
 
-    .modal-header {
-      font-family: InterMedium;
-      align-items: center;
-      padding-bottom: 5px;
-    }
-
-    .filter-group {
-      margin-bottom: 15px;
-    }
-
-    .filter-group label {
-      font-size: 13px;
-      color: #53545c;
-      font-family: InterMedium;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .filter-group2 label {
-      font-size: 13px;
-      font-family: InterLight !important;
-    }
-
+  
     .amount-fields {
       display: flex;
       gap: 10px;
@@ -374,47 +333,9 @@
       font-size: 14px;
     }
 
-    .calendar {
-      top: 1rem;
-      margin: 0 auto;
-      width: 300px;
-      background: #fff;
-    }
+  
 
-    .mainCalendar {
-      background-color: #f4f5fa;
-      border-radius: 13px;
-    }
-
-    .calendar header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .calendar nav {
-      display: flex;
-      align-items: center;
-    }
-
-    .calendar ul {
-      padding-left: 0;
-      margin: 0;
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .calendar ul li {
-      width: calc(100% / 7);
-      position: relative;
-      z-index: 2;
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  
 
     #prev,
     #next {
@@ -1073,7 +994,7 @@
                     <img src="./assests/svg/filter1.svg" /> Filter
                   </button>
 
-                  <div class="modal-content" id="modal-content">
+                  <div class="modal-content1" id="modal-content">
                     <div class="modal-header">
                       <h6>Filter</h6>
                     </div>
@@ -1081,10 +1002,24 @@
                       <form id="filterForm">
                         <div class="filter-group">
                           <label>Order Type</label>
-                          <div class="d-flex justify-content-between align-items-center mt-1 filter-group2">
-                            <label><input class="" type="checkbox" /> Home
-                              Delivery</label>
-                            <label><input type="checkbox" /> Pick Up</label>
+                          <div class="d-flex justify-content-between align-items-center mt-1 ">
+                           
+                           
+                                <label class="custom-checkbox">
+                                  <input type="checkbox" class="product-checkbox" data-id="${product.id}" />
+                                  <span class="checkmark2"></span>
+                                  Home
+                                  Delivery
+                                </label>
+                              
+                            
+                                <label class="custom-checkbox">
+                                  <input type="checkbox" class="product-checkbox" data-id="${product.id}" />
+                                  <span class="checkmark2"></span>
+                                  Pick Up
+                                </label>
+                             
+                            <!-- <label><input type="checkbox" /> Pick Up</label> -->
                           </div>
                         </div>
 
@@ -1133,7 +1068,7 @@
                   <div id="modal-content2" class="modal-content2">
                     <h6>By Date</h6>
 
-                    <div class="d-flex justify-content-between">
+                    <div class="btween">
                       <div class="d-flex flex-column align-items-baseline mt-1 filter-group2">
                         <label class="custom-checkbox">
                           <input type="checkbox" class="product-checkbox" data-id="${product.id}" />
@@ -1563,7 +1498,7 @@
           <!-- new inner page -->
           <div class="viewOrder px-3" id="viewOrder" style="display: none">
             <div class="Width d-flex flex-wrap gap-3 justify-content-between align-items-center customer2">
-              <div class="d-flex align-items-center justify-content-center gap-3">
+              <div class="d-flex flex-wrap align-items-center  gap-3">
                 <span class="d-flex gap-2">
                   <p class="mediumFont m-0">Order Number</p>
                   <p class="LightFont m-0">#88540</p>
@@ -1582,7 +1517,7 @@
                   <img src="./assests/svg/copyIcon.svg" />
                 </span>
               </div>
-              <div class="d-flex gap-3">
+              <div class="subOrderLayer">
                 <div class="dropdown-container dropdown2 position-relative">
                   <select id="data-category" class="form-control4 d-inline w-auto">
                     <option value="Revenue">Ready to Ship</option>
@@ -1598,9 +1533,9 @@
                 </button>
               </div>
             </div>
-            <div class="d-flex gap-3 mt-3">
-              <div class="" style="width: 30%">
-                <div class="card text-center">
+            <div class="subOrderLayer mt-3">
+              <div class="subOrders">
+                <div class="card2 text-center">
                   <div class="alignemnt">
                     <div class="d-flex gap-3">
                       <img src="./assests/svg/client2.svg" />
@@ -1632,8 +1567,8 @@
                   </div>
                 </div>
               </div>
-              <div class=" " style="width: 40%">
-                <div class="card text-center">
+              <div class="subOrders2">
+                <div class="card2 text-center">
                   <div class="alignemnt">
                     <img src="./assests/svg/address.svg" />
                   </div>
@@ -1655,8 +1590,8 @@
                   </div>
                 </div>
               </div>
-              <div class=" " style="width: 30%">
-                <div class="card text-center">
+              <div class="subOrders">
+                <div class="card2 text-center">
                   <div class="d-flex justify-content-between CustomerOrders">
                     <img src="./assests/svg/orders.svg" />
 
@@ -1682,10 +1617,10 @@
             </div>
 
             <div class="product2 my-4">
-              <div class="d-flex justify-content-between">
+              <div class="d-flex flex-wrap justify-content-between">
                 <h6>Items 3</h6>
 
-                <div class="d-flex gap-2 position-relative">
+                <div class="d-flex flex-wrap gap-2 position-relative">
                   <div class="search-bar">
                     <img src="./assests/svg/Search.svg" />
                     <input type="text" placeholder="Search.." />
